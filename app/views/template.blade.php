@@ -9,7 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Scrolling Nav - Start Bootstrap Template</title>
+    <title>
+        {{{ isset($title) ? 'Viajes Transparentes - '.$title : 'Viajes Transparentes' }}}
+    </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
@@ -23,6 +25,16 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- jQuery Version 1.11.0 -->
+    <script src="{{ URL::asset('js/jquery-1.11.0.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="{{ URL::asset('js/jquery.easing.min.js') }}"></script>
+    <script src="{{ URL::asset('js/scrolling-nav.js') }}"></script>
+
 
 </head>
 
@@ -40,7 +52,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand page-scroll" href="#page-top">Viajes Transparentes</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -51,13 +63,13 @@
                         <a class="page-scroll" href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#about">Acerca</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a class="page-scroll" href="#services">Datos</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#contact">Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -68,16 +80,6 @@
 
     @yield('content')
 
-
-    <!-- jQuery Version 1.11.0 -->
-    <script src="{{ URL::asset('js/jquery-1.11.0.js') }}"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
-
-    <!-- Scrolling Nav JavaScript -->
-    <script src="{{ URL::asset('js/jquery.easing.min.js') }}"></script>
-    <script src="{{ URL::asset('js/scrolling-nav.js') }}"></script>
 
 </body>
 
