@@ -29,7 +29,7 @@
 		],
 		"post-update-cmd": [
 			"php artisan clear-compiled",
-			"php artisan optimize"
+			"php artisan optimize",
 			"php artisan asset:publish frozennode/administrator"
 		],
 		"post-create-project-cmd": [
