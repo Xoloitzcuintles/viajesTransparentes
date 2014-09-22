@@ -33,13 +33,14 @@ Route::get('template', function()
     return View::make('template');
 });
 
-Route::get('users/login', function()
-{
-    return View::make('users/login');
-});
+Route::get('users/login', 'UserController@login');
+
+Route::post('users/login', 'UserController@login');
 
 Route::post('users/register', 'UserController@register');
 Route::get('users/register', 'UserController@register');
 
 Route::post('users/welcome', 'UserController@login');
 Route::get('users/welcome', 'UserController@login');
+
+Route::get('users/crud', 'UserController@getExample4');
