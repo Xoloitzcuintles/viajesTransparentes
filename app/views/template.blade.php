@@ -66,10 +66,13 @@
                         <a class="page-scroll" href="#about">Acerca</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Datos</a>
+                        <a class="page-scroll" href="#data">Datos</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contacto</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#login">Login</a>
                     </li>
                 </ul>
             </div>
