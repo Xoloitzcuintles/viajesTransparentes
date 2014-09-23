@@ -18,7 +18,13 @@
                             <br />
                             Repetir:
                             <input type="password" name="repeatPassword" id="repeatPassword" />
-                            <br />
+                            <br>
+                            <select name="role">
+                                <option value="3">Ciudadano</option>
+                                <option value="2">Servidor</option>
+                                <!-- The admin option should not be display -->
+                                <option value="1">Administrador</option>
+                            </select>
                             <input type="submit" class="btn btn-default" 
                             name="registerButton" id="registerButton" value="Registrarse" />
                         {{ Form::close() }}
