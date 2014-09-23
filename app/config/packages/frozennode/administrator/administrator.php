@@ -61,7 +61,11 @@
 	 */
 	'permission'=> function()
 	{
-		return Auth::check();
+		$isAuth =  false;
+		if (Auth::user()->role_id == 1 && Auth::check()) {
+			$isAuth =  true;
+		} 
+		return $isAuth;
 	},
 
 	/**

@@ -33,12 +33,14 @@ class UserController extends BaseController {
         if($register != false){
             $password = Input::get('password');
             $username = Input::get('username');
+            $role = Input::get('role');
             $password = Hash::make($password);
             $user = new User;
 
             $user->email = $username;
             $user->name = '';
             $user->password = $password;
+            $user->role_id = $role;
 
             $user->save();
 
@@ -63,7 +65,24 @@ class UserController extends BaseController {
         }
         if (Auth::attempt(array('email' => $username, 'password' => $password)) || Auth::check())
         {
-            return View::make('users/welcome', array('title'=>$title));
+            $role = Auth::user()->role_id;
+            switch ($role) {
+                //Admin
+                case 1:
+                    return Redirect::to('administrator');
+                    break;
+                //Servidor
+                case 2:
+                    return View::make('users/welcome', array('title'=>$title));
+                    break;
+                //ciudadano
+                case 3:
+                    return View::make('users/welcome', array('title'=>$title));
+                    break;
+                default:
+                    return View::make('users/welcome', array('title'=>$title));
+                    break;
+            }
         } else {
             return View::make('users/login', array('title'=>$title));
         }
