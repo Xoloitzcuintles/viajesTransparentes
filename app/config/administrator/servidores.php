@@ -46,6 +46,11 @@ return array(
             'relationship' => 'puesto',
             'select' => "(:table).nombre",
         ),
+        'cargo_name' => array(
+            'title' => 'Cargo',
+            'relationship' => 'puesto',
+            'select' => "(:table).nombre",
+        ),
         'unidadAdministrativa_name' => array(
             'title' => 'Unidad Administrativa',
             'relationship' => 'unidadAdministrativa',

@@ -52,7 +52,9 @@
 	 *	)
 	 */
 	'menu' => array('users',
-					'Configuración'=>array('puestos','unidadAdministrativa','cargos','servidores')),
+					'Configuración'=>array('puestos','unidadAdministrativa','cargos','servidores'),
+					'Config. geográfica'=>array('countries','states','cities'),
+					),
 
 	/**
 	 * The permission option is the highest-level authentication check that lets you define a closure that should return true if the current user
