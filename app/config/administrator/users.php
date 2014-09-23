@@ -40,7 +40,13 @@ return array(
             'title' => 'Member since',
 //            'relationship' => 'product',
 //            'select' => '(:table).name',
-        )
+        ),
+        'role_name' => array(
+            'title' => 'Roles',
+            'relationship' => 'roles',
+//            'select' => 'count((:table).role)'
+            'select' => "(:table).role", //would select groups.name            
+        ),
     ),
     /**
      * The edit fields array
@@ -55,6 +61,11 @@ return array(
         'name' => array(
             'title' => 'Name',
             'type' => 'text'
+        ),
+        'roles' => array(
+            'title' => 'Role',
+            'type' => 'relationship',
+            'name_field' => 'role',
         ),
 /*        'image' => array(
             'title' => 'Image (1200 x 1314)',

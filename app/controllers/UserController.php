@@ -63,6 +63,7 @@ class UserController extends BaseController {
         }
         if (Auth::attempt(array('email' => $username, 'password' => $password)) || Auth::check())
         {
+            $title = "Welcome";
             return View::make('users/welcome', array('title'=>$title));
         } else {
             return View::make('users/login', array('title'=>$title));
@@ -75,65 +76,6 @@ class UserController extends BaseController {
         return Redirect::action('UserController@login');
     }
 
-    public function postExample1()
-    {
-        return $this->getExample1();
-    }
- 
-    public function getExample1()
-    {
-        $image_crud = new ImageCRUD();
- 
-        $image_crud->set_primary_key_field('id');
-        $image_crud->set_url_field('email');
-        $image_crud->set_table('users')
-            ->set_image_path('assets/uploads');
- 
-        $output = $image_crud->render();
-
-        return $this->_example_output($output);
-    }
-
-    public function postExample5()
-    {
-        return $this->getExample5();
-    }
-    
-    public function getExample5()
-    {
-        $image_crud = new ImageCRUD();
-        $image_crud->unset_upload();
-        $image_crud->unset_delete();
-        $image_crud->set_primary_key_field('id');
-        $image_crud->set_url_field('email');
-        $image_crud->set_table('users')
-        ->set_image_path('assets/uploads');
-        $output = $image_crud->render();
-        return $this->_example_output($output);
-    }
- 
-    public function postExample4()
-    {
-        return $this->getExample4();
-    }
-
-    public function getExample4()
-    {
-        $image_crud = new ImageCRUD();
-        $image_crud->set_primary_key_field('id');
-        $image_crud->set_url_field('email');
-        $image_crud->set_title_field('email');
-        $image_crud->set_table('users')
-//        ->set_ordering_field('priority')
-        ->set_image_path('assets/uploads');
-        $output = $image_crud->render();
-        return $this->_example_output($output);
-    }
-
-    private function _example_output($output = null)
-    {
-        return View::make('crud/example', $output);
-    }
 }
 
 ?>
