@@ -51,7 +51,8 @@
 	 * 		'Analytics' => array('E-Commerce' => 'page.ecommerce.analytics'),
 	 *	)
 	 */
-	'menu' => array('users','puestos'),
+	'menu' => array('users',
+					'Configuración'=>array('puestos','unidadAdministrativa','cargos','servidores')),
 
 	/**
 	 * The permission option is the highest-level authentication check that lets you define a closure that should return true if the current user

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserRoleTable extends Migration {
+class CreateCargoTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,12 @@ class CreateUserRoleTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('role_user', function($table)
+		Schema::create('cargos', function($table)
 	    {
 	        $table->increments('id');
-	        $table->integer('role_id');
-	        $table->integer('user_id');
+	        $table->string('nombre',90);
+	        $table->string('clave',45);
+			$table->integer('cargo_id')->default(null)->nullable();
 	    });
 	}
 
@@ -27,7 +28,7 @@ class CreateUserRoleTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('cargos');
 	}
 
 }

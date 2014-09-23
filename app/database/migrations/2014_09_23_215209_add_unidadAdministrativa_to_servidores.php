@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddRoleColumn extends Migration {
+class AddUnidadAdministrativaToServidores extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,9 @@ class AddRoleColumn extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('users', function($table)
+		Schema::table('servidores', function(Blueprint $table)
 		{
-			$table->integer('role_id')->after('password');
+			$table->integer('unidad_administrativa_id');
 		});
 	}
 
@@ -25,7 +25,10 @@ class AddRoleColumn extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::table('servidores', function(Blueprint $table)
+		{
+			//
+		});
 	}
 
 }

@@ -43,9 +43,8 @@ return array(
         ),
         'role_name' => array(
             'title' => 'Roles',
-            'relationship' => 'roles',
-//            'select' => 'count((:table).role)'
-            'select' => "(:table).role", //would select groups.name            
+            'relationship' => 'role',
+            'select' => "(:table).role",
         ),
     ),
     /**
@@ -62,7 +61,7 @@ return array(
             'title' => 'Name',
             'type' => 'text'
         ),
-        'roles' => array(
+        'role' => array(
             'title' => 'Role',
             'type' => 'relationship',
             'name_field' => 'role',

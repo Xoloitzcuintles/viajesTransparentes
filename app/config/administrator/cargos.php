@@ -6,19 +6,19 @@ return array(
      *
      * @type string
      */
-    'title' => 'Servidores',
+    'title' => 'Cargos',
     /**
      * The singular name of your model
      *
      * @type string
      */
-    'single' => 'servidor',
+    'single' => 'cargo',
     /**
      * The class name of the Eloquent model that this config represents
      *
      * @type string
      */
-    'model' => 'Servidor',
+    'model' => 'Cargo',
     /**
      * The columns array
      *
@@ -35,7 +35,12 @@ return array(
         'nombre' => array(
             'title' => 'Nombre',
 //            'output' => '<a href="(:value)" target="_blank">(:value)</a>',
-        )
+        ),
+        'cargo_name' => array(
+            'title' => 'Unidad Administrativa',
+            'relationship' => 'parent',
+            'select' => "(:table).nombre",
+        ),
     ),
     /**
      * The edit fields array
@@ -48,8 +53,13 @@ return array(
             'type' => 'text'
         ),
         'nombre' => array(
-            'title' => 'Nombre del puesto',
+            'title' => 'Nombre del cargo',
             'type' => 'text'
+        ),
+        'parent' => array(
+            'title' => 'Cargo Superior Inmediato',
+            'type' => 'relationship',
+            'name_field' => 'nombre',
         ),
     ),
     /**
