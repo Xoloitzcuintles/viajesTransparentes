@@ -62,7 +62,7 @@
 	'permission'=> function()
 	{
 		$isAuth =  false;
-		if (Auth::user()->role_id == 1 && Auth::check()) {
+		if (Auth::check() && Auth::user()->role_id == 1) {
 			$isAuth =  true;
 		} 
 		return $isAuth;
