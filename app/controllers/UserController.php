@@ -69,6 +69,12 @@ class UserController extends BaseController {
         }
     }
 
+    public function logout()
+    {
+        Auth::logout(); 
+        return Redirect::action('UserController@login');
+    }
+
     public function postExample1()
     {
         return $this->getExample1();

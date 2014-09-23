@@ -44,3 +44,5 @@ Route::post('users/welcome', 'UserController@login');
 Route::get('users/welcome', 'UserController@login');
 
 Route::get('users/crud', 'UserController@getExample4');
+
+Route::get('users/logout', 'UserController@logout');
