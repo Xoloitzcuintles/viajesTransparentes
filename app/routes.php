@@ -15,36 +15,25 @@ Route::get('/', function()
 {
     return View::make('content');
 });
-
 Route::get('setup', 'BaseController@setupLayout');
-
 Route::get('user/{id}', 'UserController@showProfile');
-
-
 Route::get('users', function()
 {
     $users = User::all();
 
     return View::make('users')->with('users', $users);
 });
-
 Route::get('template', function()
 {
     return View::make('template');
 });
-
 Route::get('users/login', 'UserController@login');
-
 Route::post('users/login', 'UserController@login');
-
 Route::post('users/register', 'UserController@register');
 Route::get('users/register', 'UserController@register');
-
 Route::post('users/welcome', 'UserController@login');
 Route::get('users/welcome', 'UserController@login');
-
 Route::get('users/crud', 'UserController@getExample4');
-
 Route::get('users/logout', 'UserController@logout');
 
 /**
@@ -66,3 +55,8 @@ Route::get('servidor/trips', 'ServidorController@trips');
 
 Route::get('viajesApi/getJson', 'ViajeApiController@getJson');
 Route::get('viajesApi/postJson', 'ViajeApiController@postJson');
+
+ /**
+ * ServidorApi routes
+ */
+Route::get('servidorData', 'ServidorApiController@getServidorData');
