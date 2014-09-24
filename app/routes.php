@@ -46,3 +46,16 @@ Route::get('users/welcome', 'UserController@login');
 Route::get('users/crud', 'UserController@getExample4');
 
 Route::get('users/logout', 'UserController@logout');
+
+/**
+ * Ciudadano routes
+ */
+Route::get('ciudadano', 'CiudadanoController@dashboard');
+Route::get('ciudadano/account', 'CiudadanoController@account');
+
+/**
+ * Servidor routes
+ */
+Route::get('servidor', 'ServidorController@dashboard');
+Route::get('servidor/account', 'ServidorController@account');
+Route::get('servidor/trips', 'ServidorController@trips');

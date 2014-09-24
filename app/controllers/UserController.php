@@ -73,11 +73,11 @@ class UserController extends BaseController {
                     break;
                 //Servidor
                 case 2:
-                    return View::make('users/welcome', array('title'=>$title));
+                    return Redirect::to('servidor');
                     break;
                 //ciudadano
                 case 3:
-                    return View::make('users/welcome', array('title'=>$title));
+                    return Redirect::to('ciudadano');
                     break;
                 default:
                     return View::make('users/welcome', array('title'=>$title));

@@ -1,61 +1,15 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Viajes Transparentes - Perfiles</title>
-        <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
-        <!-- Bootstrap Core CSS -->
-        <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
-        <!-- Custom CSS -->
-        <link href="{{ URL::asset('css/estilos.css') }}" rel="stylesheet">
-    </head>
-    <body id="page-top" class="index">
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <nav class="navbar navbar-default navbar-fixed-top">
-                <div class="container">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header page-scroll">
-                        <button data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" class="navbar-toggle" type="button">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a href="#page-top" class="navbar-brand">
-                            <span class="glyphicon glyphicon-globe icon-logo"></span> Viajes Transparentes
-                        </a>
 
-                    </div>
+@extends('servidor/layout')
 
-                    <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="#">Dashboard</a>
-                            </li>
-                            <li>
-                                <a href="viajes.html">Viajes</a>
-                            </li>
-                            <li>
-                                <a href="perfiles.html">Perfiles</a>
-                            </li>
-                            <li>
-                                <a href="#">Información CSV</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <section>
+@section('data')
+<section>
             <div class="container">
                 <div class="row">
-                    <ol class="breadcrumb">
+<!--                     <ol class="breadcrumb">
                       <li><a href="#">Inicio</a></li>
                       <li><a href="#">Perfiles</a></li>
                       <li class="active">Liliana Herrera Martín</li>
-                    </ol>                
+                    </ol>  -->               
                     <div class="col-lg-3">
                         <h3>Liliana Herrera Martín </h3>
                         <div class="profilepic">
@@ -66,7 +20,7 @@
                         <p><strong>Nombre del Cargo:</strong> Secretaría Particular</p>
                         <p><strong>Unidad Administrativa:</strong> Comisionado</p>
                         <p><strong>Clave de Puesto:</strong> MAC03</p>
-                        <div class="usertools">
+                        <!-- <div class="usertools">
                             <a href="" class="tool">
                                 <span class="glyphicon glyphicon-plus"></span>
                             </a>
@@ -76,7 +30,7 @@
                             <a href="" class="tool">
                                 <span class="glyphicon glyphicon-map-marker"></span>
                             </a>                        
-                        </div>
+                        </div> -->
                     </div>   
                     <div class="col-lg-9">
                         <h3>Viajes realizados <span class="badge">42</span></h3>
@@ -147,19 +101,6 @@
                 </div>
             </div>
         </section>
-
-
-        <footer class="text-center">
-                <div class="footer-below">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                Todos los Derechos Reservados &copy; 2014
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </footer>    
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
@@ -191,6 +132,4 @@
           };
         </script>
 
-
-    </body>
-</html>
+@stop
