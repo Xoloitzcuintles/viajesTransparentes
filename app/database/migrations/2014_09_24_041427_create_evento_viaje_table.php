@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddUnidadAdministrativaToServidores extends Migration {
+class CreateEventoViajeTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,12 @@ class AddUnidadAdministrativaToServidores extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('servidores', function(Blueprint $table)
+		Schema::create('evento_viaje', function($table)
 		{
-			$table->integer('unidad_administrativa_id');
+			$table->increments('id');
+			$table->integer('evento_id');
+			$table->integer('viaje_id');
+			$table->timestamps();
 		});
 	}
 
@@ -25,10 +28,7 @@ class AddUnidadAdministrativaToServidores extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('servidores', function(Blueprint $table)
-		{
-			//
-		});
+		//
 	}
 
 }

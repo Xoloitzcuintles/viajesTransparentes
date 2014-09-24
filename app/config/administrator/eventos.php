@@ -6,31 +6,28 @@ return array(
      *
      * @type string
      */
-    'title' => 'Instituciones que Generan',
+    'title' => 'Eventos',
     /**
      * The singular name of your model
      *
      * @type string
      */
-    'single' => 'Institución que Genera',
+    'single' => 'Evento',
     /**
      * The class name of the Eloquent model that this config represents
      *
      * @type string
      */
-    'model' => 'InstGenera',
+    'model' => 'Evento',
     /**
      * The columns array
      *
      * @type array
      */
     'columns' => array(
-        'id' => array(
-            'title' => 'Id'
-        ),
         'name' => array(
-            'title' => 'Institución',
-        )
+            'title' => 'Nombre'
+        ),
     ),
     /**
      * The edit fields array
@@ -39,7 +36,7 @@ return array(
      */
     'edit_fields' => array(
         'name' => array(
-            'title' => 'Institución',
+            'title' => 'Nombre',
             'type' => 'text'
         ),
     ),

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCityTable extends Migration {
+class CreateViaticoTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,14 @@ class CreateCityTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('city', function($table)
+		Schema::create('viatico', function($table)
 		{
 			$table->increments('id');
-	        $table->string('name',90);
-	        $table->string('key',10);
-	        $table->integer('state_id');
+	        $table->float('gasto');
+	        $table->float('comprobado');
+	        $table->float('sin_comprobar');
+	        $table->float('devuelto');
+	        $table->string('descripcion',255);
 			$table->timestamps();
 		});
 	}
@@ -29,7 +31,7 @@ class CreateCityTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('city');
+		Schema::drop('viatico');
 	}
 
 }

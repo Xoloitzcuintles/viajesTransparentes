@@ -6,31 +6,28 @@ return array(
      *
      * @type string
      */
-    'title' => 'Instituciones que Generan',
+    'title' => 'Viajes',
     /**
      * The singular name of your model
      *
      * @type string
      */
-    'single' => 'Institución que Genera',
+    'single' => 'viaje',
     /**
      * The class name of the Eloquent model that this config represents
      *
      * @type string
      */
-    'model' => 'InstGenera',
+    'model' => 'Viaje',
     /**
      * The columns array
      *
      * @type array
      */
     'columns' => array(
-        'id' => array(
-            'title' => 'Id'
+        'ur' => array(
+            'title' => 'UR'
         ),
-        'name' => array(
-            'title' => 'Institución',
-        )
     ),
     /**
      * The edit fields array
@@ -38,9 +35,14 @@ return array(
      * @type array
      */
     'edit_fields' => array(
-        'name' => array(
-            'title' => 'Institución',
+        'ur' => array(
+            'title' => 'UR',
             'type' => 'text'
+        ),
+        'eventos' => array(
+            'title' => 'Eventos',
+            'type' => 'relationship',
+            'name_field' => 'name',
         ),
     ),
     /**
@@ -49,7 +51,7 @@ return array(
      * @type array
      */
     'sort' => array(
-        'field' => 'name',
+        'field' => 'UR',
         'direction' => 'asc',
     ),
 );

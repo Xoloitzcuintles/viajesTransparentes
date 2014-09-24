@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCityTable extends Migration {
+class CreateHospedajeTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,14 @@ class CreateCityTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('city', function($table)
+		Schema::create('hospedaje', function($table)
 		{
 			$table->increments('id');
-	        $table->string('name',90);
-	        $table->string('key',10);
-	        $table->integer('state_id');
+	        $table->date('fecha_inicio');
+	        $table->date('fecha_fin');
+	        $table->string('inst_hospedaje','90');
+	        $table->float('costo');
+	        $table->string('hotel',255);
 			$table->timestamps();
 		});
 	}
@@ -29,7 +31,7 @@ class CreateCityTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('city');
+		Schema::drop('hospedaje');
 	}
 
 }
