@@ -36,6 +36,11 @@ return array(
             'relationship' => 'ciudad',
             'select' => "(:table).name",
         ),
+        'viatico_nombre' => array(
+            'title' => 'Viáticos',
+            'relationship' => 'viatico',
+            'select' => "(:table).gasto",
+        ),
     ),
     /**
      * The edit fields array
@@ -55,6 +60,16 @@ return array(
             'title' => 'Ciudad',
             'type' => 'relationship',
             'name_field' => 'name',
+        ),
+        'viatico' => array(
+            'title' => 'Viáticos',
+            'type' => 'relationship',
+            'name_field' => 'gasto',
+        ),
+        'pasajes' => array(
+            'title' => 'Pasajes',
+            'type' => 'relationship',
+            'name_field' => 'numero_viaje',
         ),
     ),
     /**

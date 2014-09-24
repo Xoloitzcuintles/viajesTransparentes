@@ -8,8 +8,16 @@ class Evento extends Eloquent {
         return $this->belongsToMany('Viaje');
     }
 
+    public function pasajes(){
+        return $this->belongsToMany('Pasaje');
+    }
+
     public function ciudad(){
         return $this->belongsTo('City');
+    }
+
+    public function viatico(){
+        return $this->belongsTo('Viatico');
     }
 
 }
