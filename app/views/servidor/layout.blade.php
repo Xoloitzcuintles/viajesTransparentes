@@ -43,7 +43,7 @@
                                 <a href="/servidor/">Dashboard</a>
                             </li>
                             <li class="page-scroll">
-                                <a href="/servidor/account/">Mi cuaneta</a>
+                                <a href="/servidor/profile/">Mi Perfil</a>
                             </li>
                             <li class="page-scroll">
                                 <a href="/servidor/trips/">Mis viajes</a>

@@ -24,10 +24,9 @@ class ServidorController extends BaseController
         return View::make('servidor/trips', array());
     }
 
-    public function account()
+    public function profile()
     {   
-        $user = Auth::user();
-        return View::make('servidor/account', array('user' => $user));
+        return View::make('servidor/profile', array());
     }
 
 }
