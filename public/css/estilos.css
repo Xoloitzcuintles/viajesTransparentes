@@ -1,0 +1,206 @@
+body{
+	color: #666;
+}
+header{
+	background: url('../images/travel_back.jpg') no-repeat;
+	color: #FFF;
+	padding: 80px 0 20px 0;
+	position: relative;
+}
+header:before{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.4);
+	top: 0;
+}
+section{
+	background: #FFF;
+	padding:80px 0;
+	position: relative;
+}
+h2{
+	color: #125560;
+}
+h2,h3, h4{
+	font-family: 'Noto Sans', sans-serif;
+}
+footer .footer-above {
+    background-color: #125560;
+    padding-top: 30px;
+    color: #FFF;
+    position: relative;
+}
+
+section#quees:after, section#comofunciona:after  {
+    background: inherit;
+    border-radius: 50%;
+    bottom: -37px;
+    content: "";
+    height: 100px;
+    left: 45%;
+    position: absolute;
+    width: 100px;
+    z-index: 10;
+}
+
+.footer-above:before{
+    border-top: 1px dashed #FFF;
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    top: 10px;
+}
+.footer-above:after{
+    font-family: 'Glyphicons Halflings';
+  	content: "\e171";
+  	position: absolute;
+  	top: 0;
+  	right: 15px;
+  	background: inherit;
+  	font-size: 20px;
+}
+footer .footer-col{
+	padding-bottom: 30px;
+}
+.footer-below{
+	color: #FFF;
+	background-color: #1E7B89;
+	padding:15px 0;
+}
+.picture{
+	width: 50%;
+	border-radius: 50%;
+}
+.profilepic{
+	text-align: center;
+}
+.icons-info{
+	background: #125560;
+	color: #FFF;
+	font-size: 30px;
+	padding: 10px;
+	border-radius: 50%;
+	position: relative;
+	z-index: 1;
+	margin:4% 40%;
+}
+.icons-info:after{
+	content: "";
+	background: inherit;
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	bottom: -5px;
+	left: 35%;
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	z-index: -1;
+}
+#comofunciona{
+	background: #eee;
+}
+.functions .glyphicon{
+	background: #F29407;
+	padding: 5px;
+	border-radius: 50%;
+}
+
+.icon-logo{
+	font-size: 45px;
+}
+.navbar-default, .navbar-inverse{
+	border: none;
+	background: none;
+}
+.navbar-default{
+	background: rgba(18, 85, 96,0.85);
+}
+
+.diagram{
+	margin: 0 auto;
+}
+
+.navbar-brand{
+	color: #FFF;
+	font-size: 22px;
+	text-transform: uppercase;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+.tool{
+	background:rgba(18, 85, 96,0.85);
+	padding:12px 17px;
+	display: inline-block;
+	margin-right: -1px;
+	color: #FFF;
+	font-size: 18px;
+}
+.tool:nth-child(2){
+	background-color: #187E8E;
+}
+
+.tool:nth-child(3){
+	background-color: #1496AA;
+}
+
+.navbar-inverse .navbar-brand{
+	color: #FFF;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+	color: #FFF;
+}
+
+.barra{
+	background: #CCC;
+	position: relative;
+	border-radius: 5px;
+	text-align: right;
+	font-size: 15px;
+}
+
+.navbar-nav{
+	margin-top: 10px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+	background-color: #178C9E;
+	-webkit-transition: background-color 0.2s linear;
+	-o-transition: background-color 0.2s linear;
+	transition: background-color 0.2s linear;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus{
+	background-color: #178C9E;
+}
+
+.barra:before{
+	background: #49abd8;
+	content: "";
+	height: 100%;
+	position: absolute;
+	left: 0;
+	border-radius: 5px 0 0 5px;
+}
+.barra.avion:before{
+	width: 20%;
+}
+.barra.transporte:before{
+	width: 80%;
+}
+.barra.gastos:before{
+	width: 50%;
+}
+.navbar{
+	padding-bottom: 15px;
+}
+
+.navbar-brand span{
+	vertical-align: middle;
+}
