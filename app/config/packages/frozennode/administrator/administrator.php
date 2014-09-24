@@ -54,7 +54,7 @@
 	'menu' => array('Config. de Usuarios'=> array('users','servidores','puestos','unidadAdministrativa','cargos'),
 					'Config. Geográfica' => array('countries','states','cities'),
 					'Config. de Viajes'  => array('tipoComision','temas','mecanismoOrigen','instGenera','companiaTransporte'),
-					'Config. de Test'  => array('eventos','viajes','viaticos','hospedaje','pasaje'),
+					'Config. de Test'  => array('hospedaje','viaticos','pasaje','eventos','viajes'),
 					),
 
 	/**

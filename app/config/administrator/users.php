@@ -46,6 +46,11 @@ return array(
             'relationship' => 'role',
             'select' => "(:table).role",
         ),
+        'servidor_name' => array(
+            'title' => 'Servidor Público',
+            'relationship' => 'servidor',
+            'select' => "(:table).nombre",
+        ),
     ),
     /**
      * The edit fields array
@@ -65,6 +70,11 @@ return array(
             'title' => 'Role',
             'type' => 'relationship',
             'name_field' => 'role',
+        ),
+        'servidor' => array(
+            'title' => 'Servidor',
+            'type' => 'relationship',
+            'name_field' => 'nombre',
         ),
 /*        'image' => array(
             'title' => 'Image (1200 x 1314)',
