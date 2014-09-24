@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEventoViajeTable extends Migration {
+class CreateHospedajeViaticoTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,11 @@ class CreateEventoViajeTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('evento_viaje', function($table)
+		Schema::create('hospedaje_viatico', function($table)
 		{
 			$table->increments('id');
-			$table->integer('evento_id');
-			$table->integer('viaje_id');
+			$table->integer('hospedaje_id');
+			$table->integer('viatico_id');
 			$table->timestamps();
 		});
 	}
@@ -28,7 +28,7 @@ class CreateEventoViajeTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('evento_viaje');
+		Schema::drop('hospedaje_viatico');
 	}
 
 }

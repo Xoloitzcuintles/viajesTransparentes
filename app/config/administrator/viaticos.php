@@ -74,6 +74,12 @@ return array(
             'title' => 'Descripción',
             'type' => 'text'
         ),
+        'hospedajes' => array(
+            'title' => 'Hospedajes',
+            'type' => 'relationship',
+            'name_field' => 'hotel',
+        ),
+
     ),
     /**
      * The sort options for a model
