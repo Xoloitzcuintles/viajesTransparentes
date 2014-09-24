@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-    return View::make('users/welcome');
+    return View::make('content');
 });
 
 Route::get('setup', 'BaseController@setupLayout');
