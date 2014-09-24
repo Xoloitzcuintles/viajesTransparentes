@@ -28,6 +28,14 @@ return array(
         'name' => array(
             'title' => 'Nombre'
         ),
+        'url' => array(
+            'title' => 'URL del evento'
+        ),
+        'ciudad_nombre' => array(
+            'title' => 'Ciudad del Evento',
+            'relationship' => 'ciudad',
+            'select' => "(:table).name",
+        ),
     ),
     /**
      * The edit fields array
@@ -38,6 +46,15 @@ return array(
         'name' => array(
             'title' => 'Nombre',
             'type' => 'text'
+        ),
+        'url' => array(
+            'title' => 'URL',
+            'type' => 'text'
+        ),
+        'ciudad' => array(
+            'title' => 'Ciudad',
+            'type' => 'relationship',
+            'name_field' => 'name',
         ),
     ),
     /**

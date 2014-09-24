@@ -48,6 +48,16 @@ return array(
             'relationship' => 'compania',
             'select' => "(:table).name",
         ),
+        'ciudad_origen_nombre' => array(
+            'title' => 'Ciudad Origen',
+            'relationship' => 'ciudad_origen',
+            'select' => "(:table).name",
+        ),
+        'ciudad_destino_nombre' => array(
+            'title' => 'Ciudad Destino',
+            'relationship' => 'ciudad_destino',
+            'select' => "(:table).name",
+        ),
     ),
     /**
      * The edit fields array
@@ -82,6 +92,16 @@ return array(
         ),
         'compania' => array(
             'title' => 'Compañia de transporte',
+            'type' => 'relationship',
+            'name_field' => 'name',
+        ),
+        'ciudad_origen' => array(
+            'title' => 'Ciudad Origen',
+            'type' => 'relationship',
+            'name_field' => 'name',
+        ),
+        'ciudad_destino' => array(
+            'title' => 'Ciudad Destino',
             'type' => 'relationship',
             'name_field' => 'name',
         ),
