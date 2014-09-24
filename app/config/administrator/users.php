@@ -6,13 +6,13 @@ return array(
      *
      * @type string
      */
-    'title' => 'Users',
+    'title' => 'Usuarios',
     /**
      * The singular name of your model
      *
      * @type string
      */
-    'single' => 'User',
+    'single' => 'Usuario',
     /**
      * The class name of the Eloquent model that this config represents
      *
