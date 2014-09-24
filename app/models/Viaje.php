@@ -17,14 +17,26 @@ class Viaje extends Eloquent {
     }
 
     public function tipo_comision(){
-    	return $this->belongsTo('TipoComision');	
+        return $this->belongsTo('TipoComision');    
+    }
+
+    public function tipoComision(){
+        return $this->belongsTo('TipoComision');    
     }
 
     public function mecanismo_origen(){
-    	return $this->belongsTo('MecanismoOrigen');	
+        return $this->belongsTo('MecanismoOrigen'); 
+    }
+
+    public function mecanismoOrigen(){
+        return $this->belongsTo('MecanismoOrigen'); 
     }
 
     public function inst_genera(){
+        return $this->belongsTo('InstGenera');  
+    }
+
+    public function instGenera(){
     	return $this->belongsTo('InstGenera');	
     }
 

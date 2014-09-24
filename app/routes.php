@@ -59,3 +59,10 @@ Route::get('ciudadano/account', 'CiudadanoController@account');
 Route::get('servidor', 'ServidorController@dashboard');
 Route::get('servidor/profile', 'ServidorController@profile');
 Route::get('servidor/trips', 'ServidorController@trips');
+
+/**
+ * Viajes API Routes
+ */
+
+Route::get('viajesApi/getJson', 'ViajeApiController@getJson');
+Route::get('viajesApi/postJson', 'ViajeApiController@postJson');
