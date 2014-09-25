@@ -91,7 +91,7 @@ class UserController extends BaseController {
     public function logout()
     {
         Auth::logout(); 
-        return Redirect::action('UserController@login');
+        return Redirect::to('/');
     }
 
     public function postExample1()
