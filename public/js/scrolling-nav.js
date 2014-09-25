@@ -17,3 +17,17 @@ $(function() {
         event.preventDefault();
     });
 });
+$(function() {
+    $('#js-registrarse').on('click',function(){
+        $('#registeruser').slideToggle();
+        if ( $('#loginuser').hasClass('invisible') ) {
+            $('#loginuser').addClass('hidesection').removeClass('invisible');
+        }else{
+            $('#loginuser').removeClass('hidesection').addClass('invisible');
+        }
+    })
+
+    $('#js-accesar').on('click',function(){
+        $('#loginuser').slideToggle();
+    })
+});

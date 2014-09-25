@@ -17,9 +17,18 @@ header:before{
 }
 section{
 	background: #FFF;
-	padding:80px 0;
+	padding:70px 0;
 	position: relative;
 }
+
+section:nth-child(even){
+	background: #eee;
+}
+
+section:nth-child(even) hr{
+	border: 1px solid #E0DEDE;
+}
+
 h2{
 	color: #125560;
 }
@@ -54,13 +63,13 @@ section#quees:after, section#comofunciona:after  {
     top: 10px;
 }
 .footer-above:after{
-    font-family: 'Glyphicons Halflings';
-  	content: "\e171";
-  	position: absolute;
-  	top: 0;
-  	right: 15px;
-  	background: inherit;
-  	font-size: 20px;
+	background: inherit;
+	content: "\e171";
+	font-size: 20px;
+	position: absolute;
+	right: 15px;
+	top: 0;
+	font-family: 'Glyphicons Halflings';
 }
 footer .footer-col{
 	padding-bottom: 30px;
@@ -79,42 +88,40 @@ footer .footer-col{
 }
 .icons-info{
 	background: #125560;
+	border-radius: 50%;
 	color: #FFF;
 	font-size: 30px;
+	margin:4% 40%;
 	padding: 10px;
-	border-radius: 50%;
 	position: relative;
 	z-index: 1;
-	margin:4% 40%;
 }
 .icons-info:after{
-	content: "";
 	background: inherit;
+	bottom: -5px;
+	content: "";
+	height: 15px;
+	left: 35%;
 	position: absolute;
 	width: 15px;
-	height: 15px;
-	bottom: -5px;
-	left: 35%;
 	-moz-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
 	z-index: -1;
 }
-#comofunciona{
-	background: #eee;
-}
+
 .functions .glyphicon{
 	background: #F29407;
-	padding: 5px;
 	border-radius: 50%;
+	padding: 5px;
 }
 
 .icon-logo{
 	font-size: 45px;
 }
 .navbar-default, .navbar-inverse{
-	border: none;
 	background: none;
+	border: none;
 }
 .navbar-default{
 	background: rgba(18, 85, 96,0.85);
@@ -126,18 +133,18 @@ footer .footer-col{
 
 .navbar-brand{
 	color: #FFF;
+	font-family: 'Noto Sans', sans-serif;
 	font-size: 22px;
 	text-transform: uppercase;
-	font-family: 'Noto Sans', sans-serif;
 }
 
 .tool{
 	background:rgba(18, 85, 96,0.85);
-	padding:12px 17px;
-	display: inline-block;
-	margin-right: -1px;
 	color: #FFF;
+	display: inline-block;
 	font-size: 18px;
+	margin-right: -1px;
+	padding:12px 17px;
 }
 .tool:nth-child(2){
 	background-color: #187E8E;
@@ -203,4 +210,20 @@ footer .footer-col{
 
 .navbar-brand span{
 	vertical-align: middle;
+}
+
+#registroaccesar h3{
+	margin-top: 0;
+}
+
+#registroaccesar button{
+	background: #F29407;
+	color: #FFF;
+}
+.input-group{
+	margin-bottom: 15px;
+}
+
+.hidesection{
+	display: none;
 }

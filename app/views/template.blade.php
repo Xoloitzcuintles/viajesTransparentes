@@ -43,6 +43,9 @@
                                 <a href="#quees">¿Qué es?</a>
                             </li>
                             <li class="page-scroll">
+                                <a href="#registroaccesar">Accesar</a>
+                            </li>                            
+                            <li class="page-scroll">
                                 <a href="#comofunciona">¿Cómo funciona?</a>
                             </li>
                             <li class="page-scroll">

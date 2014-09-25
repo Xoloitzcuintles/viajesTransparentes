@@ -46,7 +46,90 @@
             </div>
         </div>
     </section>
-
+    <!-- Login Section -->
+    <section id="registroaccesar">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Accesar Plataforma</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <h3>Accesar</h3>
+                    <button type="button" class="btn btn-default btn-lg" id="js-accesar">
+                        <span class="glyphicon glyphicon-lock"></span> Accesar a la Plataforma
+                    </button>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <h3>Registrarse</h3>
+                    <button type="button" class="btn btn-default btn-lg" id="js-registrarse">
+                        <span class="glyphicon glyphicon-user"></span> Registrarse en la Plataforma
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-md-offset-1 hidesection" id="loginuser">
+                    <p>
+                        {{ Form::open(array('url' => 'users/login', 'id'=>'loginForm')) }}
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                </span>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Nombre de usuario" />
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-lock"></span>
+                                </span>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" />
+                            </div>
+                            <input type="submit" class="btn btn-default" id="loginButton" value="Accesar" />
+                        {{ Form::close() }}
+                    </p>
+                </div>
+                <div class="col-sm-4 col-md-offset-2 hidesection" id="registeruser">
+                    <p>
+                        {{ Form::open(array('url' => 'users/register', 'id'=>'registerForm')) }}
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                </span>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Nombre de usuario" />
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-lock"></span>
+                                </span>                            
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" />
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-lock"></span>
+                                </span>
+                                <input type="password" class="form-control" name="repeatPassword" id="repeatPassword" placeholder="Repetir contraseña"/>
+                            </div>
+                            <div class="btn-group">
+                                    <input type="submit" class="btn btn-default" name="registerButton" id="registerButton" value="Registrarse" />
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                      <span class="caret"></span>
+                                      <span class="sr-only">Toggle Dropdown</span>
+                                    </button>                                    
+                                    <ul class="dropdown-menu" role="menu">
+                                      <li><a href="">Registro como</a></li>
+                                      <li class="divider"></li>
+                                      <li><a href="#">Ciudadano</a></li>
+                                      <li><a href="#">Servidor</a></li>
+                                      <li><a href="#">Administrador</a></li>
+                                    </ul>
+                            </div>                            
+                        {{ Form::close() }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>    
     <!-- About Section -->
     <section id="comofunciona">
         <div class="container">
