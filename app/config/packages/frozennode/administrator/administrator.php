@@ -51,7 +51,7 @@
 	 * 		'Analytics' => array('E-Commerce' => 'page.ecommerce.analytics'),
 	 *	)
 	 */
-	'menu' => array('Config. de Usuarios'=> array('users','servidores','puestos','unidadAdministrativa','cargos'),
+	'menu' => array('Config. de Usuarios'=> array('users','servidores','puestos','unidadAdministrativa','cargos','remuneraciones'),
 					'Config. Geográfica' => array('countries','states','cities'),
 					'Config. de Viajes'  => array('tipoComision','temas','mecanismoOrigen','instGenera','companiaTransporte'),
 					'Config. de Test'  => array('hospedaje','viaticos','pasaje','eventos','viajes'),

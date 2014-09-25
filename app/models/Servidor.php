@@ -14,4 +14,8 @@ class Servidor extends Eloquent {
         return $this->belongsTo('UnidadAdministrativa');
     }
 
+    public function cargo(){
+        return $this->belongsTo('Cargo');
+    }
+
 }

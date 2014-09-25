@@ -37,7 +37,7 @@ return array(
 //            'output' => '<a href="(:value)" target="_blank">(:value)</a>',
         ),
         'cargo_name' => array(
-            'title' => 'Unidad Administrativa',
+            'title' => 'Cargo Superior Inmediato',
             'relationship' => 'parent',
             'select' => "(:table).nombre",
         ),

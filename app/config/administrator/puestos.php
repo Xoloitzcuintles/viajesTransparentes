@@ -35,7 +35,13 @@ return array(
         'nombre' => array(
             'title' => 'Nombre',
 //            'output' => '<a href="(:value)" target="_blank">(:value)</a>',
-        )
+        ),
+        'remuneracion_key' => array(
+            'title' => 'Clave de Puesto',
+            'relationship' => 'remuneracion',
+            'select' => "(:table).grupo_jerarquico",
+        ),
+
     ),
     /**
      * The edit fields array
@@ -51,6 +57,12 @@ return array(
             'title' => 'Nombre del puesto',
             'type' => 'text'
         ),
+        'remuneracion' => array(
+            'title' => 'Clave de Puesto',
+            'type' => 'relationship',
+            'name_field' => 'grupo_jerarquico',
+        ),
+        
     ),
     /**
      * The sort options for a model

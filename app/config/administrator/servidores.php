@@ -84,6 +84,11 @@ return array(
             'type' => 'relationship',
             'name_field' => 'nombre',
         ),
+        'cargo' => array(
+            'title' => 'Cargo',
+            'type' => 'relationship',
+            'name_field' => 'nombre',
+        ),
         'unidadAdministrativa' => array(
             'title' => 'Unidad Administrativa',
             'type' => 'relationship',

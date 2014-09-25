@@ -31,11 +31,12 @@ class ViajeApiController extends BaseController
 
         $viajeArray = array();
 
-        foreach($viajeModel as $viaje){
+        foreach($viajeModel as $viaje){//
             $viajeFinal = $viaje;
             $viajeFinal->servidor = $viaje->servidor;
             $viajeFinal->tema = $viaje->tema;
             $viajeFinal->eventos = $viaje->eventos;
+            //$viajeFinal->eventos->ciudad = $viaje->eventos->ciudad();
             $viajeFinal->tipoComision = $viaje->tipoComision;
             $viajeFinal->mecanismoOrigen = $viaje->mecanismoOrigen;
             $viajeFinal->instGenera = $viaje->instGenera;

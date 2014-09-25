@@ -40,4 +40,10 @@ class Viaje extends Eloquent {
     	return $this->belongsTo('InstGenera');	
     }
 
+/*    public function eventoCity(){
+        return $this->hasManyThrough('City', 'Evento', 'viaje_id', 'evento_id');
+    }
+*/
+
+
 }
