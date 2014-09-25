@@ -66,6 +66,7 @@
         <!-- Scrolling Nav JavaScript -->
         <script src="{{ URL::asset('js/jquery.easing.min.js') }}"></script>
         <script src="{{ URL::asset('js/scrolling-nav.js') }}"></script>
+        <script src="{{ URL::asset('js/lib/servidor/servidor.js') }}"></script>
         <script type="text/javascript">
             // jQuery for page scrolling feature - requires jQuery Easing plugin
             $(function() {

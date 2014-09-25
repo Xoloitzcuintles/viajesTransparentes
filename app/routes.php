@@ -59,4 +59,4 @@ Route::get('viajesApi/postJson', 'ViajeApiController@postJson');
  /**
  * ServidorApi routes
  */
-Route::get('servidorData', 'ServidorApiController@getServidorData');
+Route::get('servidorApi/getServidorProfile', 'ServidorApiController@getServidorProfile');

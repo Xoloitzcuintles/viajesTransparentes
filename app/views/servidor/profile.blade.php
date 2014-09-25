@@ -4,22 +4,23 @@
 @section('data')
 <section>
             <div class="container">
-                <div class="row">
+                <div class="loading"></div>
+                <div class="row hidden">
 <!--                     <ol class="breadcrumb">
                       <li><a href="#">Inicio</a></li>
                       <li><a href="#">Perfiles</a></li>
                       <li class="active">Liliana Herrera Martín</li>
                     </ol>  -->               
                     <div class="col-lg-3">
-                        <h3>Liliana Herrera Martín </h3>
+                        <h3 id="servidorName"></h3>
                         <div class="profilepic">
-                            <img src="{{ URL::asset('images/servidores/user.jpg') }}" class="picture"/>
+                            <img src="" class="picture"/>
                         </div>
-                        <p><a href="mailto:liliana.herrera@ifai.org.mx">liliana.herrera@ifai.org.mx</a></p>
-                        <p><strong>Tipo de Personal:</strong> Confianza</p>
-                        <p><strong>Nombre del Cargo:</strong> Secretaría Particular</p>
-                        <p><strong>Unidad Administrativa:</strong> Comisionado</p>
-                        <p><strong>Clave de Puesto:</strong> MAC03</p>
+                        <p><a id="servidorEmail" href="">Sin correo</a></p>
+                        <p><strong>Tipo de Personal: </strong><span id="">--</span></p>
+                        <p><strong>Nombre del Cargo: </strong><span id="nombrePuesto">--</span></p>
+                        <p><strong>Unidad Administrativa: </strong><span id="unidadAdministrativa">--</span></p>
+                        <p><strong>Clave de Puesto: </strong><span id="clavePuesto">--</span></p>
                         <!-- <div class="usertools">
                             <a href="" class="tool">
                                 <span class="glyphicon glyphicon-plus"></span>
@@ -33,7 +34,7 @@
                         </div> -->
                     </div>   
                     <div class="col-lg-9">
-                        <h3>Viajes realizados <span class="badge">42</span></h3>
+                        <h3>Viajes realizados <span class="badge"></span></h3>
                         <div class="panel panel-default">
                             <div class="panel-heading">Consultar Viajes</div>
                             <table class="table">
