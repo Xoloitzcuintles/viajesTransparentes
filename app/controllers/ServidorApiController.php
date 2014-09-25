@@ -49,8 +49,9 @@ class ServidorApiController extends Controller
         return Response::json($response);
     }
 
-    public function getServidorViajes()
+    public function getServidores()
     {   
-
+        $servidores = Servidor::all()->take(10);
+        return Response::json($servidores);
     }
 }

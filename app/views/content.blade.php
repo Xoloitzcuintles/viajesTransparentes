@@ -216,7 +216,7 @@
                         </div>
                         <div class="footer-col col-md-4">
                             <h3>Servidores Públicos</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem earum quo optio quibusdam, odit, tempore debitis cum, suscipit inventore non veniam iusto? Magnam dolore molestiae optio, vel atque at iure!</p>
+                            <p id="js-servidoresList"></p>
                         </div>
                         <div class="footer-col col-md-4">
                             <h3>Destinos principales</h3>

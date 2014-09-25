@@ -16,7 +16,7 @@ Route::get('/', function()
     return View::make('content');
 });
 Route::get('setup', 'BaseController@setupLayout');
-Route::get('user/{id}', 'UserController@showProfile');
+Route::get('servidor/{id}', 'UserController@showProfile');
 Route::get('users', function()
 {
     $users = User::all();
@@ -59,4 +59,7 @@ Route::get('viajesApi/postJson', 'ViajeApiController@postJson');
  /**
  * ServidorApi routes
  */
+Route::post('servidorApi/getServidorProfile', 'ServidorApiController@getServidorProfile');
 Route::get('servidorApi/getServidorProfile', 'ServidorApiController@getServidorProfile');
+Route::post('servidorApi/getServidores', 'ServidorApiController@getServidores');
+Route::get('servidorApi/getServidores', 'ServidorApiController@getServidores');

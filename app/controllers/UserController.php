@@ -13,7 +13,7 @@ class UserController extends BaseController {
     {
         //$user = User::find($id);
 
-        return View::make('hello', array('user' => $id));
+        return View::make('profile', array());
     }
 
     public function showTemplate($id)
