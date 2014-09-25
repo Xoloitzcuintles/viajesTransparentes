@@ -29,7 +29,7 @@ servidor.setProfileFail = function (message) {
 
 servidor.setPicture = function() {
     var host = window.location.origin;
-    if(this.servidorData['servidor']['contact'].picture_url == '') {   
+    if(this.servidorData['servidor']['contact'].picture_url == '' || this.servidorData['servidor']['contact'].picture_url == null) {   
         var src = host + '/images/servidores/default-user.png';
     } else {
         var src = host + this.servidorData['servidor']['contact'].picture_url;

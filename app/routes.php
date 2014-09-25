@@ -16,7 +16,7 @@ Route::get('/', function()
     return View::make('content');
 });
 Route::get('setup', 'BaseController@setupLayout');
-Route::get('servidor/{id}', 'UserController@showProfile');
+Route::get('servidorProfile/{id}', 'UserController@showProfile');
 Route::get('users', function()
 {
     $users = User::all();
