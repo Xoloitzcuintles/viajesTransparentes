@@ -48,6 +48,7 @@ Route::get('ciudadano/account', 'CiudadanoController@account');
 Route::get('servidor', 'ServidorController@dashboard');
 Route::get('servidor/profile', 'ServidorController@profile');
 Route::get('servidor/trips', 'ServidorController@trips');
+Route::get('servidor/altaViaje', 'ServidorController@altaViaje');
 
 /**
  * Viajes API Routes

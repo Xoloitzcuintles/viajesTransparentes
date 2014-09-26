@@ -8,7 +8,7 @@ class ServidorController extends BaseController
     {
         $this->beforeFilter(function()
         {
-            if (Auth::user()->role_id != "2") {
+            if (Auth::check() && Auth::user()->role_id > "2") {
                 return Redirect::to(URL::previous());
             }
         });
@@ -27,6 +27,10 @@ class ServidorController extends BaseController
     public function profile()
     {   
         return View::make('servidor/profile', array());
+    }
+
+    public function altaViaje(){
+        return View::make('servidor/travelinfoadd', array());
     }
 
 }
