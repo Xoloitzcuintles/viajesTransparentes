@@ -41,6 +41,9 @@ return array(
             'relationship' => 'viatico',
             'select' => "(:table).gasto",
         ),
+        'tipo_viaje' => array(
+            'title' => 'Tipo de Viaje'
+        )
     ),
     /**
      * The edit fields array
@@ -54,6 +57,10 @@ return array(
         ),
         'url' => array(
             'title' => 'URL',
+            'type' => 'text'
+        ),
+        'tipo_viaje' => array(
+            'title' => 'Tipo de Viaje (Nacional, Internacional)',
             'type' => 'text'
         ),
         'ciudad' => array(

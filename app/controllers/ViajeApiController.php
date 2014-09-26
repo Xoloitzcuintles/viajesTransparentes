@@ -6,7 +6,9 @@ class ViajeApiController extends BaseController
 
     public function __construct()
     {
-        $relatedModelsOrder = array('Viaje','Evento');
+        $this->relatedModelsOrder = array('Viaje',
+                                    'Evento'
+                                    );
     }
 
     public function getJson()
@@ -18,11 +20,11 @@ class ViajeApiController extends BaseController
     {
         $viaje_id = 1;
 
-        if (Request::isMethod('post'))
+        if (Request::isMethod('post') && null !== Request::get('servidor_id') && Request::get('servidor_id') > 0)
         {
             $viajeModel = Viaje::whereHas('servidor', function($q)
                                             {
-                                                $q->where('id', '=', '1');
+                                                $q->where('id', '=', Request::get('servidor_id'));
 
                                             })->get();
         } else {
@@ -36,6 +38,9 @@ class ViajeApiController extends BaseController
             $viajeFinal->servidor = $viaje->servidor;
             $viajeFinal->tema = $viaje->tema;
             $viajeFinal->eventos = $viaje->eventos;
+            foreach($viajeFinal->eventos as $k=>$evento){
+                $viajeFinal->eventos[$k]->pasajes = $evento->pasajes;
+            }
             //$viajeFinal->eventos->ciudad = $viaje->eventos->ciudad();
             $viajeFinal->tipoComision = $viaje->tipoComision;
             $viajeFinal->mecanismoOrigen = $viaje->mecanismoOrigen;
@@ -44,5 +49,10 @@ class ViajeApiController extends BaseController
         }
 
         return Response::json($viajeArray);
+    }
+
+    public function consulta(){
+        $view = View::make('viajes/gridViajes')->nest('child', 'viajes.consulta');
+        return $view;
     }
 }

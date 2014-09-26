@@ -36,8 +36,10 @@ $(function() {
 });
 getServidoresToHome = function () {
     var json = null;
+    var base_url = $("#base_url").val();
+    console.log(base_url);
     $.ajax({
-        url: '/servidorApi/getServidores/',
+        url:  base_url+'/servidorApi/getServidores',
         type: 'get',
         dataType: 'json',
         async: false,

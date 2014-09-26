@@ -1,34 +1,58 @@
 @extends('template')
 
 @section('content')
-    <script src="{{ URL::asset('js/lib/user/register.js') }}"></script>
+<script src="{{ URL::asset('js/lib/viajes/viajes.js') }}"></script>
+@yield('consulta')
 
     <section id="intro" class="intro-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>Registro</h1>
-                    <p>
-                        {{ Form::open(array('url' => 'users/register', 'id'=>'registerForm')) }}
-                            Correo Electrónico:
-                            <input type="text" name="username" id="username" />
-                            <br />
-                            Contraseña:
-                            <input type="password" name="password" id="password" />
-                            <br />
-                            Repetir:
-                            <input type="password" name="repeatPassword" id="repeatPassword" />
-                            <br>
-                            <select name="role">
-                                <option value="3">Ciudadano</option>
-                                <option value="2">Servidor</option>
-                                <!-- The admin option should not be display -->
-                                <option value="1">Administrador</option>
-                            </select>
-                            <input type="submit" class="btn btn-default" 
-                            name="registerButton" id="registerButton" value="Registrarse" />
-                        {{ Form::close() }}
-                    </p>
+                    <h3>Viajes realizados <span class="badge" id="viajes_count">42</span></h3>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Consultar Viajes</div>
+                            <table class="table" id="viajes_table">
+                                <thead>
+                                  <tr>
+                                    <th>Tipo de Viaje</th>
+                                    <th>Num. Autorización</th>
+                                    <th>Num. Oficio</th>
+                                    <th>País de Origen</th>
+                                    <th>País de Destino</th>
+                                    <th>Viáticos</th>
+                                    <th>Detalles</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Internacional</td>
+                                    <td>ACT-PUB/03/04/2013.03.01</td>
+                                    <td>IFAI/Comisionados/Ponencias/087/13</td>
+                                    <td>México</td>
+                                    <td>Chile</td>
+                                    <td>450.00 USD</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-xs">
+                                            <span class="glyphicon glyphicon-plus"></span> Detalles
+                                        </button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>Internacional</td>
+                                    <td>ACT-PUB/03/04/2013.03.01</td>
+                                    <td>IFAI/Comisionados/Ponencias/087/13</td>
+                                    <td>México</td>
+                                    <td>Chile</td>
+                                    <td>450.00 USD</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-xs">
+                                            <span class="glyphicon glyphicon-plus"></span> Detalles
+                                        </button>
+                                    </td>                                
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
                 </div>
             </div>
         </div>

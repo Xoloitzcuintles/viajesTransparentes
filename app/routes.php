@@ -54,7 +54,9 @@ Route::get('servidor/trips', 'ServidorController@trips');
  */
 
 Route::get('viajesApi/getJson', 'ViajeApiController@getJson');
-Route::get('viajesApi/postJson', 'ViajeApiController@postJson');
+Route::post('viajesApi/postJson', 'ViajeApiController@postJson');
+Route::get('viajesApi/consulta', 'ViajeApiController@consulta');
+Route::post('viajesApi/consulta', 'ViajeApiController@consulta');
 
  /**
  * ServidorApi routes

@@ -14,6 +14,8 @@
         <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="{{ URL::asset('css/estilos.css') }}" rel="stylesheet">
+        <!-- jQuery Version 1.11.0 -->
+        <script src="{{ URL::asset('js/jquery-1.11.0.js') }}"></script>
     </head>
 
 <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
@@ -59,8 +61,6 @@
 
         @yield('content')
 
-        <!-- jQuery Version 1.11.0 -->
-        <script src="{{ URL::asset('js/jquery-1.11.0.js') }}"></script>
         <!-- Bootstrap Core JavaScript -->
         <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
         <!-- Scrolling Nav JavaScript -->
@@ -81,7 +81,8 @@
                     target: '.navbar-fixed-top'
                 })            
             });
-        </script>        
+        </script>
+        <input type="hidden" id="base_url" value="{{URL::to('/')}}"/>
     </body>
 
 </html>
