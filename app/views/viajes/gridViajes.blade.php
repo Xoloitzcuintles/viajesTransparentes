@@ -2,12 +2,12 @@
 
 @section('content')
 <script src="{{ URL::asset('js/lib/viajes/viajes.js') }}"></script>
-@yield('consulta')
 
     <section id="intro" class="intro-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                @yield('consulta')
+                <div class="col-sm-9">
                     <h3>Viajes realizados <span class="badge" id="viajes_count">42</span></h3>
                         <div class="panel panel-default">
                             <div class="panel-heading">Consultar Viajes</div>

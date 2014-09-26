@@ -1,10 +1,5 @@
 @section('consulta')
-<script src="{{ URL::asset('js/lib/viajes/consulta.js') }}"></script>
-
-    <section id="intro" class="intro-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
+                <div class="col-sm-3">
                     <h1>Búsqueda</h1>
                     <p>
                 {{ Form::open(array('url' => 'viajesApi/postJson', 'id' => 'consulta_viajes')) }}
@@ -28,8 +23,4 @@
                 {{ Form::close() }}
                     </p>
                 </div>
-            </div>
-        </div>
-    </section>
-
 @stop

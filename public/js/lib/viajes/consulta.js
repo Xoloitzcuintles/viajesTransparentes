@@ -1,6 +1,7 @@
 $(function(){
     $("#consulta_viajes").submit(function(){
         getViajes();
+        alert("eggs");
         return false;
     })
 

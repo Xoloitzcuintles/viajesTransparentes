@@ -15,7 +15,7 @@ class CreateUnidadesAdministrativasTable extends Migration {
 		Schema::create('unidadAdministrativa', function($table)
 	    {
 	        $table->increments('id');
-	        $table->string('nombre', 45)->unique();
+	        $table->string('nombre', 90)->unique();
 	        $table->timestamps();
 	    });
 	}
