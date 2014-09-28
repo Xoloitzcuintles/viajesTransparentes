@@ -66,12 +66,15 @@ servidor.setUnidadAdministrativa = function () {
 
 servidor.setProfile = function () {
     this.servidorData = servidor.getServidorData();
-    servidor.setPicture();
-    servidor.setNumberOfTrips();
-    servidor.setServidorName();
-    servidor.setEmail();
-    servidor.setPuesto();
-    servidor.setUnidadAdministrativa();
+    console.log(this.servidorData);
+    if(this.servidorData != false){
+        servidor.setPicture();
+        servidor.setNumberOfTrips();
+        servidor.setServidorName();
+        servidor.setEmail();
+        servidor.setPuesto();
+        servidor.setUnidadAdministrativa();
+    }
     $('.loading',document).hide();
     $('.row.hidden').removeClass('hidden');
 }

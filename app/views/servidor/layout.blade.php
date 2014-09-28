@@ -56,10 +56,14 @@
                                 </ul>
                             </li>
                             <li>
+                                <a href="#">Información CSV</a>
+                            </li>
+                            <li>
                                 <a href="/users/logout/">Logout</a>
                             </li>                            
                         </ul>
                     </div>
+
                 </div>
             </nav>
         </div>
@@ -89,7 +93,8 @@
                     target: '.navbar-fixed-top'
                 })            
             });
-        </script>        
+        </script>    
+        <input type="hidden" id="base_url" value="{{URL::to('/')}}"/>
     </body>
 
 </html>

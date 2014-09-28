@@ -6,13 +6,17 @@ class ServidorApiController extends Controller
      * Get all related data to a servidor publico
      */
 
-    public function getServidorProfile()
+    public function getServidorProfile($json = true)
     {   
         $servidorId = Auth::user()->servidor_id;
         $userId  = Auth::user()->id;
         if (isset($servidorId) && $servidorId > 0) {
             $contact = User::find($userId)->servidor;
             $puesto = User::find($userId)->servidor->puesto;
+
+            $puesto->remuneracion = Remuneracion::where('id','=',$puesto->remuneracion_id)->get()->first();
+
+            $cargo = User::find($userId)->servidor->cargo;
             $unidadAdministrativa = User::find($userId)->servidor->unidadAdministrativa;
             $viajes = Viaje::where('servidor_id', '=', $servidorId)->get();
             $numberOfViajes = Viaje::where('servidor_id', '=', $servidorId)->get()->count();
@@ -33,6 +37,7 @@ class ServidorApiController extends Controller
                                 'servidor'   => array(
                                                         'contact'       => $contact, 
                                                         'puesto'        => $puesto, 
+                                                        'cargo'        => $cargo, 
                                                         'unidadAdministrativa'        => $unidadAdministrativa, 
                                                         'numberOfViajes'=> $numberOfViajes,
                                                         'viajes'        => $viajeArray,
@@ -46,7 +51,11 @@ class ServidorApiController extends Controller
 
                             );
         }
-        return Response::json($response);
+        if($json == true){ //regresamos respuesta en json
+            return Response::json($response);
+        } else {
+            return $response;
+        }
     }
 
     public function getServidores()

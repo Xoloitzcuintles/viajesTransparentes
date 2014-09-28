@@ -30,7 +30,9 @@ class ServidorController extends BaseController
     }
 
     public function altaViaje(){
-        return View::make('servidor/travelinfoadd', array());
+        $servidor = new ServidorApiController();
+        $servidor = $servidor->getServidorProfile(false);
+        return View::make('servidor/travelinfoadd', array('servidor'=>$servidor));
     }
 
 }
