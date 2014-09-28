@@ -261,3 +261,14 @@ footer .footer-col{
 	background: #FFF;
 	padding: 5px;
 }
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus{
+	background-color: #178C9E;
+}
+
+.servidoresList a{
+	width: 100%;
+	display: block;
+	text-align: left;
+	color: #39bacc;
+}
