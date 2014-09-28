@@ -15,7 +15,7 @@ class CreatePuestosTable extends Migration {
 		Schema::create('puestos', function($table)
 	    {
 	        $table->increments('id');
-	        $table->string('clave', 45)->unique();
+//	        $table->string('clave', 45)->unique();
 	        $table->string('nombre', 255);
 	        $table->timestamps();
 	    });

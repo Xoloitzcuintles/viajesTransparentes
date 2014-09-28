@@ -16,6 +16,9 @@ class DatabaseSeeder extends Seeder {
 		$this->call('CargoTableSeeder');
 		$this->call('PuestoTableSeeder');
 		$this->call('UnidadAdministrativaTableSeeder');
+		$this->call('CountryTableSeeder');
+		//$this->call('StateTableSeeder');
+		//$this->call('CityTableSeeder');
 	}
 
 }

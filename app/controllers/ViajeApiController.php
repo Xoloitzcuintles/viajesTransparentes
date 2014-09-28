@@ -41,7 +41,7 @@ class ViajeApiController extends BaseController
             foreach($viajeFinal->eventos as $k=>$evento){
                 $viajeFinal->eventos[$k]->pasajes = $evento->pasajes;
                 foreach ($evento->pasajes as $l=>$pasaje){
-                    $pasaje->ciudad_origen = $pasaje->ciudad_origen;
+                    $pasaje->ciudad_origen = City::where('city_id', '=', $pasaje->ciudad_origen_id)->first();
 //                    var_dump($viajeFinal->eventos[$k]->pasajes[$l]);die();
                     $viajeFinal->eventos[$k]->pasajes[$l]->ciudad_origen = $pasaje->ciudad_origen;
                     
