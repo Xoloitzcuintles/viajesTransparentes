@@ -31,15 +31,22 @@
                     </div>
 
                     <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav navbar-right">
+                        <ul class="nav navbar-nav navbar-right" role="navigation">
                             <li>
                                 <a href="#">Dashboard</a>
                             </li>
-                            <li>
-                                <a href="viajes.html">Viajes</a>
+                            <li class="dropdown">
+                                <a href="#" id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown">Viajes<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="drop">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Añadir Viajes</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Consultar Viajes</a></li>
+                                </ul>
                             </li>
                             <li>
-                                <a href="perfiles.html">Perfiles</a>
+                                <a href="#" id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown">Perfiles<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="drop">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Consultar Perfiles</a></li>
+                                </ul>
                             </li>
                             <li>
                                 <a href="#">Información CSV</a>
@@ -128,19 +135,19 @@
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
                                     </div>
-                                    <div class='input-group date' id='datetimepickend'>
+                                    <div class='input-group date'>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-user"></span>
                                         </span>
                                         <input type="text" class="form-control" name="password" id="password" placeholder="Número de comisión" />
                                     </div>
-                                    <div class='input-group date' id='datetimepickend'>
+                                    <div class='input-group date'>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-user"></span>
                                         </span>
                                         <input type="text" class="form-control" name="password" id="password" placeholder="País de Origen" />
                                     </div>
-                                    <div class='input-group date' id='datetimepickend'>
+                                    <div class='input-group date'>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-user"></span>
                                         </span>
