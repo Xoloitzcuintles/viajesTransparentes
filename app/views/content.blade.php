@@ -216,7 +216,7 @@
                         </div>
                         <div class="footer-col col-md-4">
                             <h3>Servidores Públicos</h3>
-                            <p id="js-servidoresList"></p>
+                            <ul id="js-servidoresList" class="servidoresList"></ul>
                         </div>
                         <div class="footer-col col-md-4">
                             <h3>Destinos principales</h3>
