@@ -25,26 +25,27 @@ getViajes = function () {
     $("#viajes_count").html(json.length);
     $("#viajes_table > tbody").html("");
     $.each(json, function(key,viaje){
-          console.log(viaje);
+          //console.log(viaje);
                 if(viaje.eventos.length > 0){
                   var evento = viaje.eventos[0];
                   var costo_pasaje;
                   var tipo_viaje = viaje.eventos[0].tipo_viaje;
                   $.each(evento.pasajes, function(n, pasaje){
                     if(pasaje.tipo == 'ida'){
-
+                      ciudad_origen = pasaje.ciudad_origen.name;
+                      ciudad_destino = pasaje.ciudad_destino.name;
                     }
-
-              });
+                  });
+                  var viaticos = viaje.eventos[0].viatico.gasto;
             }
 
             content = '<tr>'+
                ' <td>'+tipo_viaje+'</td>'+
                ' <td>'+viaje.acuerdo+'</td>'+
                ' <td>'+viaje.oficio+'</td>'+
-               ' <td>México</td>'+
-               ' <td>Chile</td>'+
-               ' <td>450.00 USD</td>'+
+               ' <td>'+ciudad_origen+'</td>'+
+               ' <td>'+ciudad_destino+'</td>'+
+               ' <td>$'+viaticos+' MXN</td>'+
                ' <td>'+
                    ' <button type="button" class="btn btn-default btn-xs">'+
                        ' <span class="glyphicon glyphicon-plus"></span> Detalles'+
