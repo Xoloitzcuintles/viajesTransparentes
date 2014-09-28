@@ -2,38 +2,6 @@
 
 @section('data')
 
-<<<<<<< Updated upstream
-                    <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav navbar-right" role="navigation">
-                            <li>
-                                <a href="#">Dashboard</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown">Viajes<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="drop">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Añadir Viajes</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Consultar Viajes</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#" id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown">Perfiles<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="drop">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Consultar Perfiles</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Información CSV</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-=======
-
-
-<section>
->>>>>>> Stashed changes
         <section>
             <div class="container">
                 <div class="row">
