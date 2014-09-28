@@ -6,26 +6,35 @@ class PuestoTableSeeder extends Seeder {
     {
         DB::table('puestos')->delete();
 
-        Puesto::create(array('id'=>1,'nombre'=>' COMISIONADO'));
-		Puesto::create(array('id'=>2,'nombre'=>' DIRECCION GENERAL DE ADMINISTRACION'));
-		Puesto::create(array('id'=>3,'nombre'=>' DIRECCION GENERAL DE ANALISIS NORMATIVO Y EVALUACION DE LA INFORMACION'));
-		Puesto::create(array('id'=>4,'nombre'=>' DIRECCION GENERAL DE ASUNTOS INTERNACIONALES'));
-		Puesto::create(array('id'=>5,'nombre'=>' DIRECCION GENERAL DE ASUNTOS JURIDICOS'));
-		Puesto::create(array('id'=>6,'nombre'=>' DIRECCION GENERAL DE AUTORREGULACION'));
-		Puesto::create(array('id'=>7,'nombre'=>' DIRECCION GENERAL DE CAPACITACION PROMOCION Y RELACIONES INSTITUCIONALES'));
-		Puesto::create(array('id'=>8,'nombre'=>' DIRECCION GENERAL DE COMUNICACION SOCIAL Y DIFUSION'));
-		Puesto::create(array('id'=>9,'nombre'=>' DIRECCION GENERAL DE COORDINACION DE POLITICAS DE ACCESO'));
-		Puesto::create(array('id'=>10,'nombre'=>' DIRECCION GENERAL DE COORDINACION Y VIGILANCIA DE LA ADMINISTRACION PUBLICA FEDERAL'));
-		Puesto::create(array('id'=>11,'nombre'=>' DIRECCION GENERAL DE GESTION DE LA INFORMACION Y ESTUDIOS'));
-		Puesto::create(array('id'=>12,'nombre'=>' DIRECCION GENERAL DE NORMATIVIDAD CONSULTA Y ATENCION REGIONAL'));
-		Puesto::create(array('id'=>13,'nombre'=>' DIRECCION GENERAL DE SUSTANCIACION Y SANCION'));
-		Puesto::create(array('id'=>14,'nombre'=>' DIRECCION GENERAL DE TECNOLOGIAS DE LA INFORMACION'));
-		Puesto::create(array('id'=>15,'nombre'=>' DIRECCION GENERAL DE VERIFICACION'));
-		Puesto::create(array('id'=>16,'nombre'=>' PLENO'));
-		Puesto::create(array('id'=>17,'nombre'=>' SECRETARIA DE ACCESO A LA INFORMACION'));
-		Puesto::create(array('id'=>18,'nombre'=>' SECRETARIA DE PROTECCION DE DATOS PERSONALES'));
-		Puesto::create(array('id'=>19,'nombre'=>' SECRETARIA GENERAL'));
-		Puesto::create(array('id'=>20,'nombre'=>' SECRETARIA TECNICA DEL PLENO'));
+		Puesto::create(array('nombre'=>'SECRETARIO PARTICULAR DE PONENCIA', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'MC03')->first()->id));
+		Puesto::create(array('nombre'=>'JEFE DE DEPARTAMENTO', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'OC1')->first()->id));
+		Puesto::create(array('nombre'=>'SUBDIRECTOR DE AREA', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'NC1')->first()->id));
+		Puesto::create(array('nombre'=>'DIRECTOR DE AREA', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'MC2')->first()->id));
+		Puesto::create(array('nombre'=>'SUBDIRECTOR DE AREA', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'NC2')->first()->id));
+		Puesto::create(array('nombre'=>'DIRECTOR DE AREA', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'MC1')->first()->id));
+		Puesto::create(array('nombre'=>'ENLACE', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'PC2')->first()->id));
+		Puesto::create(array('nombre'=>'ENLACE', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'PC3')->first()->id));
+		Puesto::create(array('nombre'=>'DIRECTOR GENERAL', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'KB1')->first()->id));
+		Puesto::create(array('nombre'=>'SUBDIRECTOR DE AREA', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'NC3')->first()->id));
+		Puesto::create(array('nombre'=>'JEFE DE DEPARTAMENTO', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'OC2')->first()->id));
+		Puesto::create(array('nombre'=>'ENLACE', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'PC1')->first()->id));
+		Puesto::create(array('nombre'=>'ENLACE', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'PA3')->first()->id));
+		Puesto::create(array('nombre'=>'JEFE DE DEPARTAMENTO', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'OC3')->first()->id));
+		Puesto::create(array('nombre'=>'JEFE DE DEPARTAMENTO', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'OB2')->first()->id));
+		Puesto::create(array('nombre'=>'DIRECTOR GENERAL', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'KB2')->first()->id));
+		Puesto::create(array('nombre'=>'ENLACE', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'PA1')->first()->id));
+		Puesto::create(array('nombre'=>'COORDINADOR', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'KA2')->first()->id));
+		Puesto::create(array('nombre'=>'SUBDIRECTOR DE AREA', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'NA1')->first()->id));
+		Puesto::create(array('nombre'=>'CONTRALOR', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'KA02')->first()->id));
+		Puesto::create(array('nombre'=>'COMISIONADO PRESIDENTE / COMISIONADOS', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'HB1')->first()->id));
+		Puesto::create(array('nombre'=>'DIRECTOR GENERAL', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'KB3')->first()->id));
+		Puesto::create(array('nombre'=>'ENLACE DE PONENCIA / PROYECTISTA', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'OC02')->first()->id));
+		Puesto::create(array('nombre'=>'JEFE DE DEPARTAMENTO DE PONENCIA', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'NB3')->first()->id));
+		Puesto::create(array('nombre'=>'SUBDIRECTOR DE PONENCIA', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'MB2')->first()->id));
+		Puesto::create(array('nombre'=>'SECRETARIO DE ACUERDOS Y PONENCIA / DIRECTOR DE PONENCIA', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'MC3')->first()->id));
+		Puesto::create(array('nombre'=>'CHOFER', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'OB02')->first()->id));
+		Puesto::create(array('nombre'=>'SECRETARIA', 'remuneracion_id'=>Remuneracion::where('grupo_jerarquico', '=', 'OC002')->first()->id));
+
     }
 
 }

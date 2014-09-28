@@ -12,10 +12,10 @@ class AddRemuneracionToPuesto extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('puestos', function(Blueprint $table)
-		{
-			$table->integer('remuneracion_id');
-		});
+		// Schema::table('puestos', function(Blueprint $table)
+		// {
+		// 	$table->integer('remuneracion_id');
+		// });
 	}
 
 	/**
@@ -25,10 +25,10 @@ class AddRemuneracionToPuesto extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('puestos', function(Blueprint $table)
-		{
-			$table->integer('remuneracion_id');
-		});
+		// Schema::table('puestos', function(Blueprint $table)
+		// {
+		// 	$table->integer('remuneracion_id');
+		// });
 	}
 
 }

@@ -71,6 +71,9 @@ composer install
 #installing migrations for database
 php artisan migrate
 
+#seeding database
+php artisan db:seed
+
 #restart servers
 
 service apache2 restart
