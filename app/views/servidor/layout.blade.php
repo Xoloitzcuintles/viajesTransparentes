@@ -38,19 +38,26 @@
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="page-scroll">
+                        <ul class="nav navbar-nav navbar-right" role="navigation">
+                            <li>
                                 <a href="/servidor/">Dashboard</a>
                             </li>
-                            <li class="page-scroll">
-                                <a href="/servidor/profile/">Mi Perfil</a>
+                            <li class="dropdown">
+                                <a href="#" id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown">Viajes<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="drop">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Añadir Viajes</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/servidor/trips/">Consultar Viajes</a></li>
+                                </ul>
                             </li>
-                            <li class="page-scroll">
-                                <a href="/servidor/trips/">Mis viajes</a>
+                            <li>
+                                <a href="#" id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown">Perfiles<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="drop">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/servidor/profile/">Consultar Perfiles</a></li>
+                                </ul>
                             </li>
-                            <li class="page-scroll">
+                            <li>
                                 <a href="/users/logout/">Logout</a>
-                            </li>
+                            </li>                            
                         </ul>
                     </div>
                 </div>
