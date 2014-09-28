@@ -19,6 +19,10 @@ class DatabaseSeeder extends Seeder {
 		$this->call('CountryTableSeeder');
 		$this->call('StateTableSeeder');
 		$this->call('CityTableSeeder');
+		$this->call('TipoComisionTableSeeder');
+		$this->call('MecanismoOrigenTableSeeder');
+		$this->call('InstGeneraTableSeeder');
+		$this->call('CompaniaTransporteTableSeeder');
 	}
 
 }
