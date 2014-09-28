@@ -40,6 +40,12 @@ class ViajeApiController extends BaseController
             $viajeFinal->eventos = $viaje->eventos;
             foreach($viajeFinal->eventos as $k=>$evento){
                 $viajeFinal->eventos[$k]->pasajes = $evento->pasajes;
+                foreach ($evento->pasajes as $l=>$pasaje){
+                    $pasaje->ciudad_origen = $pasaje->ciudad_origen;
+//                    var_dump($viajeFinal->eventos[$k]->pasajes[$l]);die();
+                    $viajeFinal->eventos[$k]->pasajes[$l]->ciudad_origen = $pasaje->ciudad_origen;
+                    
+                }
             }
             //$viajeFinal->eventos->ciudad = $viaje->eventos->ciudad();
             $viajeFinal->tipoComision = $viaje->tipoComision;

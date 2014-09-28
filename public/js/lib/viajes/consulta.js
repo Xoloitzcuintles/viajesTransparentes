@@ -1,9 +1,8 @@
-$(function(){
-    $("#consulta_viajes").submit(function(){
+$(document).ready(function(){
+    $("#buscar_viajes_button").click(function(){
         getViajes();
-        alert("eggs");
         return false;
-    })
+    });
 
 });
 
@@ -25,11 +24,24 @@ getViajes = function () {
     var html;
     $("#viajes_count").html(json.length);
     $("#viajes_table > tbody").html("");
-    $.each(json, function(){
+    $.each(json, function(key,viaje){
+          console.log(viaje);
+                if(viaje.eventos.length > 0){
+                  var evento = viaje.eventos[0];
+                  var costo_pasaje;
+                  var tipo_viaje = viaje.eventos[0].tipo_viaje;
+                  $.each(evento.pasajes, function(n, pasaje){
+                    if(pasaje.tipo == 'ida'){
+
+                    }
+
+              });
+            }
+
             content = '<tr>'+
-               ' <td>Internacional</td>'+
-               ' <td>ACT-PUB/03/04/2013.03.01</td>'+
-               ' <td>IFAI/Comisionados/Ponencias/087/13</td>'+
+               ' <td>'+tipo_viaje+'</td>'+
+               ' <td>'+viaje.acuerdo+'</td>'+
+               ' <td>'+viaje.oficio+'</td>'+
                ' <td>México</td>'+
                ' <td>Chile</td>'+
                ' <td>450.00 USD</td>'+
@@ -40,7 +52,6 @@ getViajes = function () {
                 '</td>'+
             '</tr>';
             $("#viajes_table > tbody").append(content);
-        console.log(json);
 //        html = '<a href="/servidorProfile/'+this['id']+'/">'+this['nombre'] + ' ' +this['apellidoPaterno'] + ' ' + this['apellidoMaterno'] + '</a> ';
 //        $('#js-servidoresList').append(html);
     });

@@ -1,8 +1,9 @@
 @section('consulta')
+                <script src="{{ URL::asset('js/lib/viajes/consulta.js') }}"></script>
                 <div class="col-sm-3">
                     <h1>Búsqueda</h1>
                     <p>
-                {{ Form::open(array('url' => 'viajesApi/postJson', 'id' => 'consulta_viajes')) }}
+                {{ Form::open(array('url' => '#', 'id' => 'consulta_viajes')) }}
                 
                 {{ Form::label('servidor', 'Servidor') }}
  

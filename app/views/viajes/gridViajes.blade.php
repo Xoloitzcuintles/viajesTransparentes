@@ -15,10 +15,10 @@
                                 <thead>
                                   <tr>
                                     <th>Tipo de Viaje</th>
-                                    <th>Num. Autorización</th>
+                                    <th>Num. Acuerdo</th>
                                     <th>Num. Oficio</th>
-                                    <th>País de Origen</th>
-                                    <th>País de Destino</th>
+                                    <th>Ciudad de Origen</th>
+                                    <th>Ciudad de Destino</th>
                                     <th>Viáticos</th>
                                     <th>Detalles</th>
                                   </tr>
