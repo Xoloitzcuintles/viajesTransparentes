@@ -31,6 +31,7 @@
                         <div class="tabbable">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#infouser" data-toggle="tab">Información de Servidor Público</a></li>
+                                <li><a href="#infoevento" data-toggle="tab">Información del Evento</a></li>
                                 <li><a href="#infotravel" data-toggle="tab">Información del Viaje</a></li>
                                 <li><a href="#infomoney" data-toggle="tab">Gastos Realizados</a></li>
                             </ul>
@@ -84,8 +85,17 @@
                                     </div>
 
 
-                                    <input type="submit" class="btn btn-default" id="infouserbtn" value="Añadir información de viaje" />
+                                    <input type="submit" class="btn btn-default" id="infouserbtn" value="Añadir información de evento" />
                                 </div>
+                                <div id="infoevento" class="tab-pane fade">
+                                    <div class='input-group date' id='datetimepickbegin'>
+                                        <input type='text' class="form-control" placeholder="Fecha inicio"/>
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                    <input type="submit" class="btn btn-default" data-loading-text="Registrando Viaje..." id="finishregister" value="Añadir información de viaje" />
+                                </div>     
                                 <div id="infotravel" class="tab-pane fade">
                                     <div class='input-group date' id='datetimepickbegin'>
                                         <input type='text' class="form-control" placeholder="Fecha inicio"/>
