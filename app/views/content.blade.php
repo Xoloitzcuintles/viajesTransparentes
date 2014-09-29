@@ -7,13 +7,13 @@
             <div class="row">
                 <div class="col-lg-6 functions">
                     <h3><span class="glyphicon glyphicon-bullhorn"></span> Notificaciones</h3>
-                    <p>ipsum dolor sit amet, consectetur adipisicing elit. Laborum porro dolor atque quidem, debitis temporibus, illum nihil.</p>
+                    <p>Suscribete y sigue de cerca las últimas noticias de los servidores públicos.</p>
                     <h3><span class="glyphicon glyphicon-transfer"></span> Consultas</h3>
-                    <p>ipsum dolor sit amet, consectetur adipisicing elit. Laborum porro dolor atque quidem, debitis temporibus, illum nihil.</p>
+                    <p>Reliza consultas sobre los viajes realizados por los servidores públicos y obtene información filtrada, gráficas, comparaciones y otras opciones más.</p>
                     <h3><span class="glyphicon glyphicon-thumbs-up"></span> Comparte</h3>
-                    <p>ipsum dolor sit amet, consectetur adipisicing elit. Laborum porro dolor atque quidem, debitis temporibus, illum nihil.</p>
+                    <p>Depués de realizar tus consultas comparte los resultados obtenidos a traves de las redes sociales</p>
                     <h3><span class="glyphicon glyphicon-phone"></span> Accesa desde tu Móvil</h3>
-                    <p>ipsum dolor sit amet, consectetur adipisicing elit. Laborum porro dolor atque quidem, debitis temporibus, illum nihil.</p>
+                    <p>Consulta toda la información necesaria a través de tu dispositivo móvil desde cualquier lugar</p>
                 </div>
                 <div class="col-lg-6">
                     <img alt="" src="images/travel.png" class="img-responsive diagram">
@@ -33,15 +33,17 @@
             <div class="row">
                 <div class="col-sm-4">
                     <span class="glyphicon glyphicon-info-sign icons-info"></span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo ipsum obcaecati esse, nesciunt pariatur, nulla ipsa rerum possimus officiis, laboriosam voluptatibus consequatur. At beatae, mollitia eaque cum consequatur necessitatibus dolore.</p>
+                    <p>Sistema que te permite realizar consultas, visualizar y comparar los viajes de los servidores públicos considerando datos interesantes como:
+Área de adscripción o tema perfil de un servidor público, nivel jerárquico del servidor, ubicación geográfica, duración del viaje, etc
+                    </p>
                 </div>
                 <div class="col-sm-4">
                     <span class="glyphicon glyphicon-user icons-info"></span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus excepturi ipsa, error magni mollitia, hic quaerat saepe sunt, molestiae nemo illo. Nobis animi quia voluptas reiciendis assumenda fugiat ab sit.</p>
+                    <p>Podrás obtener la información respecto a los viajes realizados por los servidores públicos y y filtrar la información obtenida de acuerdo a tus necesidades. En los perfiles de los servidores públicos podrás visualizar el perfil con sus datos de mayor relevancia como son: correo electrónico, nombre del cargo y unidad administrativa.</p>
                 </div>
                 <div class="col-sm-4">
                     <span class="glyphicon glyphicon-stats icons-info"></span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam fuga ipsa ducimus rerum quibusdam aliquid culpa enim illum recusandae, quis architecto modi aspernatur officia nisi inventore necessitatibus, soluta maiores asperiores.</p>
+                    <p>El sistema permite realizar comparaciones entre los viajes realizados por los servidores públicos, a través de búsquedas específicas, gráficas entre otros.</p>
                 </div>
             </div>
         </div>
@@ -206,26 +208,34 @@
             </div>
         </div>
     </section>
-    <footer class="text-center">
+    <footer>
             <div class="footer-above">
                 <div class="container">
                     <div class="row">
                         <div class="footer-col col-md-4">
-                            <h3>Acerca de</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut nihil laudantium illum culpa rem dignissimos eos ratione iste libero labore atque, illo nulla quisquam qui aperiam minima tempora numquam error.</p>
+                            <h3 class="text-center">Acerca de</h3>
+                            <p>Sistema de Viajes Transparentes te permite consultar, visualizar y comparar los viajes de trabajo, considerando datos interesantes como:</p>
+                            <ul>
+                                <li>Área de adscripción</li>
+                                <li>Perfil de un servidor público</li>
+                                <li>Fecha o período de tiempo</li>
+                                <li>Ubicación geográfica</li>
+                                <li>Duración de viaje</li>
+                                <li>Costo</li>
+                            </ul>
                         </div>
                         <div class="footer-col col-md-4">
-                            <h3>Servidores Públicos</h3>
+                            <h3 class="text-center">Servidores Públicos</h3>
                             <ul id="js-servidoresList" class="servidoresList"></ul>
                         </div>
                         <div class="footer-col col-md-4">
-                            <h3>Destinos principales</h3>
+                            <h3 class="text-center">Destinos principales</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni id iusto eligendi quidem distinctio mollitia minus maiores, eaque temporibus, est, esse quae! Ab excepturi rerum, obcaecati! Maxime corporis, rerum labore.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-below">
+            <div class="footer-below text-center">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
