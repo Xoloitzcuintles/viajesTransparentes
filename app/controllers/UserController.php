@@ -84,7 +84,7 @@ class UserController extends BaseController {
                     break;
             }
         } else {
-            return View::make('users/login', array('title'=>$title));
+            return View::make('users/login', array('title'=>$title,'loginError'=>1));
         }
     }
 

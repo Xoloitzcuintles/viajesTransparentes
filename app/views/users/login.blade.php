@@ -8,6 +8,7 @@
                 <div class="col-lg-12">
                     <h1>Login</h1>
                     <p>
+                        {{ (isset($loginError) && $loginError == 1) ? '<div class="alert alert-danger" role="alert">Hubo un error al intentar ingresar. Verifique su usuario y contraseña e intente de nuevo</div>': '';}}
                         {{ Form::open(array('url' => 'users/login', 'id'=>'loginForm')) }}
                             Usuario:
                             <input type="text" name="username" id="username" />

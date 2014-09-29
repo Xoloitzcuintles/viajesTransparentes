@@ -23,6 +23,22 @@
                                 </span>
                             </div>                            
                             <div class="input-group">
+                                <select class="form-control" id="area_adscripcion">
+                                    <option selected="selected">Área de adscripción</option>
+                                <?php foreach($instituciones as $institucion){ ?>
+                                        <option value="{{$institucion['id']}}">{{$institucion['name']}}</option>
+                                <?php } ?>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="servidor">Servidor Público</label>
+                                <select multiple class="form-control" id="servidor">
+                                <?php foreach($servidores as $servidor){ ?>
+                                        <option value="{{$servidor['id']}}">{{$servidor['nombre']." ".$servidor['apellidoPaterno']}}</option>
+                                <?php } ?>
+                                </select>
+                            </div>
+                            <div class="input-group">
                                 <select class="form-control">
                                     <option selected="selected">Buscar por...</option>
                                     <option>Área de adscripción</option>
