@@ -62,7 +62,8 @@ class ViajeApiController extends BaseController
     public function consulta(){
         $servidores = Servidor::all();
         $instituciones = InstGenera::all();
-        $data = array('servidores'=>$servidores,'instituciones'=>$instituciones);
+        $temas = Tema::all();
+        $data = array('servidores'=>$servidores,'instituciones'=>$instituciones,'temas'=>$temas);
         $view = View::make('viajes/gridViajes',$data)->nest('child', 'viajes.consulta', $data);
         return $view;
     }

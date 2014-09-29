@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('MecanismoOrigenTableSeeder');
 		$this->call('InstGeneraTableSeeder');
 		$this->call('CompaniaTransporteTableSeeder');
+		$this->call('TemaTableSeeder');
 	}
 
 }

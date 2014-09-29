@@ -14,16 +14,20 @@
                         <h3>Instrucciones</h3>
                         <ul class="instructions">
                             <li>
-                                <span class="count">1</span>Inforamción Servidor Público
+                                <span class="count">1</span>Información Servidor Público
                                 <p>Debe revisar y confirmar que la información desplegada, relacionada con su servidor público sea correcta, una vez comprobado haga click en 'Añadir información de viaje'</p>
                             </li>
                             <li>
-                                <span class="count">2</span>Información de Viaje
-                                <p>En esta sección deberá </p>
+                                <span class="count">2</span>Información del Evento
+                                <p>Información del evento en el que participa.</p>
                             </li>
                             <li>
-                                <span class="count">3</span>Gastos Realizados
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis ipsam</p>
+                                <span class="count">3</span>Información de Viaje
+                                <p>En esta sección deberá contener la información de los pasajes realizados.</p>
+                            </li>
+                            <li>
+                                <span class="count">4</span>Gastos Realizados
+                                <p>Aquí capturará los gastos de viáticos y hospedaje.</p>
                             </li>
                         </ul>
                     </div>

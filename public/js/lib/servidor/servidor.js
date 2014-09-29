@@ -6,7 +6,7 @@ servidor.servidorData = null;
 servidor.getServidorData = function(e) {
     var json = null;
     $.ajax({
-        url: '/servidorApi/getServidorProfile/',
+        url: $("#base_url").val()+'/servidorApi/getServidorProfile',
         type: 'get',
         dataType: 'json',
         async: false,

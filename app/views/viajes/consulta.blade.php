@@ -31,6 +31,14 @@
                                 </select>
                             </div>
                             <div class="input-group">
+                                <label for="servidor">Tema</label>
+                                <select class="form-control" id="servidor">
+                                <?php foreach($temas as $tema){ ?>
+                                        <option value="{{$tema['id']}}">{{$tema['name']}}</option>
+                                <?php } ?>
+                                </select>
+                            </div>
+                            <div class="input-group">
                                 <label for="servidor">Servidor Público</label>
                                 <select multiple class="form-control" id="servidor">
                                 <?php foreach($servidores as $servidor){ ?>
