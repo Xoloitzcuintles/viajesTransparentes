@@ -1,3 +1,11 @@
 $(function(){
-//    alert("viajes");
+	$('#datetimepickbegin').datetimepicker({
+		pickTime: false,
+		language: 'es'
+
+	});
+	$('#datetimepickend').datetimepicker({
+		pickTime: false,
+		language: 'es'
+	});
 });

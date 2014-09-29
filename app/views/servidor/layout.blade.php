@@ -14,6 +14,7 @@
         <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="{{ URL::asset('css/estilos.css') }}" rel="stylesheet">
+        <link href="{{ URL::asset('css/datepicker.css') }}" rel="stylesheet">
     </head>
 
 <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
@@ -75,6 +76,9 @@
         <!-- Scrolling Nav JavaScript -->
         <script src="{{ URL::asset('js/jquery.easing.min.js') }}"></script>
         <script src="{{ URL::asset('js/scrolling-nav.js') }}"></script>
+        <script src="{{ URL::asset('js/moment.js') }}"></script>
+        <script src="{{ URL::asset('js/bootstrap-datepicker.js') }}"></script>
+        <script src="{{ URL::asset('js/es.js') }}"></script>
         <script src="{{ URL::asset('js/lib/servidor/servidor.js') }}"></script>
         <script type="text/javascript">
             // jQuery for page scrolling feature - requires jQuery Easing plugin

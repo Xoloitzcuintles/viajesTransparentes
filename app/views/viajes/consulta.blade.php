@@ -4,19 +4,19 @@
                         <h3>Buscador</h3>
                             {{ Form::open(array('url' => '#', 'id' => 'consulta_viajes')) }}
                             
-                            <div class='input-group date' id='datetimepickend'>
+                            <div class='input-group'>
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-search"></span>
                                 </span>
                                 {{ Form::text('servidor', Input::old('servidor'), array('id' => 'servidor_id','placeholder'=>'Buscar...','class'=>'form-control')) }}
                             </div>
-                            <div class='input-group date' id='datetimepickbegin'>
+                            <div class='input-group date' id='datetimepickbegin' data-date-format="DD/MM/YYYY">
                                 <input type='text' class="form-control" placeholder="Fecha inicio"/>
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
                             </div>
-                            <div class='input-group date' id='datetimepickend'>
+                            <div class='input-group date' id='datetimepickend' data-date-format="DD/MM/YYYY">
                                 <input type='text' class="form-control" placeholder="Fecha final"/>
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
