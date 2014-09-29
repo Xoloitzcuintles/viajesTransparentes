@@ -286,3 +286,8 @@ footer .footer-col{
 	text-align: left;
 	color: #39bacc;
 }
+
+.navbar-toggle{
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
