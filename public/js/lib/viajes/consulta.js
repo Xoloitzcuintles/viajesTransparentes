@@ -3,7 +3,7 @@ $(document).ready(function(){
         getViajes();
         return false;
     });
-
+getViajes();
 });
 
 getViajes = function () {
