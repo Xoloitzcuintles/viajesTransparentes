@@ -32,9 +32,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="#page-top" class="navbar-brand">
-                            <span class="glyphicon glyphicon-globe icon-logo"></span> Viajes Transparentes
-                        </a>
+                        <a href="#page-top" class="navbar-brand" id="travelogo">Travel logo</a>
 
                     </div>
 
