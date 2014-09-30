@@ -44,7 +44,7 @@
                             <li class="dropdown">
                                 <a href="#" id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown">Viajes<span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="drop">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Añadir Viajes</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/servidor/altaViaje/">Añadir Viajes</a></li>
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="/servidor/trips/">Consultar Viajes</a></li>
                                 </ul>
                             </li>
