@@ -16,6 +16,12 @@
                         <div class="profilepic">
                             <img src="" class="picture"/>
                         </div>
+                        <p><a href="/" id="addProfilePicture" class="changePicture glyphicon glyphicon-picture"><span> Cambiar foto </span></a></p>
+                        {{ Form::open(array('url' => 'servidor/addPicture', 'id'=>'addPicture')) }}
+                            <input type="file" class="filestyle" data-buttonText="Foto..." name="picture" id="picture" />
+                            <input type="submit" class="btn btn-default" 
+                            name="registerButton" id="registerButton" value="Subir" />
+                        {{ Form::close() }}
                         <p><a id="servidorEmail" href="">Sin correo</a></p>
                         <p><strong>Tipo de Personal: </strong><span id="">--</span></p>
                         <p><strong>Nombre del Cargo: </strong><span id="nombrePuesto">--</span></p>

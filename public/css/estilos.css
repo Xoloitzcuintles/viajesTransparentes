@@ -287,6 +287,15 @@ footer .footer-col{
 	color: #39bacc;
 }
 
+#addPicture {
+	display: none;
+}
+a.changePicture span{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+	font-size: 14px;
+	line-height: 1.42857143;
+}
+
 .navbar-toggle{
 	margin-top: 25px;
 	margin-bottom: 20px;

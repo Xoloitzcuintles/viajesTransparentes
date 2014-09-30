@@ -104,6 +104,13 @@ servidor.setProfile = function () {
     $('.row.hidden').removeClass('hidden');
 }
 
+servidor.toggleAddPicture = function(e) {
+    e.preventDefault();
+    $('#addPicture').slideToggle();
+}
+
 $(function() {
+    $(":file").filestyle({input: false,buttonText: "Foto..."});
+    $(document).on( 'click', '#addProfilePicture', servidor.toggleAddPicture);
     servidor.setProfile();
 });
