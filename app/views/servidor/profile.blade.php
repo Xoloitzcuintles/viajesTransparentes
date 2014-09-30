@@ -49,33 +49,8 @@
                                     <th>Detalles</th>
                                   </tr>
                                 </thead>
-                                <tbody>
-                                  <tr>
-                                    <td>Internacional</td>
-                                    <td>ACT-PUB/03/04/2013.03.01</td>
-                                    <td>IFAI/Comisionados/Ponencias/087/13</td>
-                                    <td>México</td>
-                                    <td>Chile</td>
-                                    <td>450.00 USD</td>
-                                    <td>
-                                        <button type="button" class="btn btn-default btn-xs">
-                                            <span class="glyphicon glyphicon-plus"></span> Detalles
-                                        </button>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>Internacional</td>
-                                    <td>ACT-PUB/03/04/2013.03.01</td>
-                                    <td>IFAI/Comisionados/Ponencias/087/13</td>
-                                    <td>México</td>
-                                    <td>Chile</td>
-                                    <td>450.00 USD</td>
-                                    <td>
-                                        <button type="button" class="btn btn-default btn-xs">
-                                            <span class="glyphicon glyphicon-plus"></span> Detalles
-                                        </button>
-                                    </td>                                
-                                  </tr>
+                                <tbody id="viajesRows">
+                                  
                                 </tbody>
                             </table>
                         </div>

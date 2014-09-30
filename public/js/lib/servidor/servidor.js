@@ -64,6 +64,30 @@ servidor.setUnidadAdministrativa = function () {
     $('#unidadAdministrativa').text(ua);
 }
 
+servidor.setViaje = function () {
+    if (this.servidorData['servidor'].numberOfViajes == 0){
+        $('.panel.panel-default').hide();
+    } else {
+        var rows = '';
+        $.each(this.servidorData['servidor']['viajes'],function(){
+            rows +='<tr>'+
+                    '<td>'+this.tipo_viaje+'</td>'+
+                    '<td></td>'+
+                    '<td></td>'+
+                    '<td></td>'+
+                    '<td></td>'+
+                    '<td></td>'+
+                    '<td>'+
+                        '<button type="button" class="btn btn-default btn-xs">'+
+                            '<span data-id="'+this.id+'" class="glyphicon glyphicon-plus showMore"></span> Detalles'+
+                        '</button>'+
+                    '</td>'+
+                '</tr>';
+        });
+        $('#viajesRows').html(rows);
+    }
+}
+
 servidor.setProfile = function () {
     this.servidorData = servidor.getServidorData();
     console.log(this.servidorData);
@@ -74,6 +98,7 @@ servidor.setProfile = function () {
         servidor.setEmail();
         servidor.setPuesto();
         servidor.setUnidadAdministrativa();
+        servidor.setViaje();
     }
     $('.loading',document).hide();
     $('.row.hidden').removeClass('hidden');

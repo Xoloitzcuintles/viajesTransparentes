@@ -22,15 +22,24 @@ class ServidorApiController extends Controller
             $numberOfViajes = Viaje::where('servidor_id', '=', $servidorId)->get()->count();
             $viajeArray = array();
             foreach($viajes as $viaje){
-                if($viaje->servidor_id == $servidorId) {
-                    $viajeFinal = $viaje;
-                    $viajeFinal->tema = $viaje->tema;
-                    $viajeFinal->eventos = $viaje->eventos;
-                    $viajeFinal->tipoComision = $viaje->tipoComision;
-                    $viajeFinal->mecanismoOrigen = $viaje->mecanismoOrigen;
-                    $viajeFinal->instGenera = $viaje->instGenera;
-                    $viajeArray[] = $viajeFinal;
+                $viajeFinal = $viaje;
+                $viajeFinal->tema = $viaje->tema;
+                $viajeFinal->eventos = $viaje->eventos;
+                foreach($viajeFinal->eventos as $k=>$evento){
+                    $viajeFinal->eventos[$k]->pasajes = $evento->pasajes;
+                    foreach ($evento->pasajes as $l=>$pasaje){
+                        $pasaje->ciudad_origen = City::where('id', '=', $pasaje->ciudad_origen_id)->first();
+                        $pasaje->ciudad_destino = City::where('id', '=', $pasaje->ciudad_destino_id)->first();
+                        $viajeFinal->eventos[$k]->pasajes[$l]->ciudad_origen = $pasaje->ciudad_origen;
+                        $viajeFinal->eventos[$k]->pasajes[$l]->ciudad_destino = $pasaje->ciudad_destino;
+                    }
+                    $viajeFinal->eventos[$k]->viatico = Viatico::where('id', '=', $evento->viatico_id)->first();
+                    
                 }
+                $viajeFinal->tipoComision = $viaje->tipoComision;
+                $viajeFinal->mecanismoOrigen = $viaje->mecanismoOrigen;
+                $viajeFinal->instGenera = $viaje->instGenera;
+                $viajeArray[] = $viajeFinal;
             }
             $response = array(
                                 'status'    => 'success',
