@@ -32,7 +32,19 @@ class ServidorController extends BaseController
     public function altaViaje(){
         $servidor = new ServidorApiController();
         $servidor = $servidor->getServidorProfile(false);
-        return View::make('servidor/travelinfoadd', array('servidor'=>$servidor));
+        $ciudades = City::all();
+//        var_dump($servidor);die();
+        return View::make('servidor/travelinfoadd', array('servidor'=>$servidor,'ciudades'=>$ciudades));
+    }
+
+    public function consultaViaje(){
+        $viaje_id = Input::get('viaje');
+        $viajeApi = new ViajeApiController();
+        $viaje = $viajeApi->postJson(false,$viaje_id);
+        $servidor = new ServidorApiController();
+        $servidor = $servidor->getServidorProfile(false);
+        $ciudades = City::all();
+        return View::make('servidor/travelinfoconsult', array('servidor'=>$servidor,'ciudades'=>$ciudades,'viaje'=>$viaje));
     }
 
 }

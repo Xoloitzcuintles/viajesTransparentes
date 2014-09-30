@@ -6,17 +6,21 @@ class ServidorApiController extends Controller
      * Get all related data to a servidor publico
      */
 
-    public function getServidorProfile($json = true)
+    public function getServidorProfile($json = true,$servidor_id=false)
     {   
-        $servidorId = Auth::user()->servidor_id;
+        if($servidor_id == false && isset(Auth::user()->servidor_id)){
+            $servidorId = Auth::user()->servidor_id;
+        } else {
+            $servidorId = ($servidor_id != false) ? Auth::user()->servidor_id : $servidor_id;
+        }
         $userId  = Auth::user()->id;
         if (isset($servidorId) && $servidorId > 0) {
-            $contact = User::find($userId)->servidor;
-            $puesto = User::find($userId)->servidor->puesto;
+            $contact = Servidor::find($servidorId)->first();
+            $puesto = Servidor::find($servidorId)->puesto;
 
             $puesto->remuneracion = Remuneracion::where('id','=',$puesto->remuneracion_id)->get()->first();
 
-            $cargo = User::find($userId)->servidor->cargo;
+            $cargo = Servidor::find($servidorId)->cargo;
             $unidadAdministrativa = User::find($userId)->servidor->unidadAdministrativa;
             $viajes = Viaje::where('servidor_id', '=', $servidorId)->get();
             $numberOfViajes = Viaje::where('servidor_id', '=', $servidorId)->get()->count();

@@ -49,6 +49,7 @@ Route::get('servidor', 'ServidorController@dashboard');
 Route::get('servidor/profile', 'ServidorController@profile');
 Route::get('servidor/trips', 'ServidorController@trips');
 Route::get('servidor/altaViaje', 'ServidorController@altaViaje');
+Route::get('servidor/viaje', 'ServidorController@consultaViaje');
 
 /**
  * Viajes API Routes

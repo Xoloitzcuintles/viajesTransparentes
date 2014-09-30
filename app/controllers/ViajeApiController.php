@@ -16,10 +16,8 @@ class ViajeApiController extends BaseController
         return $this->postJson();
     }
 
-    public function postJson()
+    public function postJson($json = true,$viaje_id = null)
     {
-        $viaje_id = 1;
-
         if (Request::isMethod('post') && null !== Request::get('servidor_id') && Request::get('servidor_id') > 0)
         {
             $viajeModel = Viaje::whereHas('servidor', function($q)
@@ -27,7 +25,9 @@ class ViajeApiController extends BaseController
                                                 $q->where('id', '=', Request::get('servidor_id'));
 
                                             })->get();
-        } else {
+        } if(null !== $viaje_id) {
+            $viajeModel = Viaje::where('id', '=', $viaje_id)->get();
+        }else {
             $viajeModel = Viaje::all();
         }
 
@@ -35,7 +35,9 @@ class ViajeApiController extends BaseController
 
         foreach($viajeModel as $viaje){//
             $viajeFinal = $viaje;
-            $viajeFinal->servidor = $viaje->servidor;
+            $servidor = new ServidorApiController();
+            $viajeFinal->servidor = $servidor->getServidorProfile(false,$viaje->servidor_id)["servidor"];
+            //$viajeFinal->servidor->unidad_administrativa = UnidadAdministrativa::where('id','=',$viaje->servidor->unidad_administrativa_id);
             $viajeFinal->tema = $viaje->tema;
             $viajeFinal->eventos = $viaje->eventos;
             foreach($viajeFinal->eventos as $k=>$evento){
@@ -56,14 +58,19 @@ class ViajeApiController extends BaseController
             $viajeArray[] = $viajeFinal;
         }
 
-        return Response::json($viajeArray);
+        if($json == true){
+            return Response::json($viajeArray);
+        } else {
+            return $viajeArray;
+        }
     }
 
     public function consulta(){
         $servidores = Servidor::all();
         $instituciones = InstGenera::all();
         $temas = Tema::all();
-        $data = array('servidores'=>$servidores,'instituciones'=>$instituciones,'temas'=>$temas);
+        $ciudades = City::all();
+        $data = array('servidores'=>$servidores,'instituciones'=>$instituciones,'temas'=>$temas,'ciudades'=>$ciudades);
         $view = View::make('viajes/gridViajes',$data)->nest('child', 'viajes.consulta', $data);
         return $view;
     }
