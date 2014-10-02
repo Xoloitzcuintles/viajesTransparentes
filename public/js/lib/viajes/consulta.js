@@ -18,13 +18,64 @@ getViajes = function () {
             servidor_id : $("#servidor_id").val()
         },
         success: function(data) {
-            json = data;
+            viajes = data;
         } 
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//console.log(viajes[0].id)
+viajesClean = clearArray(viajes[0]);
+console.log(viajesClean);
+function clearArray(thisObject){
+  if(typeof thisObject === 'object' || typeof thisObject === 'array'){
+    console.log("it is");
+    $(thisObject).each(function(index,key){
+        if(typeof key === 'object' || typeof key === 'array'){
+        //  console.log(index);
+          key = clearArray(key);
+         // console.log(key);
+        } else {
+          key = null; 
+        }
+    });
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     var html;
-    $("#viajes_count").html(json.length);
+    $("#viajes_count").html(viajes.length);
     $("#viajes_table > tbody").html("");
-    $.each(json, function(key,viaje){
+    $.each(viajes, function(key,viaje){
           //console.log(viaje);
                 if(viaje.eventos.length > 0){
                   var evento = viaje.eventos[0];

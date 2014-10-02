@@ -30,11 +30,15 @@ class ServidorController extends BaseController
     }
 
     public function altaViaje(){
-        $servidor = new ServidorApiController();
-        $servidor = $servidor->getServidorProfile(false);
-        $ciudades = City::all();
-//        var_dump($servidor);die();
-        return View::make('servidor/travelinfoadd', array('servidor'=>$servidor,'ciudades'=>$ciudades));
+        if(Auth::check() && Auth::user()->role_id < "2"){
+            $servidor = new ServidorApiController();
+            $servidor = $servidor->getServidorProfile(false);
+            $ciudades = City::all();
+    //        var_dump($servidor);die();
+            return View::make('servidor/travelinfoadd', array('servidor'=>$servidor,'ciudades'=>$ciudades));
+        } else {
+            return Redirect::to('/');
+        }
     }
 
     public function consultaViaje(){

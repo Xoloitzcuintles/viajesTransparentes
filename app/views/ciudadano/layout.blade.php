@@ -40,13 +40,13 @@
                     <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="page-scroll">
-                                <a href="/ciudadano/">Dashboard</a>
+                                <a href="{{URL::to('/')}}/ciudadano">Dashboard</a>
                             </li>
                             <li class="page-scroll">
-                                <a href="/ciudadano/account/">Mi cuaneta</a>
+                                <a href="{{URL::to('/')}}/ciudadano/account">Mi cuaneta</a>
                             </li>
                             <li class="page-scroll">
-                                <a href="/users/logout/">Logout</a>
+                                <a href="{{URL::to('/')}}/users/logout">Logout</a>
                             </li>
                         </ul>
                     </div>
@@ -78,7 +78,8 @@
                     target: '.navbar-fixed-top'
                 })            
             });
-        </script>        
+        </script>
+        <input type="hidden" name="base_url" id="base_url" value="{{URL::to('/')}}"/>
     </body>
 
 </html>
