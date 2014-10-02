@@ -42,7 +42,7 @@ class ServidorController extends BaseController
         $viajeApi = new ViajeApiController();
         $viaje = $viajeApi->postJson(false,$viaje_id);
         $servidor = new ServidorApiController();
-        $servidor = $servidor->getServidorProfile(false);
+        $servidor = $servidor->getServidorProfile(false,$viaje[0]["servidor_id"]);
         $ciudades = City::all();
         return View::make('servidor/travelinfoconsult', array('servidor'=>$servidor,'ciudades'=>$ciudades,'viaje'=>$viaje));
     }

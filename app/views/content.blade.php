@@ -42,7 +42,7 @@
                     <p>Podrás obtener la información respecto a los viajes realizados por los servidores públicos y y filtrar la información obtenida de acuerdo a tus necesidades. En los perfiles de los servidores públicos podrás visualizar el perfil con sus datos de mayor relevancia como son: correo electrónico, nombre del cargo y unidad administrativa.</p>
                 </div>
                 <div class="col-sm-4">
-                    <span class="glyphicon glyphicon-stats icons-info"></span>
+                    <a href="{{URL::to('/viajesApi/consulta')}}"><span class="glyphicon glyphicon-stats icons-info"></span></a>
                     <p>El sistema permite realizar comparaciones entre los viajes realizados por los servidores públicos, a través de búsquedas específicas, gráficas entre otros.</p>
                 </div>
             </div>
@@ -114,17 +114,17 @@
                             </div>
                             <div class="btn-group">
                                     <input type="submit" class="btn btn-default" name="registerButton" id="registerButton" value="Registrarse" />
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <!--<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                       <span class="caret"></span>
-                                      <span class="sr-only">Toggle Dropdown</span>
+                                      <span class="sr-only">Toggle Dropdown</span> !-->
                                     </button>                                    
-                                    <ul class="dropdown-menu" role="menu">
+                                    <!--<ul class="dropdown-menu" role="menu">
                                       <li><a href="">Registro como</a></li>
                                       <li class="divider"></li>
                                       <li><a href="#">Ciudadano</a></li>
                                       <li><a href="#">Servidor</a></li>
                                       <li><a href="#">Administrador</a></li>
-                                    </ul>
+                                    </ul>!-->
                             </div>                            
                         {{ Form::close() }}
                     </p>

@@ -47,13 +47,11 @@ getViajes = function () {
                ' <td>'+ciudad_destino+'</td>'+
                ' <td>$'+viaticos+' MXN</td>'+
                ' <td>'+
-                   ' <button type="button" class="btn btn-default btn-xs">'+
+                   ' <a href="'+base_url+'/servidor/viaje?viaje='+viaje.id+'"><button type="button" class="btn btn-default btn-xs">'+
                        ' <span class="glyphicon glyphicon-plus"></span> Detalles'+
-                    '</button>'+
+                    '</button></a>'+
                 '</td>'+
             '</tr>';
             $("#viajes_table > tbody").append(content);
-//        html = '<a href="/servidorProfile/'+this['id']+'/">'+this['nombre'] + ' ' +this['apellidoPaterno'] + ' ' + this['apellidoMaterno'] + '</a> ';
-//        $('#js-servidoresList').append(html);
     });
 }

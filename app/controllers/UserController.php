@@ -33,7 +33,7 @@ class UserController extends BaseController {
         if($register != false){
             $password = Input::get('password');
             $username = Input::get('username');
-            $role = Input::get('role');
+            $role = 3;//Input::get('role');
             $password = Hash::make($password);
             $user = new User;
 

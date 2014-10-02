@@ -10,10 +10,12 @@ class ServidorApiController extends Controller
     {   
         if($servidor_id == false && isset(Auth::user()->servidor_id)){
             $servidorId = Auth::user()->servidor_id;
+            $userId  = Auth::user()->id;
         } else {
-            $servidorId = ($servidor_id != false) ? Auth::user()->servidor_id : $servidor_id;
+            $servidorId = ($servidor_id != false) ? $servidor_id : Auth::user()->servidor_id;
+            $user = User::where('servidor_id','=',$servidor_id)->first();
+            $userId = $user['id'];
         }
-        $userId  = Auth::user()->id;
         if (isset($servidorId) && $servidorId > 0) {
             $contact = Servidor::find($servidorId)->first();
             $puesto = Servidor::find($servidorId)->puesto;

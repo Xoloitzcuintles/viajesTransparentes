@@ -49,7 +49,7 @@ getServidoresToHome = function () {
     });
     var html;
     $.each(json, function(){
-        html = '<li><a href="/servidorProfile/'+this['id']+'/">'+this['nombre'] + ' ' +this['apellidoPaterno'] + ' ' + this['apellidoMaterno'] + '</a></li> ';
+        html = '<li><a href="'+base_url+'/servidorProfile/'+this['id']+'">'+this['nombre'] + ' ' +this['apellidoPaterno'] + ' ' + this['apellidoMaterno'] + '</a></li> ';
         $('#js-servidoresList').append(html);
     });
 }

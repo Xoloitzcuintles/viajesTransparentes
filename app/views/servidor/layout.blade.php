@@ -39,19 +39,21 @@
                     <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right" role="navigation">
                             <li>
-                                <a href="/servidor/">Dashboard</a>
+                                <a href="{{URL::to('/')}}/servidor/">Dashboard</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown">Viajes<span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="drop">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/servidor/altaViaje/">Añadir Viajes</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/servidor/trips/">Consultar Viajes</a></li>
+                                    <?php if(Auth::check() && Auth::user()->servidor_id){ ?>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="{{URL::to('/')}}/servidor/altaViaje">Añadir Viajes</a></li>
+                                    <?php } ?>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{URL::to('/')}}/viajesApi/consulta">Consultar Viajes</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="#" id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown">Perfiles<span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="drop">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/servidor/profile/">Consultar Perfiles</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{URL::to('/')}}/servidor/profile">Consultar Perfiles</a></li>
                                 </ul>
                             </li>
                             <li>
