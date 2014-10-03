@@ -58,4 +58,24 @@ class ServidorController extends BaseController
         return View::make('servidor/travelinfoconsult', array('servidor'=>$servidor,'ciudades'=>$ciudades,'viaje'=>$viaje));
     }
 
+    public function addPicture()
+    {   
+        if (null !== Input::file('picture')) {
+            $file = Input::file('picture');
+            $destinationPath = public_path().'/images/servidores/';
+            $filename = $file->getClientOriginalName();
+            $upload_success = Input::file('picture')->move($destinationPath, $filename);
+
+            if( $upload_success ) {
+                $servidorId = (isset(Auth::user()->servidor_id)) ? Auth::user()->servidor_id : null; 
+                $servidor = Servidor::find($servidorId);
+                $servidor->picture_url = '/images/servidores/'.$filename;
+                $servidor->save();
+                return Redirect::to('/servidor/profile/');
+            } 
+        } else {
+            return Redirect::to('/servidor/profile/');
+        }
+        
+    }
 }

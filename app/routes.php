@@ -50,6 +50,7 @@ Route::get('servidor/profile', 'ServidorController@profile');
 Route::get('servidor/trips', 'ServidorController@trips');
 Route::get('servidor/altaViaje', 'ServidorController@altaViaje');
 Route::get('servidor/viaje', 'ServidorController@consultaViaje');
+Route::post('servidor/addPicture', 'ServidorController@addPicture');
 
 /**
  * Viajes API Routes
