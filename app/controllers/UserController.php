@@ -11,10 +11,12 @@ class UserController extends BaseController {
     
     public function showProfile($id)
     {
-        //$user = User::find($id);
-
-        return View::make('profile', array());
+        $serApi = new ServidorApiController();
+        $json = $serApi->getServidorProfile(false,$id);
+        $json = json_encode($json);
+        return View::make('profile', array('servidorData' => $json, 'servidorId' => $id));
     }
+
 
     public function showTemplate($id)
     {

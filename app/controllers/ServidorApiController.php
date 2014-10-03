@@ -17,7 +17,7 @@ class ServidorApiController extends Controller
             $userId = $user['id'];
         }
         if (isset($servidorId) && $servidorId > 0) {
-            $contact = Servidor::find($servidorId)->first();
+            $contact = Servidor::find($servidorId);//->first();
             $puesto = Servidor::find($servidorId)->puesto;
 
             $puesto->remuneracion = Remuneracion::where('id','=',$puesto->remuneracion_id)->get()->first();

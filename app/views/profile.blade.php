@@ -23,22 +23,22 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="/servidor/" class="navbar-brand" id="travelogo">Travel logo</a>
+                        <a href="/" class="navbar-brand" id="travelogo">Travel logo</a>
                     </div>
 
                     <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="#">Dashboard</a>
+                            <li class="page-scroll">
+                                <a href="{{ URL::to('/') }}#quees">¿Qué es?</a>
                             </li>
-                            <li>
-                                <a href="viajes.html">Viajes</a>
+                            <li class="page-scroll">
+                                <a href="{{ URL::to('/') }}#registroaccesar">Accesar</a>
+                            </li>                            
+                            <li class="page-scroll">
+                                <a href="{{ URL::to('/') }}#comofunciona">¿Cómo funciona?</a>
                             </li>
-                            <li>
-                                <a href="perfiles.html">Perfiles</a>
-                            </li>
-                            <li>
-                                <a href="#">Información CSV</a>
+                            <li class="page-scroll">
+                                <a href="{{ URL::to('/') }}#contactanos">Contáctanos</a>
                             </li>
                         </ul>
                     </div>
@@ -47,36 +47,43 @@
         </div>
         <section>
             <div class="container">
-                <div class="row">
-                    <ol class="breadcrumb">
+                <div class="loading"></div>
+                <div class="row hidden">
+<!--                     <ol class="breadcrumb">
                       <li><a href="#">Inicio</a></li>
                       <li><a href="#">Perfiles</a></li>
                       <li class="active">Liliana Herrera Martín</li>
-                    </ol>                
+                    </ol>  -->               
                     <div class="col-lg-3">
-                        <h3>Liliana Herrera Martín </h3>
+                        <h3 id="servidorName"></h3>
                         <div class="profilepic">
-                            <img src="{{ URL::asset('images/servidores/user.jpg') }}" class="picture"/>
+                            <img onerror="profile.imgError()" src="" class="picture"/>
                         </div>
-                        <p><a href="mailto:liliana.herrera@ifai.org.mx">liliana.herrera@ifai.org.mx</a></p>
-                        <p><strong>Tipo de Personal:</strong> Confianza</p>
-                        <p><strong>Nombre del Cargo:</strong> Secretaría Particular</p>
-                        <p><strong>Unidad Administrativa:</strong> Comisionado</p>
-                        <p><strong>Clave de Puesto:</strong> MAC03</p>
+                        <p><a id="servidorEmail" href="">Sin correo</a></p>
+                        <p><strong>Tipo de Personal: </strong><span id="">--</span></p>
+                        <p><strong>Nombre del Cargo: </strong><span id="nombrePuesto">--</span></p>
+                        <p><strong>Unidad Administrativa: </strong><span id="unidadAdministrativa">--</span></p>
+                        <p><strong>Clave de Puesto: </strong><span id="clavePuesto">--</span></p>
                         <div class="usertools">
                             <a href="" class="tool">
                                 <span class="glyphicon glyphicon-plus"></span>
                             </a>
-                            <a href="mailto:liliana.herrera@ifai.org.mx" class="tool">
+                            <a id="servidorEmailTool" href="mailto:liliana.herrera@ifai.org.mx" class="tool">
                                 <span class="glyphicon glyphicon-envelope"></span>
                             </a>
-                            <a href="" class="tool">
-                                <span class="glyphicon glyphicon-map-marker"></span>
-                            </a>                        
+                            <?php if (Auth::check()) : ?>
+                                <a href="/ciudadano/followServidor/<?php echo $servidorId; ?>" class="tool">
+                                    <span class="glyphicon glyphicon-map-marker"></span>
+                                </a>
+                            <?php else : ?>
+                                <a id="loginFirst" href="" class="tool">
+                                    <span class="glyphicon glyphicon-map-marker"></span>
+                                </a>
+                            <?php endif; ?>                      
                         </div>
                     </div>   
                     <div class="col-lg-9">
-                        <h3>Viajes realizados <span class="badge">42</span></h3>
+                        <h3>Viajes realizados <span class="badge"></span></h3>
                         <div class="panel panel-default">
                             <div class="panel-heading">Consultar Viajes</div>
                             <table class="table">
@@ -91,33 +98,8 @@
                                     <th>Detalles</th>
                                   </tr>
                                 </thead>
-                                <tbody>
-                                  <tr>
-                                    <td>Internacional</td>
-                                    <td>ACT-PUB/03/04/2013.03.01</td>
-                                    <td>IFAI/Comisionados/Ponencias/087/13</td>
-                                    <td>México</td>
-                                    <td>Chile</td>
-                                    <td>450.00 USD</td>
-                                    <td>
-                                        <button type="button" class="btn btn-default btn-xs">
-                                            <span class="glyphicon glyphicon-plus"></span> Detalles
-                                        </button>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>Internacional</td>
-                                    <td>ACT-PUB/03/04/2013.03.01</td>
-                                    <td>IFAI/Comisionados/Ponencias/087/13</td>
-                                    <td>México</td>
-                                    <td>Chile</td>
-                                    <td>450.00 USD</td>
-                                    <td>
-                                        <button type="button" class="btn btn-default btn-xs">
-                                            <span class="glyphicon glyphicon-plus"></span> Detalles
-                                        </button>
-                                    </td>                                
-                                  </tr>
+                                <tbody id="viajesRows">
+                                  
                                 </tbody>
                             </table>
                         </div>
@@ -161,9 +143,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
+        <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ URL::asset('js/general-servidor.js') }}"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript">
+            $(function(){
+                profile.getServidorData(<?php echo $servidorData; ?>)
+                profile.setProfile();
+            });
           google.load("visualization", "1", {packages:["geomap"]});
           google.setOnLoadCallback(drawMap);
 
