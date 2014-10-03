@@ -17,28 +17,11 @@ var printArray = function(arr) {
   return arr;
 }
 
-function reloadArray(){
-  $.each( $("input"), function( key, value ) {
-                  if($(this).attr("js-path") != undefined){
-                  //  console.log($(this).attr("js-path"));
-                    var js_path = $(this).attr("js-path");
-//                    console.log(js_path);
-//                    console.log(eval(js_path));
-                    var path = eval(js_path);
-                    console.log(path);
-                    path = $(this).val();
-                    console.log(path);
-                  }
 
-                });
-}
-
-console.log(viaje);
-reloadArray();
-console.log(viaje);
-}
+//console.log(viaje);
 
 var base_url = $("#base_url").val();
+
 $.ajax({
     url:  base_url+'/viajesApi/postJson',
     type: 'post',
@@ -48,9 +31,11 @@ $.ajax({
         viaje_id : 1
     },
     success: function(data) {
+      console.log(data);
         viaje = data[0];
         //console.log(viaje);
         viaje = printArray(viaje);
+ //       reloadArray();
         //console.log(viajesClean);
     }
 });
@@ -58,3 +43,23 @@ $.ajax({
 
 
 });
+
+function reloadArray(){
+  $.each( $("input") , function( key, value ) {
+                  if($(this).attr("js-path") != undefined){
+                    var js_path = $(this).attr("js-path");
+                    if($(this).val() != ""){
+                      var string = js_path +" = '"+ $(this).val()+"'";
+                      console.log(string)
+                      eval(string);
+                    }
+                    //var path = eval(js_path);
+                    //var path = 
+                    //eval(js_path + ' = ' + $(this).val());
+//                    console.log();
+//                    path = $(this).val();
+//                    console.log(path);
+                  }
+
+                });
+}

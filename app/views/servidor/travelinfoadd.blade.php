@@ -276,13 +276,19 @@
                                     </div>
 
                                     <hr>
-                                    <div class='input-group date'>
+                                    <div class='input-group'>
                                         <span class="input-group-addon">Ciudad
                                             <span class="glyphicon glyphicon-lock"></span>
-                                        </span>
-                                        <input type="text" class="form-control" name="ciudad_origen" id="ciudad_origen" placeholder="Ciudad de Evento" 
-                                            js-path='$("#ciudadEvento option[value="+viaje.eventos[0].ciudad_id+"] ").html();'
-                                        />
+                                        </span>                            
+                                        <select type="text" class="form-control" name="ciudad_origen" id="ciudad_origen" 
+                                        placeholder="Ciudad del Evento" 
+                                        js-path="viaje.eventos[0].ciudad_id" >
+                                            <option value='0'>Seleccione</option>
+                                            <?php foreach($ciudades as $ciudad){ ?>
+                                                <option value="{{$ciudad["id"]}}" >{{$ciudad["name"]}}</option>
+
+                                            <?php } ?>
+                                        </select>
                                     </div>
                                     <div class="input-group">
                                         <span class="input-group-addon">Tipo de Viaje
@@ -423,7 +429,7 @@
                                             <span class="glyphicon glyphicon-lock"></span>
                                         </span>
                                         <input type="text" class="form-control" name="ciudad_origen_ida" id="ciudad_origen_ida" placeholder="Ciudad de Origen" 
-                                            js-path='$("#ciudadEvento option[value="+viaje.eventos[0].pasajes[0].ciudad_origen_id+"] ").html();'
+                                            js-path='viaje.eventos[0].pasajes[0].ciudad_origen_id'
                                         />
                                     </div>
                                     <div class='input-group date'>
@@ -431,7 +437,7 @@
                                             <span class="glyphicon glyphicon-lock"></span>
                                         </span>
                                         <input type="text" class="form-control" name="ciudad_destino_ida" id="ciudad_destino_ida" placeholder="Ciudad de Destino" 
-                                            js-path='$("#ciudadEvento option[value="+viaje.eventos[0].pasajes[0].ciudad_destino_id+"] ").html();'
+                                            js-path='viaje.eventos[0].pasajes[0].ciudad_destino_id'
                                         />
                                     </div>
                                     <span>Viaje de regreso</span>
@@ -464,7 +470,7 @@
                                             <span class="glyphicon glyphicon-lock"></span>
                                         </span>
                                         <input type="text" class="form-control" name="ciudad_origen_regreso" id="ciudad_origen_regreso" placeholder="Ciudad de Origen" 
-                                            js-path='$("#ciudadEvento option[value="+viaje.eventos[0].pasajes[1].ciudad_origen_id+"] ").html();'
+                                            js-path='viaje.eventos[0].pasajes[1].ciudad_origen_id'
                                         />
                                     </div>
                                     <div class='input-group date'>
@@ -472,7 +478,7 @@
                                             <span class="glyphicon glyphicon-lock"></span>
                                         </span>
                                         <input type="text" class="form-control" name="ciudad_destino_regreso" id="ciudad_destino_regreso" placeholder="Ciudad de Destino" 
-                                            js-path='$("#ciudadEvento option[value="+viaje.eventos[0].pasajes[1].ciudad_destino_id+"] ").html();'
+                                            js-path='viaje.eventos[0].pasajes[1].ciudad_destino_id'
                                         />
                                     </div>
                                     
@@ -500,6 +506,9 @@
             });
             $(document).ready(function() {
                 $('#finishregister').click(function () {
+                    reloadArray();
+                    console.log(viaje);
+                    /*
                     var btn = $(this)
                     btn.button('loading')
                     setTimeout(function() {
@@ -508,7 +517,7 @@
                         }).always(function () {
                             btn.button('reset')
                         });
-                    }, 3000);
+                    }, 3000);*/
                 });
             });
         </script>
