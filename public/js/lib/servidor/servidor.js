@@ -109,6 +109,12 @@ servidor.toggleAddPicture = function(e) {
     $('#addPicture').slideToggle();
 }
 
+servidor.imgError = function() {
+    var host = window.location.origin;
+     var src = host + '/images/servidores/default-user.png';
+    $('.profilepic > img').attr('src', src);
+}
+
 $(function() {
     $(":file").filestyle({input: false,buttonText: "Foto..."});
     $(document).on( 'click', '#addProfilePicture', servidor.toggleAddPicture);

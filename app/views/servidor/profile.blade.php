@@ -14,7 +14,7 @@
                     <div class="col-lg-3">
                         <h3 id="servidorName"></h3>
                         <div class="profilepic">
-                            <img src="" class="picture"/>
+                            <img onerror="servidor.imgError()" src="" class="picture"/>
                         </div>
                         <p><a href="/" id="addProfilePicture" class="changePicture glyphicon glyphicon-picture"><span> Cambiar foto </span></a></p>
                         {{ Form::open(array('url' => 'servidor/addPicture', 'id'=>'addPicture', 'files'=>true)) }}
