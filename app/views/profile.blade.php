@@ -23,10 +23,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="#page-top" class="navbar-brand">
-                            <span class="glyphicon glyphicon-globe icon-logo"></span> Viajes Transparentes
-                        </a>
-
+                        <a href="/servidor/" class="navbar-brand" id="travelogo">Travel logo</a>
                     </div>
 
                     <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
