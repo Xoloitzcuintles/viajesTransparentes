@@ -1,6 +1,9 @@
 @extends('template')
 
 @section('content')
+    <div id="topage">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </div>
     <!-- Header Section -->
     <header>
         <div class="container">
@@ -143,13 +146,13 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo ipsum obcaecati esse, nesciunt pariatur, nulla ipsa rerum possimus officiis, laboriosam voluptatibus consequatur. At beatae, mollitia eaque cum consequatur necessitatibus dolore.</p>
+                    <p>Sólo es necesario accesar a nuestro sistema dando click en el siguiente enlace <a href="">Consultar información</a>, ahí podrás encontrar la información necesaria sobre los viajes realizados por los servidores públicos así como el dinero utilizado, fechas, destino, entre otras funcionalidades.</p>
                 </div>
                 <div class="col-sm-4">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus excepturi ipsa, error magni mollitia, hic quaerat saepe sunt, molestiae nemo illo. Nobis animi quia voluptas reiciendis assumenda fugiat ab sit.
+                        Una vez dentro realiza tus búsquedas de una manera fácil y sencilla, compara datos y públicalos en tus redes sociales, o si lo prefieres exporta la inforamción obtenida para desṕues utilizarla.
                 </div>
                 <div class="col-sm-4">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam fuga ipsa ducimus rerum quibusdam aliquid culpa enim illum recusandae, quis architecto modi aspernatur officia nisi inventore necessitatibus, soluta maiores asperiores.
+                        Sigue a tu servidor público de cerca, esto te permitira recibir notificaciones vía correo electrónico respecto a los viajes realizados, actualizaciones y datos interesantes que recibirás en tiempo real.
                 </div>
             </div>
         </div>
@@ -230,7 +233,10 @@
                         </div>
                         <div class="footer-col col-md-4">
                             <h3 class="text-center">Destinos principales</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni id iusto eligendi quidem distinctio mollitia minus maiores, eaque temporibus, est, esse quae! Ab excepturi rerum, obcaecati! Maxime corporis, rerum labore.</p>
+                            <div class="alert alert-info" align="center" role="alert">Aún no contamos con información registrada</div>
+                            <div class="notinformation">
+                                <span class="glyphicon glyphicon-map-marker"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
