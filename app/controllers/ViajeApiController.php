@@ -47,6 +47,7 @@ class ViajeApiController extends BaseController
                     $pasaje->ciudad_destino = City::where('id', '=', $pasaje->ciudad_destino_id)->first();
                     $viajeFinal->eventos[$k]->pasajes[$l]->ciudad_origen = $pasaje->ciudad_origen;
                     $viajeFinal->eventos[$k]->pasajes[$l]->ciudad_destino = $pasaje->ciudad_destino;
+                    $viajeFinal->eventos[$k]->pasajes[$l]->compania = $pasaje->compania;
                 }
                 $viajeFinal->eventos[$k]->viatico = Viatico::where('id', '=', $evento->viatico_id)->first();
                 $viajeFinal->eventos[$k]->viatico->hospedajes = Viatico::where('id', '=', $evento->viatico_id)->first()->hospedajes;

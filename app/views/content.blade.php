@@ -79,6 +79,15 @@
                     <p>
                         {{ Form::open(array('url' => 'users/login', 'id'=>'loginForm')) }}
                             <div class="input-group">
+                                <span>
+                                    Usuarios de prueba:<br>
+                                    <ul>
+                                        <li>us: admin@ifai.gob.mx pw:</li>
+                                        <li>us: servidor@ifai.gob.mx pw:</li>
+                                        <li>us: ciudadano@ifai.gob.mx pw:</li>
+                                </span>
+                            </div>
+                            <div class="input-group">
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-user"></span>
                                 </span>

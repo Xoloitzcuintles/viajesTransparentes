@@ -34,8 +34,15 @@ class ServidorController extends BaseController
             $servidor = new ServidorApiController();
             $servidor = $servidor->getServidorProfile(false);
             $ciudades = City::all();
+            $temas = Tema::all();
+            $tipoComisiones = TipoComision::all();
+            $mecanismosOrigen = MecanismoOrigen::all();
+            $instsGenera = InstGenera::all();
     //        var_dump($servidor);die();
-            return View::make('servidor/travelinfoadd', array('servidor'=>$servidor,'ciudades'=>$ciudades));
+            return View::make('servidor/travelinfoadd', array('servidor'=>$servidor,'ciudades'=>$ciudades,
+                                                'temas'=>$temas, 'tipoComisiones'=>$tipoComisiones,
+                                                'mecanismosOrigen' => $mecanismosOrigen,
+                                                'instsGenera' => $instsGenera));
         } else {
             return Redirect::to('/');
         }

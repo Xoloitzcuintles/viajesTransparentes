@@ -17,6 +17,20 @@ var printArray = function(arr) {
   return arr;
 }
 
+$('#finishregister').click(function () {
+    reloadArray();
+    console.log(viaje);
+    /*
+    var btn = $(this)
+    btn.button('loading')
+    setTimeout(function() {
+        $.ajax('/servidorApi/addTrip/',{},function(){
+            //TODO: Process response
+        }).always(function () {
+            btn.button('reset')
+        });
+    }, 3000);*/
+});
 
 //console.log(viaje);
 
@@ -53,13 +67,17 @@ function reloadArray(){
                       console.log(string)
                       eval(string);
                     }
-                    //var path = eval(js_path);
-                    //var path = 
-                    //eval(js_path + ' = ' + $(this).val());
-//                    console.log();
-//                    path = $(this).val();
-//                    console.log(path);
                   }
+  });
 
-                });
+  $.each( $("select") , function( key, value ) {
+                  if($(this).attr("js-path") != undefined){
+                    var js_path = $(this).attr("js-path");
+                    if($(this).val() != "" && $(this).val() != 0){
+                      var string = js_path +" = '"+ $(this).val()+"'";
+                      console.log(string)
+                      eval(string);
+                    }
+                  }
+  });
 }

@@ -410,6 +410,14 @@
                                             js-path="viaje.eventos[0].pasajes[0].tipo_pasaje"
                                         />
                                     </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Compañía
+                                            <span class="glyphicon glyphicon-lock"></span>
+                                        </span>                            
+                                        <input type="text" class="form-control" name="companiaPasajeIda" id="companiaPasajeIda" placeholder="Institución que cubre pasaje" 
+                                            js-path="viaje.eventos[0].pasajes[0].compania.name"
+                                        />
+                                    </div>
                                     <div class='input-group date' id='datetimepickhospedajebegin'>
                                         <span class="input-group-addon">Fecha
                                             <span class="glyphicon glyphicon-lock"></span>
@@ -449,6 +457,14 @@
                                         </span>                            
                                         <input type="text" class="form-control" name="tipoPasajeRegreso" id="tipoPasajeRegreso" placeholder="Tipo de pasaje" 
                                             js-path="viaje.eventos[0].pasajes[1].tipo_pasaje"
+                                        />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Compañía
+                                            <span class="glyphicon glyphicon-lock"></span>
+                                        </span>                            
+                                        <input type="text" class="form-control" name="companiaPasajeRegreso" id="companiaPasajeRegreso" placeholder="Compañía" 
+                                            js-path="viaje.eventos[0].pasajes[1].compania.name"
                                         />
                                     </div>
                                     <div class='input-group date' id='datetimepickhospedajebegin'>
@@ -519,30 +535,23 @@
                     },
                     success: function(data) {
                         viaje = data[0];
+                        $.each( $("input"), function( key, value ) {
+                          if($(this).attr("js-path") != undefined){
+                          //  console.log($(this).attr("js-path"));
+                            var js_path = $(this).attr("js-path");
+                            // console.log(js_path);
+                            // console.log(eval(js_path));
+                            // //if input
+                             $(this).val(eval(js_path));
+                            // // else if select
+                          }
+
+                        });
                     }
                 });
 
-                $.each( $("input"), function( key, value ) {
-                  if($(this).attr("js-path") != undefined){
-                  //  console.log($(this).attr("js-path"));
-                    var js_path = $(this).attr("js-path");
-                    console.log(js_path);
-                    console.log(eval(js_path));
-                    //if input
-                    $(this).val(eval(js_path));
-                    // else if select
-                  }
-
-                });
 
             });
-
-            
-            
-
-
-
-            
         </script>
 
 
