@@ -22,56 +22,6 @@ getViajes = function () {
         } 
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//console.log(viajes[0].id)
-viajesClean = clearArray(viajes[0]);
-console.log(viajesClean);
-function clearArray(thisObject){
-  if(typeof thisObject === 'object' || typeof thisObject === 'array'){
-    console.log("it is");
-    $(thisObject).each(function(index,key){
-        if(typeof key === 'object' || typeof key === 'array'){
-        //  console.log(index);
-          key = clearArray(key);
-         // console.log(key);
-        } else {
-          key = null; 
-        }
-    });
-  }
-  
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     var html;
     $("#viajes_count").html(viajes.length);
     $("#viajes_table > tbody").html("");

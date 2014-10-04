@@ -62,10 +62,17 @@
             </div>
             <div class="row">
                 <div class="col-sm-6 text-center">
+                    <?php if(!Auth::check()){ ?>
                     <h3>Accesar</h3>
                     <button type="button" class="btn btn-default btn-lg" id="js-accesar">
                         <span class="glyphicon glyphicon-lock"></span> Accesar a la Plataforma
                     </button>
+                    <?php } else { ?>
+                    <h3>Ir a Perfil</h3>
+                    <button type="button" class="btn btn-default btn-lg" id="js-perfil">
+                        <span class="glyphicon glyphicon-lock"></span> Ir a Mi Perfil
+                    </button>
+                    <?php } ?>
                 </div>
                 <div class="col-sm-6 text-center">
                     <h3>Registrarse</h3>
@@ -75,6 +82,7 @@
                 </div>
             </div>
             <div class="row">
+                <?php if( !Auth::check() ){ ?>
                 <div class="col-sm-4 col-md-offset-1 hidesection" id="loginuser">
                     <p>
                         {{ Form::open(array('url' => 'users/login', 'id'=>'loginForm')) }}
@@ -103,6 +111,12 @@
                         {{ Form::close() }}
                     </p>
                 </div>
+                <?php } else { ?>
+                <div class="col-sm-4 col-md-offset-1 hidesection" id="loginuser">
+                    <p>
+                    </p>
+                </div>
+                <?php } ?>
                 <div class="col-sm-4 col-md-offset-2 hidesection" id="registeruser">
                     <p>
                         {{ Form::open(array('url' => 'users/register', 'id'=>'registerForm')) }}

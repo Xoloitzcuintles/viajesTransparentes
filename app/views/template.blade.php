@@ -52,6 +52,22 @@
                             <li class="page-scroll">
                                 <a href="#contactanos">Contáctanos</a>
                             </li>
+                            <?php if (Auth::check()) { ?>
+                                <?php if (Auth::user()->role_id < 2) { ?>
+                                    <li class="dropdown">
+                                        <a href="#" id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown">Viajes<span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="drop">
+                                            <?php if(Auth::check() && Auth::user()->servidor_id){ ?>
+                                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{URL::to('/')}}/servidor/altaViaje">Añadir Viajes</a></li>
+                                            <?php } ?>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{URL::to('/')}}/viajesApi/consulta">Consultar Viajes</a></li>
+                                        </ul>
+                                    </li>
+                                <?php } ?>
+                                <li class="page-scroll">
+                                    <a href="{{URL::to('/users/logout')}}">Cerrar Sesión</a>
+                                </li>
+                            <?php } ?>
                         </ul>
                     </div>
                 </div>
