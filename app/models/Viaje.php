@@ -3,6 +3,31 @@
 class Viaje extends Eloquent {
 
     protected $table = 'viaje';
+    protected $fillable = array('id',
+                                'ur',
+                                'tipo_rep',
+                                'consecutivo',
+                                'servidor_id',
+                                'tipo_viaje',
+                                'acuerdo',
+                                'oficio',
+                                'tarifa_diaria',
+                                'moneda',
+                                'tema_id',
+                                'tipo_comision_id',
+                                'mecanismo_origen_id',
+                                'inst_genera_id',
+                                'fecha_inicio_part',
+                                'fecha_fin_part',
+                                'motivo',
+                                'antecedente',
+                                'actividad',
+                                'resultado',
+                                'contribucion_ifai',
+                                'observaciones',
+                                'url_comunicado',
+                                );
+
 
     public function eventos(){
         return $this->belongsToMany('Evento');
