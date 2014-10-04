@@ -18,18 +18,24 @@ $(document).ready(function(){
   }
 
   $('#finishregister').click(function () {
-      reloadArray();
+      viaje = reloadArray();
       console.log(viaje);
-      /*
+      
       var btn = $(this)
       btn.button('loading')
       setTimeout(function() {
-          $.ajax('/servidorApi/addTrip/',{},function(){
+          $.ajax($("#base_url").val()+'/viajesApi/saveViaje',{
+            type: 'post',
+            data: {
+                      viaje : viaje
+                  }
+          },function(response){
+            console.log(response);
               //TODO: Process response
           }).always(function () {
               btn.button('reset')
           });
-      }, 3000);*/
+      }, 10);
   });
 
   //console.log(viaje);
@@ -59,26 +65,27 @@ $(document).ready(function(){
 });
 
 function reloadArray(){
-  $.each( $("input") , function( key, value ) {
-                  if($(this).attr("js-path") != undefined){
-                    var js_path = $(this).attr("js-path");
-                    if($(this).val() != ""){
-                      var string = js_path +" = '"+ $(this).val()+"'";
-                      console.log(string)
-                      eval(string);
+    $.each( $("input") , function( key, value ) {
+                    if($(this).attr("js-path") != undefined){
+                      var js_path = $(this).attr("js-path");
+                      if($(this).val() != ""){
+                        var string = js_path +" = '"+ $(this).val()+"'";
+                        console.log(string)
+                        eval(string);
+                      }
                     }
-                  }
-  });
+    });
 
-  $.each( $("select") , function( key, value ) {
-                  if($(this).attr("js-path") != undefined){
-                    var js_path = $(this).attr("js-path");
-                    if($(this).val() != "" && $(this).val() != 0){
-                      var string = js_path +" = '"+ $(this).val()+"'";
-                      console.log(string)
-                      eval(string);
+    $.each( $("select") , function( key, value ) {
+                    if($(this).attr("js-path") != undefined){
+                      var js_path = $(this).attr("js-path");
+                      if($(this).val() != "" && $(this).val() != 0){
+                        var string = js_path +" = '"+ $(this).val()+"'";
+                        console.log(string)
+                        eval(string);
+                      }
                     }
-                  }
-  });
+    });
+    return viaje;
 }
 

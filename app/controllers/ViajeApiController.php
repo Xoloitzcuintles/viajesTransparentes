@@ -75,4 +75,16 @@ class ViajeApiController extends BaseController
         $view = View::make('viajes/gridViajes',$data)->nest('child', 'viajes.consulta', $data);
         return $view;
     }
+
+    public function saveViaje(){
+//        echo "viaje";die();
+        $viaje = Request::get('viaje');
+
+        $newViaje = new ViajeTranslatorHelper($viaje);
+
+//        $newViaje = new Viaje($viaje);
+
+
+        return Response::json($newViaje);
+    }
 }

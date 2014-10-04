@@ -63,6 +63,7 @@ Route::post('viajesApi/getJson', 'ViajeApiController@postJson');
 
 Route::get('viajesApi/consulta', 'ViajeApiController@consulta');
 Route::post('viajesApi/consulta', 'ViajeApiController@consulta');
+Route::post('viajesApi/saveViaje', 'ViajeApiController@saveViaje');
 
  /**
  * ServidorApi routes

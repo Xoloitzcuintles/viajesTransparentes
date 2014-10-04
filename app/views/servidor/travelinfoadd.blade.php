@@ -32,7 +32,7 @@
                         </ul>
                     </div>
                     <div class="col-sm-9">
-                        <div class="tabbable">
+                        <div class="tabbable" id="travelAddForm">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#infouser" data-toggle="tab">Información de Servidor Público</a></li>
                                 <li><a href="#infoevento" data-toggle="tab">Información del Evento</a></li>
@@ -50,6 +50,7 @@
                                         </span>                            
                                         <input type="text" class="form-control" name="foto" id="foto" placeholder="Fotografía a publicar" />
                                     </div>-->
+                                    <input type="hidden" id="servidor_id" js-path="viaje.servidor.contact.id" value="{{$servidor["servidor"]["contact"]["id"]}}" />
                                     <div class="input-group">
                                         <span class="input-group-addon">Nombre del servidor
                                         </span>                            
@@ -571,6 +572,7 @@
                 </div>
             </div>
         </section>
+        <input type="hidden" id="base_url" value ="{{URL::to('/')}}" />
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
