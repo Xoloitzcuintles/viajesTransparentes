@@ -37,7 +37,9 @@ getViajes = function () {
                       ciudad_destino = pasaje.ciudad_destino.name;
                     }
                   });
-                  var viaticos = viaje.eventos[0].viatico.gasto;
+                  if(viaje.eventos[0].viatico != undefined){
+                    var viaticos = viaje.eventos[0].viatico.gasto;
+                  }
             }
 
             content = '<tr>'+

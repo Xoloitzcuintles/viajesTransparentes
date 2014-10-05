@@ -35,7 +35,9 @@ class ViajeApiController extends BaseController
         foreach($viajeModel as $viaje){//
             $viajeFinal = $viaje;
             $servidor = new ServidorApiController();
-            $viajeFinal->servidor = $servidor->getServidorProfile(false,$viaje->servidor_id,false)["servidor"];
+            if($viaje->servidor_id != null && $viaje->servidor_id>0){
+                $viajeFinal->servidor = $servidor->getServidorProfile(false,$viaje->servidor_id,false)["servidor"];
+            }
             //$viajeFinal->servidor->unidad_administrativa = UnidadAdministrativa::where('id','=',$viaje->servidor->unidad_administrativa_id);
             $viajeFinal->tema = $viaje->tema;
             $viajeFinal->eventos = $viaje->eventos;

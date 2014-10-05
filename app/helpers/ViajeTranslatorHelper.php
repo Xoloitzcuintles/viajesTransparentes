@@ -26,6 +26,8 @@ class viajeTranslatorHelper {
                 if($model['type'] == 'load'){
                     $evalString = '$this->newViaje->'.$model['location'].' = '.$model['model'].'::where("id","=",$this->viaje'.$model['location_id_array'].')->get();';
                     eval($evalString);
+                    $evalString = '$this->newViaje->'.$model['location_id'].' = $this->viaje'.$model['location_id_array'].';';
+                    eval($evalString);
                 } elseif($model['type'] == 'save'){
                     $evalString = '$localModel = '.$model['model'].'::create($this->viaje'.$model['location_array'].');';
                     eval($evalString);
@@ -63,6 +65,14 @@ class viajeTranslatorHelper {
                                     'location_id_array' => '["id"]',//create :: location for the id to search the model
                                     'model' => 'Viaje'
                                 ),
+                            'servidor'=>array(
+                                    'type' => 'load',
+                                    'location' => 'servidor',
+                                    'location_id' => 'servidor_id',
+                                    'location_array' => '',
+                                    'location_id_array' => '["servidor_id"]',
+                                    'model' => 'Servidor',
+                                ),
                             'evento'=>array(
                                     'type' => 'save',
                                     'location' => 'eventos[0]',
@@ -73,14 +83,6 @@ class viajeTranslatorHelper {
                                     'parent' => '',//location of the parent for many to many relationship to execute attach
                                     'attachMethod' => 'eventos',
                                     'model' => 'Evento'
-                                ),
-                            'servidor'=>array(
-                                    'type' => 'load',
-                                    'location' => 'servidor',
-                                    'location_id' => 'servidor_id',
-                                    'location_array' => '',
-                                    'location_id_array' => '["servidor_id"]',
-                                    'model' => 'Servidor',
                                 ),
                             'pasaje'=>array(
                                     'type' => 'save',

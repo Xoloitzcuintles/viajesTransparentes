@@ -45,6 +45,7 @@ Route::get('ciudadano/account', 'CiudadanoController@account');
 /**
  * Servidor routes
  */
+Route::get('servidores', 'ServidorController@servidores');
 Route::get('servidor', 'ServidorController@dashboard');
 Route::get('servidor/profile', 'ServidorController@profile');
 Route::get('servidor/trips', 'ServidorController@trips');

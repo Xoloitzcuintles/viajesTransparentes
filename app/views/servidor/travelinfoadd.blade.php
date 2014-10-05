@@ -56,7 +56,7 @@
                                         </span>                            
                                         <input type="text" class="form-control" name="foto" id="foto" placeholder="Fotografía a publicar" />
                                     </div>-->
-                                    <input type="hidden" id="servidor_id" js-path="viaje.servidor.contact.id" value="{{$servidor["servidor"]["contact"]["id"]}}" />
+                                    <input type="hidden" id="servidor_id" js-path="viaje.servidor_id" value="{{$servidor["servidor"]["contact"]["id"]}}" />
                                     <div class="input-group">
                                         <span class="input-group-addon">Nombre del servidor
                                         </span>                            

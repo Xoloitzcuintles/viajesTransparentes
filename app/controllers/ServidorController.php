@@ -19,6 +19,11 @@ class ServidorController extends BaseController
         return View::make('servidor/dashboard', array());
     }
 
+    public function servidores()
+    {   
+        return View::make('servidor/servidores', array());
+    }
+
     public function trips()
     {   
         return View::make('servidor/trips', array());
@@ -54,7 +59,9 @@ class ServidorController extends BaseController
         $viajeApi = new ViajeApiController();
         $viaje = $viajeApi->postJson(false,$viaje_id);
         $servidor = new ServidorApiController();
-        $servidor = $servidor->getServidorProfile(false,$viaje[0]["servidor_id"]);
+        if($viaje[0]["servidor_id"] > 0){
+            $servidor = $servidor->getServidorProfile(false,$viaje[0]["servidor_id"]);
+        }
         $ciudades = City::all();
         return View::make('servidor/travelinfoconsult', array('servidor'=>$servidor,'ciudades'=>$ciudades,'viaje'=>$viaje));
     }

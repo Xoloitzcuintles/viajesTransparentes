@@ -12,6 +12,12 @@
                     <h3><span class="glyphicon glyphicon-bullhorn"></span> Notificaciones</h3>
                     <p>Suscribete y sigue de cerca las últimas noticias de los servidores públicos.</p>
                     <h3><span class="glyphicon glyphicon-transfer"></span> Consultas</h3>
+                    <a href="{{URL::to('/servidores')}}"><button type="button" class="btn btn-default btn-lg" id="consultarServidoresButton">
+                        <span class="glyphicon glyphicon-user"></span> Consultar Servidores
+                    </button></a>
+                    <a href="{{URL::to('/viajesApi/consulta')}}"><button type="button" class="btn btn-default btn-lg" id="consultarViajesButton">
+                        <span class="glyphicon glyphicon-plane"></span> Consultar Viajes
+                    </button></a>
                     <p>Reliza consultas sobre los viajes realizados por los servidores públicos y obtene información filtrada, gráficas, comparaciones y otras opciones más.</p>
                     <h3><span class="glyphicon glyphicon-thumbs-up"></span> Comparte</h3>
                     <p>Depués de realizar tus consultas comparte los resultados obtenidos a traves de las redes sociales</p>
