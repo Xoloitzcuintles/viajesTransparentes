@@ -276,14 +276,7 @@
                                     </div>
 
                                     <hr>
-                                    <div class='input-group date'>
-                                        <span class="input-group-addon">Ciudad
-                                            <span class="glyphicon glyphicon-lock"></span>
-                                        </span>
-                                        <input type="text" class="form-control" name="ciudad_origen" id="ciudad_origen" placeholder="Ciudad de Evento" 
-                                            js-path='$("#ciudadEvento option[value="+viaje.eventos[0].ciudad_id+"] ").html();'
-                                        />
-                                    </div>
+
                                     <div class="input-group">
                                         <span class="input-group-addon">Tipo de Viaje
                                             <span class="glyphicon glyphicon-lock"></span>
@@ -432,6 +425,7 @@
                                         </span>
                                         <input type="text" class="form-control" name="ciudad_origen_ida" id="ciudad_origen_ida" placeholder="Ciudad de Origen" 
                                             js-path='$("#ciudadEvento option[value="+viaje.eventos[0].pasajes[0].ciudad_origen_id+"] ").html();'
+                                            id-path='viaje.eventos[0].pasajes[0].ciudad_origen_id'
                                         />
                                     </div>
                                     <div class='input-group date'>
@@ -440,6 +434,7 @@
                                         </span>
                                         <input type="text" class="form-control" name="ciudad_destino_ida" id="ciudad_destino_ida" placeholder="Ciudad de Destino" 
                                             js-path='$("#ciudadEvento option[value="+viaje.eventos[0].pasajes[0].ciudad_destino_id+"] ").html();'
+                                            id-path='viaje.eventos[0].pasajes[0].ciudad_destino_id'
                                         />
                                     </div>
                                     <span>Viaje de regreso</span>
@@ -481,6 +476,7 @@
                                         </span>
                                         <input type="text" class="form-control" name="ciudad_origen_regreso" id="ciudad_origen_regreso" placeholder="Ciudad de Origen" 
                                             js-path='$("#ciudadEvento option[value="+viaje.eventos[0].pasajes[1].ciudad_origen_id+"] ").html();'
+                                            id-path='viaje.eventos[0].pasajes[1].ciudad_origen_id'
                                         />
                                     </div>
                                     <div class='input-group date'>
@@ -489,6 +485,7 @@
                                         </span>
                                         <input type="text" class="form-control" name="ciudad_destino_regreso" id="ciudad_destino_regreso" placeholder="Ciudad de Destino" 
                                             js-path='$("#ciudadEvento option[value="+viaje.eventos[0].pasajes[1].ciudad_destino_id+"] ").html();'
+                                            id-path='viaje.eventos[0].pasajes[1].ciudad_destino_id'
                                         />
                                     </div>
                                     
@@ -537,13 +534,19 @@
                         viaje = data[0];
                         $.each( $("input"), function( key, value ) {
                           if($(this).attr("js-path") != undefined){
-                          //  console.log($(this).attr("js-path"));
                             var js_path = $(this).attr("js-path");
-                            // console.log(js_path);
-                            // console.log(eval(js_path));
-                            // //if input
-                             $(this).val(eval(js_path));
-                            // // else if select
+                            if(js_path.charAt(0) != "$"){
+                                var validParents = validateParents(js_path);
+                                console.log(validParents);
+                                if(validParents == true){
+                                    eval('$(this).val('+js_path+');');
+                                }else{
+                                    console.log("invalid parents"+js_path);
+                                }
+                            } else {
+                                var id_path = $(this).attr("id-path");
+                                var validParents = validateParents(id_path);
+                            }
                           }
 
                         });
@@ -552,6 +555,26 @@
 
 
             });
+
+function validateParents(objString){
+    var chunks = objString.split('.');
+    var string = '';
+    var num = 0;
+    var val = false;
+    $(chunks).each(function (key, index){
+        string += index;
+        console.log(num+" - "+string);
+        if(eval(string) == undefined){
+            val = false;
+            return false;
+        } else {
+            val = true;
+        }
+        string += ".";
+        num++;
+    });
+    return val;
+}
         </script>
 
 

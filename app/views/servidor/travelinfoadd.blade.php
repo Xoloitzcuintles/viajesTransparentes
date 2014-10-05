@@ -1,6 +1,10 @@
 @extends('servidor/layout')
 
 @section('data')
+        <script src="http://ajax.microsoft.com/ajax/jquery.validate/1.5.5/jquery.validate.js"></script>
+        <script src="{{ URL::asset('js/lib/servidor/travelinfoadd.js') }}"></script>
+
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
 
         <section>
             <div class="container">
@@ -105,37 +109,36 @@
                                     <input type="submit" class="btn btn-default" id="infouserbtn" value="Añadir información de evento" />
                                 </div>
                                 <div id="infoevento" class="tab-pane fade">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">Nombre del Evento
-                                        </span>                            
-                                        <input type="text" class="form-control required" name="nombreEvento" id="nombreEvento" 
-                                        placeholder="Nombre del Evento" 
-                                        value="{{@$viaje["eventos"]["0"]["name"]}}"
-                                        js-path="viaje.eventos[0].name" required="required" />
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">URL del Evento
-                                        </span>                            
-                                        <input type="text" class="form-control" name="urlEvento" id="urlEvento" 
-                                        placeholder="URL del Evento" 
-                                        value="{{@$viaje["eventos"]["0"]["name"]}}"
-                                        js-path="viaje.eventos[0].url" />
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">Ciudad del Evento
-                                        </span>                            
-                                        <select type="text" class="form-control" name="ciudadEvento" id="ciudadEvento" 
-                                        placeholder="Ciudad del Evento" 
-                                        js-path="viaje.eventos[0].ciudad_id" >
-                                            <option value='0'>Seleccione</option>
-                                            <?php foreach($ciudades as $ciudad){ ?>
-                                                <option value="{{$ciudad["id"]}}" >{{$ciudad["name"]}}</option>
-
-                                            <?php } ?>
-                                        </select>
-                                    
-                                    </div>
-                                    
+                                    <form id="infoEventoForm" name="infoEventoForm" method="post" action="#" >
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Nombre del Evento
+                                            </span>                            
+                                            <input type="text" class="form-control" name="nombreEvento" id="nombreEvento" 
+                                            placeholder="Nombre del Evento" 
+                                            value="{{@$viaje["eventos"]["0"]["name"]}}"
+                                            js-path="viaje.eventos[0].name" required />
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">URL del Evento
+                                            </span>                            
+                                            <input type="text" class="form-control" name="urlEvento" id="urlEvento" 
+                                            placeholder="URL del Evento" 
+                                            value="{{@$viaje["eventos"]["0"]["name"]}}"
+                                            js-path="viaje.eventos[0].url" />
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Ciudad del Evento
+                                            </span>                            
+                                            <select type="text" class="form-control" name="ciudadEvento" id="ciudadEvento" 
+                                            placeholder="Ciudad del Evento" 
+                                            js-path="viaje.eventos[0].ciudad_id" >
+                                                <option value='0'>Seleccione</option>
+                                                <?php foreach($ciudades as $ciudad){ ?>
+                                                    <option value="{{$ciudad["id"]}}" >{{$ciudad["name"]}}</option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </form>
                                     <input type="submit" class="btn btn-default" id="eventbtn" value="Añadir información de viaje" />
                                 </div>     
                                 <div id="infotravel" class="tab-pane fade">
@@ -573,21 +576,7 @@
             </div>
         </section>
         <input type="hidden" id="base_url" value ="{{URL::to('/')}}" />
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="{{ URL::asset('js/lib/viajes/viajes.js') }}"></script>
-        <script src="{{ URL::asset('js/moment.js') }}"></script>
-        <script src="{{ URL::asset('js/bootstrap-datepicker.js') }}"></script>
-        <script type="text/javascript">
-            $(document).ready(function() {            
-                $('#eventbtn,#infouserbtn,#infotravelbtn').click(function(){
-                    $('.nav-tabs > .active').next('li').find('a').trigger('click');
-                })
-            });
-        </script>
-        <script src="{{ URL::asset('js/lib/servidor/travelinfoadd.js') }}"></script>
+
 
 
 @stop

@@ -69,7 +69,6 @@
             </nav>
         </div>
 
-        @yield('data')
 
         <!-- jQuery Version 1.11.0 -->
         <script src="{{ URL::asset('js/jquery-1.11.0.js') }}"></script>
@@ -99,6 +98,9 @@
                 })            
             });
         </script>    
+
+        @yield('data')
+
         <input type="hidden" id="base_url" value="{{URL::to('/')}}"/>
     </body>
 

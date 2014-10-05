@@ -43,9 +43,9 @@ class viajeTranslatorHelper {
                 if(isset($model['attach']) && $model['attach'] == true){
                     $modelParent = ($model['parent'] == '') ? '' : '->'.$model['parent'];
                     $model['parent'];
-                    $evalString = '$this->newViaje'.$model['parent'].'->'.$model['attachMethod'].'()->attach($localModel->id);';
-//                    var_dump($evalString);die();
-                    eval($evalString);
+                    $evalString = '$this->newViaje'.$modelParent.'->'.$model['attachMethod'].'()->attach($localModel->id);';
+//                    var_dump($this->newViaje->eventos()->attach(1));die();
+//                    var_dump($evalString);
                 }
             }
         }
@@ -85,8 +85,22 @@ class viajeTranslatorHelper {
                                     'type' => 'save',
                                     'location' => 'eventos[0]->pasajes[0]',
                                     'location_id' => '',
+                                    'attach' => true,//needed for saving many to many relationships
+                                    'parent' => 'eventos[0]',//location of the parent for many to many relationship to execute attach
+                                    'attachMethod' => 'pasajes',
                                     'location_array' => '["eventos"][0]["pasajes"][0]',
                                     'location_id_array' => '["eventos"][0]["pasajes"][0]["id"]',
+                                    'model' => 'Pasaje'
+                                ),
+                            'pasajeRegreso'=>array(
+                                    'type' => 'save',
+                                    'location' => 'eventos[0]->pasajes[1]',
+                                    'location_id' => '',
+                                    'attach' => true,//needed for saving many to many relationships
+                                    'parent' => 'eventos[0]',//location of the parent for many to many relationship to execute attach
+                                    'attachMethod' => 'pasajes',
+                                    'location_array' => '["eventos"][0]["pasajes"][1]',
+                                    'location_id_array' => '["eventos"][0]["pasajes"][1]["id"]',
                                     'model' => 'Pasaje'
                                 ),
                             'viatico'=>array(
@@ -96,7 +110,18 @@ class viajeTranslatorHelper {
                                     'parent' => 'eventos[0]',//parent that should be updated when this object is saved
                                     'location_array' => '["eventos"][0]["viatico"]',
                                     'location_id_array' => '["eventos"][0]["viatico"]["id"]',
-                                    'model' => 'Pasaje'
+                                    'model' => 'Viatico'
+                                ),
+                            'hospedaje'=>array(
+                                    'type' => 'save',
+                                    'location' => 'eventos[0]->viatico->hospedajes[0]',
+                                    'location_id' => '',
+                                    'attach' => true,//needed for saving many to many relationships
+                                    'attachMethod' => 'hospedajes',
+                                    'parent' => 'eventos[0]->viatico',//parent that should be updated when this object is saved
+                                    'location_array' => '["eventos"][0]["viatico"]["hospedajes"][0]',
+                                    'location_id_array' => '["eventos"][0]["viatico"]["hospedajes"][0]["id"]',
+                                    'model' => 'Hospedaje'
                                 ),
 
         );

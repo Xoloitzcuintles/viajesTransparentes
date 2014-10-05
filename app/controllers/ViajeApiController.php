@@ -18,6 +18,7 @@ class ViajeApiController extends BaseController
 
     public function postJson($json = true,$viaje_id = null)
     {
+        $viaje_id = ($viaje_id == null && null != Request::get('viaje_id')) ? Request::get('viaje_id'):$viaje_id;
         if (Request::isMethod('post') && null !== Request::get('servidor_id') && Request::get('servidor_id') > 0)
         {
             $viajeModel = Viaje::whereHas('servidor', function($q)
@@ -25,18 +26,16 @@ class ViajeApiController extends BaseController
                                                 $q->where('id', '=', Request::get('servidor_id'));
 
                                             })->get();
-        } if(null !== $viaje_id) {
+        } if(null !== $viaje_id || null != Request::get('viaje_id')) {
             $viajeModel = Viaje::where('id', '=', $viaje_id)->get();
         }else {
             $viajeModel = Viaje::all();
         }
 
-        $viajeArray = array();
-
         foreach($viajeModel as $viaje){//
             $viajeFinal = $viaje;
             $servidor = new ServidorApiController();
-            $viajeFinal->servidor = $servidor->getServidorProfile(false,$viaje->servidor_id)["servidor"];
+            $viajeFinal->servidor = $servidor->getServidorProfile(false,$viaje->servidor_id,false)["servidor"];
             //$viajeFinal->servidor->unidad_administrativa = UnidadAdministrativa::where('id','=',$viaje->servidor->unidad_administrativa_id);
             $viajeFinal->tema = $viaje->tema;
             $viajeFinal->eventos = $viaje->eventos;
@@ -50,7 +49,17 @@ class ViajeApiController extends BaseController
                     $viajeFinal->eventos[$k]->pasajes[$l]->compania = $pasaje->compania;
                 }
                 $viajeFinal->eventos[$k]->viatico = Viatico::where('id', '=', $evento->viatico_id)->first();
-                $viajeFinal->eventos[$k]->viatico->hospedajes = Viatico::where('id', '=', $evento->viatico_id)->first()->hospedajes;
+                if($evento->viatico_id>0){
+                    $hospedajes = null;
+                    $viatico = Viatico::where('id', '=', $evento->viatico_id)->first();
+                    if(isset($viatico)){
+                        $hospedajes = $viatico->hospedajes;
+                    }
+                    if($hospedajes != null ){
+                        $viajeFinal->eventos[$k]->viatico->hospedajes = $hospedajes;
+                    }
+//                    var_dump($hospedajes);die();
+                }
             }
             //$viajeFinal->eventos->ciudad = $viaje->eventos->ciudad();
             $viajeFinal->tipoComision = $viaje->tipoComision;
