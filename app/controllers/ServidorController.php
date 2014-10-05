@@ -38,11 +38,12 @@ class ServidorController extends BaseController
             $tipoComisiones = TipoComision::all();
             $mecanismosOrigen = MecanismoOrigen::all();
             $instsGenera = InstGenera::all();
+            $companiasTransporte = CompaniaTransporte::all();
     //        var_dump($servidor);die();
             return View::make('servidor/travelinfoadd', array('servidor'=>$servidor,'ciudades'=>$ciudades,
                                                 'temas'=>$temas, 'tipoComisiones'=>$tipoComisiones,
                                                 'mecanismosOrigen' => $mecanismosOrigen,
-                                                'instsGenera' => $instsGenera));
+                                                'instsGenera' => $instsGenera, 'companiasTransporte'=>$companiasTransporte));
         } else {
             return Redirect::to('/');
         }

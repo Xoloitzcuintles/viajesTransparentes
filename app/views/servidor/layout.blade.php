@@ -71,7 +71,7 @@
 
 
         <!-- jQuery Version 1.11.0 -->
-        <script src="{{ URL::asset('js/jquery-1.11.0.js') }}"></script>
+        <script src="{{ URL::asset('js/jquery-1.11.1.js') }}"></script>
         <!-- Bootstrap Core JavaScript -->
         <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
         <!-- Scrolling Nav JavaScript -->

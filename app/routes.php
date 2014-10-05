@@ -65,6 +65,12 @@ Route::get('viajesApi/consulta', 'ViajeApiController@consulta');
 Route::post('viajesApi/consulta', 'ViajeApiController@consulta');
 Route::post('viajesApi/saveViaje', 'ViajeApiController@saveViaje');
 
+/*
+    ViajeController
+*/
+Route::post('viajes/processCsv', 'ViajeController@processCsv');
+Route::get('viajes/processCsv', 'ViajeController@processCsv');
+
  /**
  * ServidorApi routes
  */

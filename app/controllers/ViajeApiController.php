@@ -93,7 +93,8 @@ class ViajeApiController extends BaseController
 
 //        $newViaje = new Viaje($viaje);
 
-
+var_dump($newViaje);
+die();
         return Response::json($newViaje);
     }
 }

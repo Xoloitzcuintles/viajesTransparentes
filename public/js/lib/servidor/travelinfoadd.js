@@ -1,7 +1,33 @@
 $(document).ready(function(){
   $('#eventbtn,#infouserbtn,#infotravelbtn').click(function(){
-      $('.nav-tabs > .active').next('li').find('a').trigger('click');
+      console.log($(this).attr('form'));
+      if($("#"+$(this).attr('form')).valid())
+      {
+        console.log("trigger");
+        $('.nav-tabs > .active').next('li').find('a').trigger('click');
+      }
   })
+
+  $("#infoEventoForm").validate({
+            submitHandler: function(form) {
+              return false;
+            }
+      });
+  $("#infoUserForm").validate({
+            submitHandler: function(form) {
+              return false;
+            }
+      });
+  $("#infoTravelForm").validate({
+            submitHandler: function(form) {
+              return false;
+            }
+      });
+  $("#infoPaymentForm").validate({
+            submitHandler: function(form) {
+              return false;
+            }
+      });
 
   var clearArray = function(arr) {
      if ( typeof(arr) == "object") {
@@ -21,6 +47,7 @@ $(document).ready(function(){
   }
 
   $('#finishregister').click(function () {
+    if($("#infoPaymentForm").valid()){
       viaje = reloadArray();
       console.log(viaje);
       
@@ -39,6 +66,7 @@ $(document).ready(function(){
               btn.button('reset')
           });
       }, 10);
+    }
   });
 
   //console.log(viaje);
@@ -69,6 +97,17 @@ $(document).ready(function(){
 
 function reloadArray(){
     $.each( $("input") , function( key, value ) {
+                    if($(this).attr("js-path") != undefined){
+                      var js_path = $(this).attr("js-path");
+                      if($(this).val() != ""){
+                        var string = js_path +" = '"+ $(this).val()+"'";
+                        console.log(string)
+                        eval(string);
+                      }
+                    }
+    });
+
+    $.each( $("textarea") , function( key, value ) {
                     if($(this).attr("js-path") != undefined){
                       var js_path = $(this).attr("js-path");
                       if($(this).val() != ""){
