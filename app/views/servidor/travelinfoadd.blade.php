@@ -11,9 +11,9 @@
             <div class="container">
                 <div class="row">
                     <ol class="breadcrumb">
-                      <li><a href="#">Inicio</a></li>
-                      <li><a href="#">Viajes</a></li>
-                      <li class="active">Añadir información</li>
+                      <li><a href="{{URL::to('/')}}">Inicio</a></li>
+                      <li><a href="{{URL::to('/viajesApi/consulta')}}">Viajes</a></li>
+                      <li class="active">Alta Viaje</li>
                     </ol>                
                     <div class="col-sm-3">
                         <h3>Instrucciones</h3>

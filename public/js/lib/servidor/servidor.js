@@ -28,7 +28,7 @@ servidor.setProfileFail = function (message) {
 }
 
 servidor.setPicture = function() {
-    var host = window.location.origin;
+    var host = $("#base_url").val();
     if(this.servidorData['servidor']['contact'].picture_url == '' || this.servidorData['servidor']['contact'].picture_url == null) {   
         var src = host + '/images/servidores/default-user.png';
     } else {

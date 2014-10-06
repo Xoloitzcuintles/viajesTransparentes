@@ -15,6 +15,10 @@
         <!-- Custom CSS -->
         <link href="{{ URL::asset('css/estilos.css') }}" rel="stylesheet">
         <link href="{{ URL::asset('css/datepicker.css') }}" rel="stylesheet">
+        <script src="{{ URL::asset('js/jquery-1.11.1.js') }}"></script>
+        <script src="{{ URL::asset('js/jquery.easing.min.js') }}"></script>
+        <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+        
     </head>
 
 <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
@@ -31,7 +35,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="/servidor/" class="navbar-brand" id="travelogo">Travel logo</a>
+                        <a href="{{URL::to('/')}}" class="navbar-brand" id="travelogo">Travel logo</a>
 
                     </div>
 

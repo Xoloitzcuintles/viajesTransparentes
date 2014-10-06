@@ -20,40 +20,43 @@ class viajeTranslatorHelper {
         if(isset($viaje) && $viaje != null){
             $this->setViaje($viaje);
             $this->setNewViaje();
-            
-            $models = $this->getModelsOrder();
-            foreach($models as $k=>$model){
-                if($model['type'] == 'load'){
-                    $evalString = '$this->newViaje->'.$model['location'].' = '.$model['model'].'::where("id","=",$this->viaje'.$model['location_id_array'].')->get();';
-                    eval($evalString);
-                    $evalString = '$this->newViaje->'.$model['location_id'].' = $this->viaje'.$model['location_id_array'].';';
-                    eval($evalString);
-                } elseif($model['type'] == 'save'){
-                    $evalString = '$localModel = '.$model['model'].'::create($this->viaje'.$model['location_array'].');';
-                    eval($evalString);
-                    //$newModel = $localModel->save();
+        }
+    }
 
-                    $modelLocation = ($model['location'] != "") ? "->".$model['location'] : $model['location'] ;
+    public function saveNewViaje(){
+        $models = $this->getModelsOrder();
+        foreach($models as $k=>$model){
+            if($model['type'] == 'load'){
+                $evalString = '$this->newViaje->'.$model['location'].' = '.$model['model'].'::where("id","=",$this->viaje'.$model['location_id_array'].')->get();';
+                eval($evalString);
+                $evalString = '$this->newViaje->'.$model['location_id'].' = $this->viaje'.$model['location_id_array'].';';
+                eval($evalString);
+            } elseif($model['type'] == 'save'){
+                $evalString = '$localModel = '.$model['model'].'::create($this->viaje'.$model['location_array'].');';
+                eval($evalString);
+                //$newModel = $localModel->save();
 
-                    if($model['location_id'] != ''){
-                        eval('$this->newViaje->'.$model['location_id'].' = $localModel->id;');
-                        eval('$this->newViaje->'.$model['parent'].'->update();');
-                    }
+                $modelLocation = ($model['location'] != "") ? "->".$model['location'] : $model['location'] ;
 
-                    //$localModel has the model
-                    $evalString = '$this->newViaje'.$modelLocation.' = $localModel;';
+                if($model['location_id'] != ''){
+                    eval('$this->newViaje->'.$model['location_id'].' = $localModel->id;');
+                    eval('$this->newViaje->'.$model['parent'].'->update();');
+                }
+
+                //$localModel has the model
+                $evalString = '$this->newViaje'.$modelLocation.' = $localModel;';
+                eval($evalString);
+                if(isset($model['attach']) && $model['attach'] == true){
+                    $modelParent = ($model['parent'] == '') ? '' : '->'.$model['parent'];
+                    $model['parent'];
+                    $evalString = '$this->newViaje'.$modelParent.'->'.$model['attachMethod'].'()->attach($localModel->id);';
                     eval($evalString);
-                    if(isset($model['attach']) && $model['attach'] == true){
-                        $modelParent = ($model['parent'] == '') ? '' : '->'.$model['parent'];
-                        $model['parent'];
-                        $evalString = '$this->newViaje'.$modelParent.'->'.$model['attachMethod'].'()->attach($localModel->id);';
-    //                    var_dump($this->newViaje->eventos()->attach(1));die();
-    //                    var_dump($evalString);
-                    }
+//                    var_dump($this->newViaje->eventos()->attach(1));die();
+//                    var_dump($evalString);
                 }
             }
-            return $this->newViaje;
         }
+        return $this->newViaje->id;
     }
 
     private function getModelsOrder(){

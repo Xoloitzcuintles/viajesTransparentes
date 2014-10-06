@@ -81,7 +81,23 @@ class ServidorApiController extends Controller
 
     public function getServidores()
     {   
-        $servidores = Servidor::all()->take(10);
-        return Response::json($servidores);
+        $limit = (Request::get('limit') != null) ? Request::get('limit') : 10;
+        if($limit>=1){
+            $servidores = Servidor::all()->take($limit);
+        } else {
+            $servidores = Servidor::all();
+        }
+        $servers = array();
+        $x=0;
+        foreach($servidores as $servidor){
+            $servers[$x] = $servidor;
+            $servers[$x]->viajes = Viaje::where('servidor_id','=',$servidor->id)->get();
+            $servers[$x]->puesto = $servidor->puesto;
+            $servers[$x]->cargo = $servidor->cargo;
+            $servers[$x]->unidadAdministrativa = $servidor->puesto;
+//            $servidor->viajes;
+            $x++;
+        }
+        return Response::json($servers);
     }
 }

@@ -6,28 +6,28 @@
             <div class="container">
                 <div class="row">
                     <ol class="breadcrumb">
-                      <li><a href="#">Inicio</a></li>
-                      <li><a href="#">Viajes</a></li>
-                      <li class="active">Añadir información</li>
+                      <li><a href="{{URL::to('/')}}">Inicio</a></li>
+                      <li><a href="{{URL::to('/viajesApi/consulta')}}">Viajes</a></li>
+                      <li class="active">Consultar Viaje</li>
                     </ol>                
                     <div class="col-sm-3">
                         <h3>Instrucciones</h3>
                         <ul class="instructions">
                             <li>
                                 <span class="count">1</span>Información Servidor Público
-                                <p>Debe revisar y confirmar que la información desplegada, relacionada con su servidor público sea correcta, una vez comprobado haga click en 'Añadir información de viaje'</p>
+                                <p>Aquí encontrará la información referente al servidor público que realizó el viaje</p>
                             </li>
                             <li>
                                 <span class="count">2</span>Información del Evento
-                                <p>Información del evento en el que participa.</p>
+                                <p>Información del evento en el que participó el servidor.</p>
                             </li>
                             <li>
                                 <span class="count">3</span>Información de Viaje
-                                <p>En esta sección deberá contener la información de los pasajes realizados.</p>
+                                <p>Sección que contiene la información del viaje como no. de autorización, de oficio, fechas, motivos, actividades, etc.</p>
                             </li>
                             <li>
                                 <span class="count">4</span>Gastos Realizados
-                                <p>Aquí capturará los gastos de viáticos y hospedaje.</p>
+                                <p>Aquí verá información de los gastos realizados de viáticos, transporte y hospedaje.</p>
                             </li>
                         </ul>
                     </div>
@@ -104,7 +104,7 @@
                                         js-path="viaje.servidor.puesto.remuneracion.tarifa_diaria_mxn" />
                                     </div>
 
-                                    <input type="submit" class="btn btn-default" id="infouserbtn" value="Añadir información de evento" />
+                                    <input type="submit" class="btn btn-default" id="infouserbtn" value="Consultar información de evento" />
                                 </div>
                                 <div id="infoevento" class="tab-pane fade">
                                     <div class="input-group">
@@ -141,7 +141,7 @@
                                     
                                     </div>
                                     
-                                    <input type="submit" class="btn btn-default" id="eventbtn" value="Añadir información de viaje" />
+                                    <input type="submit" class="btn btn-default" id="eventbtn" value="Consultar información de viaje" />
                                 </div>     
                                 <div id="infotravel" class="tab-pane fade">
                                     <div class='input-group date' id='datetimepickbegin'>
@@ -289,7 +289,7 @@
                                             <option value="Nacional">Nacional</option>
                                         </select>
                                     </div>
-                                    <input type="submit" class="btn btn-default" id="infotravelbtn" value="Añadir información de gastos" />
+                                    <input type="submit" class="btn btn-default" id="infotravelbtn" value="Consultar información de gastos" />
                                 </div>
                                 <div id="infomoney" class="tab-pane fade">
                                     <h4>Viáticos</h4>
@@ -490,7 +490,7 @@
                                     </div>
                                     
 
-                                    <input type="submit" class="btn btn-default" data-loading-text="Registrando Viaje..." id="finishregister" value="Registrar Viaje" />
+                                    <!--<input type="submit" class="btn btn-default" data-loading-text="Registrando Viaje..." id="finishregister" value="Registrar Viaje" />!-->
                                 </div>     
                             </div>
                         </div>
@@ -540,6 +540,7 @@
                                 console.log(validParents);
                                 if(validParents == true){
                                     eval('$(this).val('+js_path+');');
+                                    $(this).attr("disabled","disabled");
                                 }else{
                                     console.log("invalid parents"+js_path);
                                 }

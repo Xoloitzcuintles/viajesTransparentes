@@ -86,7 +86,7 @@
                         <h3>Viajes realizados <span class="badge"></span></h3>
                         <div class="panel panel-default">
                             <div class="panel-heading">Consultar Viajes</div>
-                            <table class="table">
+                            <table class="table" id="servidor_table">
                                 <thead>
                                   <tr>
                                     <th>Tipo de Viaje</th>
@@ -106,14 +106,14 @@
                         <h3>Estadísticas</h3>
                         <h4>Viáticos</h4>
                         <div class="progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                            $3,000
+                          <div class="progress-bar" id="viaticos-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                            $<span id="viaticos_total">3,000</span>
                           </div>
                         </div>
-                        <h4>Gasolina</h4>
+                        <h4>Transportes</h4>
                         <div class="progress">
-                          <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
-                            $100,000
+                          <div class="progress-bar progress-bar-info" id="transportes-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+                            $<span id="transportes_total">3,000</span>
                           </div>
                         </div>
                     </div>
@@ -139,19 +139,27 @@
                     </div>
                 </div>
         </footer>    
+<?php
+        $servidor = json_decode($servidorData);
+        ?>
+        <input type="hidden" id="base_url" name="base_url" value="{{URL::to('/')}}" />
+        <input type="hidden" id="servidor_id" name="servidor_id" value="{{$servidor->servidor->contact->id}}" />
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+        <script src="{{ URL::asset('js/jquery-1.11.1.js') }}"></script>
+        <script src="{{ URL::asset('js/jquery.easing.min.js') }}"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
         <script src="{{ URL::asset('js/general-servidor.js') }}"></script>
-        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript">
             $(function(){
-                profile.getServidorData(<?php echo $servidorData; ?>)
+                profile.getServidorData(<?php echo $servidorData; ?>);
                 profile.setProfile();
+                profile.getTrips();
             });
-          google.load("visualization", "1", {packages:["geomap"]});
+        </script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        /*  google.load("visualization", "1", {packages:["geomap"]});
           google.setOnLoadCallback(drawMap);
 
           function drawMap() {
@@ -172,9 +180,7 @@
             var geomap = new google.visualization.GeoMap(container);
 
             geomap.draw(data, options);
-          };
+          };*/
         </script>
-
-
     </body>
 </html>

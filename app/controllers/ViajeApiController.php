@@ -26,12 +26,13 @@ class ViajeApiController extends BaseController
                                                 $q->where('id', '=', Request::get('servidor_id'));
 
                                             })->get();
-        } if(null !== $viaje_id || null != Request::get('viaje_id')) {
+        } else if(null !== $viaje_id || null != Request::get('viaje_id')) {
             $viajeModel = Viaje::where('id', '=', $viaje_id)->get();
         }else {
             $viajeModel = Viaje::all();
         }
 
+//            var_dump($viajeModel);die();
         foreach($viajeModel as $viaje){//
             $viajeFinal = $viaje;
             $servidor = new ServidorApiController();
@@ -92,11 +93,11 @@ class ViajeApiController extends BaseController
         $viaje = Request::get('viaje');
 
         $newViaje = new ViajeTranslatorHelper($viaje);
-
+        $newViajeArray = array('id'=>$newViaje->saveNewViaje());
 //        $newViaje = new Viaje($viaje);
 
-var_dump($newViaje);
-die();
-        return Response::json($newViaje);
+//var_dump($newViaje);
+//die();
+        return Response::json($newViajeArray);
     }
 }

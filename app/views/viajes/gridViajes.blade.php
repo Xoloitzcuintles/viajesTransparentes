@@ -8,7 +8,7 @@
             <div class="row">
                 @yield('consulta')
                 <div class="col-sm-9">
-                    <h3>Viajes realizados <span class="badge" id="viajes_count">42</span></h3>
+                    <h3>Viajes realizados <span class="badge" id="viajes_count">0</span></h3>
                         <div class="panel panel-default">
                             <div class="panel-heading">Consultar Viajes</div>
                             <table class="table" id="viajes_table">
@@ -24,7 +24,7 @@
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  <tr>
+                                <!--  <tr>
                                     <td>Internacional</td>
                                     <td>ACT-PUB/03/04/2013.03.01</td>
                                     <td>IFAI/Comisionados/Ponencias/087/13</td>
@@ -49,7 +49,7 @@
                                             <span class="glyphicon glyphicon-plus"></span> Detalles
                                         </button>
                                     </td>                                
-                                  </tr>
+                                  </tr>!-->
                                 </tbody>
                             </table>
                         </div>

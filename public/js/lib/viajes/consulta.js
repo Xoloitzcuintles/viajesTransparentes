@@ -9,6 +9,7 @@ getViajes();
 getViajes = function () {
     var json = null;
     var base_url = $("#base_url").val();
+    console.log($("#servidor").val())
     $.ajax({
         url:  base_url+'/viajesApi/postJson',
         type: 'post',

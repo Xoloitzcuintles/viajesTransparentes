@@ -11,13 +11,13 @@
                                 {{ Form::text('servidor', Input::old('servidor'), array('id' => 'servidor_id','placeholder'=>'Buscar...','class'=>'form-control')) }}
                             </div>!-->
                             <div class='input-group date' id='datetimepickbegin' data-date-format="DD/MM/YYYY">
-                                <input type='text' class="form-control" placeholder="Fecha inicio"/>
+                                <input type='text' class="form-control" placeholder="Fecha inicio" id="fecha_inicio"/>
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
                             </div>
                             <div class='input-group date' id='datetimepickend' data-date-format="DD/MM/YYYY">
-                                <input type='text' class="form-control" placeholder="Fecha final"/>
+                                <input type='text' class="form-control" placeholder="Fecha final" id="fecha_fin"/>
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
@@ -31,7 +31,7 @@
                                 </select>
                             </div>
                             <div class="input-group">
-                                <select class="form-control" id="servidor">
+                                <select class="form-control" id="tema">
                                     <option selected="selected">Tema</option>
                                 <?php foreach($temas as $tema){ ?>
                                         <option value="{{$tema['id']}}">{{$tema['name']}}</option>
@@ -48,7 +48,7 @@
                             </div>
                             <div class="input-group">
                                 <label for="servidor">Destinos</label>
-                                <select multiple class="form-control" id="servidor">
+                                <select multiple class="form-control" id="destinos">
                                 <?php foreach($ciudades as $ciudad){ ?>
                                         <option value="{{$ciudad['id']}}">{{$ciudad['name']}}</option>
                                 <?php } ?>

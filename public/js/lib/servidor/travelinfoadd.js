@@ -58,7 +58,10 @@ $(document).ready(function(){
             type: 'post',
             data: {
                       viaje : viaje
-                  }
+                  },
+            success: function(data){
+              window.location = $("#base_url").val()+'/servidor/viaje?viaje='+data.id;
+            }
           },function(response){
             console.log(response);
               //TODO: Process response

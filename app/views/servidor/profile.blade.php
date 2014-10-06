@@ -84,11 +84,8 @@
             </div>
         </section>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <!--<script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript">
           google.load("visualization", "1", {packages:["geomap"]});
           google.setOnLoadCallback(drawMap);
@@ -113,5 +110,5 @@
             geomap.draw(data, options);
           };
         </script>
-
+!-->
 @stop

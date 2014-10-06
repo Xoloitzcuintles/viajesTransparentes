@@ -19,7 +19,7 @@ profile.setProfileFail = function (message) {
 }
 
 profile.setPicture = function() {
-    var host = window.location.origin;
+    var host = $("#base_url").val();//window.location.origin;
     if(this.servidorData['servidor']['contact'].picture_url == '' || this.servidorData['servidor']['contact'].picture_url == null) {   
         var src = host + '/images/servidores/default-user.png';
     } else {
@@ -98,4 +98,67 @@ profile.imgError = function() {
     var host = window.location.origin;
      var src = host + '/images/servidores/default-user.png';
     $('.profilepic > img').attr('src', src);
+}
+
+profile.getTrips = function () {
+    var json = null;
+    var base_url = $("#base_url").val();
+    $.ajax({
+        url:  base_url+'/viajesApi/postJson',
+        type: 'post',
+        dataType: 'json',
+        async: false,
+        data: {
+            servidor_id : $("#servidor_id").val()
+        },
+        success: function(data) {
+            viajes = data;
+            profile.parseTrips(viajes);
+        } 
+    });
+
+    
+}
+
+profile.parseTrips = function (viajes) {
+    var html;
+    $("#viajes_count").html(viajes.length);
+    $("#servidor_table > tbody").html("");
+    var base_url = $("#base_url").val();
+    $.each(viajes, function(key,viaje){
+          //console.log(viaje);
+                if(viaje.eventos.length > 0){
+                      var evento = viaje.eventos[0];
+                      var costo_pasaje;
+                      var tipo_viaje = (viaje.eventos[0].tipo_viaje != undefined) ? viaje.eventos[0].tipo_viaje : "No definido";
+                      $.each(evento.pasajes, function(n, pasaje){
+                        if(pasaje.tipo == 'ida'){
+                          ciudad_origen = pasaje.ciudad_origen.name;
+                          ciudad_destino = pasaje.ciudad_destino.name;
+                        }
+                      });
+                      if(viaje.eventos[0].viatico != undefined && viaje.eventos[0] != undefined){
+                        var viaticos = viaje.eventos[0].viatico.gasto;
+                      } else {
+                        var viaticos = 0;
+                      }
+                }
+
+                viaticos = (viaticos == undefined) ? 0 : viaticos;
+
+            content = '<tr>'+
+               ' <td>'+tipo_viaje+'</td>'+
+               ' <td>'+viaje.acuerdo+'</td>'+
+               ' <td>'+viaje.oficio+'</td>'+
+               ' <td>'+ciudad_origen+'</td>'+
+               ' <td>'+ciudad_destino+'</td>'+
+               ' <td>$'+viaticos+' MXN</td>'+
+               ' <td>'+
+                   ' <a href="'+base_url+'/servidor/viaje?viaje='+viaje.id+'"><button type="button" class="btn btn-default btn-xs">'+
+                       ' <span class="glyphicon glyphicon-plus"></span> Detalles'+
+                    '</button></a>'+
+                '</td>'+
+            '</tr>';
+            $("#servidor_table > tbody").append(content);
+    });
 }
