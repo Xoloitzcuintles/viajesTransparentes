@@ -84,8 +84,6 @@
         <script src="{{ URL::asset('js/moment.js') }}"></script>
         <script src="{{ URL::asset('js/bootstrap-datepicker.js') }}"></script>
         <script src="{{ URL::asset('js/es.js') }}"></script>
-        <script src="{{ URL::asset('js/lib/servidor/file.js') }}"></script>
-        <script src="{{ URL::asset('js/lib/servidor/servidor.js') }}"></script>
         <script type="text/javascript">
             // jQuery for page scrolling feature - requires jQuery Easing plugin
             $(function() {

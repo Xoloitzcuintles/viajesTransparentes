@@ -1,6 +1,6 @@
-@extends('servidor/layout')
+@extends('template')
 
-@section('data')
+@section('content')
         <script src="{{ URL::asset('js/jquery.validate.js') }}"></script>
         <script src="{{ URL::asset('js/lib/servidor/travelinfoadd.js') }}"></script>
         <script src="{{ URL::asset('js/lib/viajes/viajes.js') }}"></script>

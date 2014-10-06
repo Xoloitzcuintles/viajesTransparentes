@@ -2,6 +2,9 @@
 @extends('servidor/layout')
 
 @section('data')
+        <script src="{{ URL::asset('js/lib/servidor/file.js') }}"></script>
+        <script src="{{ URL::asset('js/lib/servidor/servidor.js') }}"></script>
+
 <section>
             <div class="container">
                 <div class="loading"></div>

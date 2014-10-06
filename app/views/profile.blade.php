@@ -1,50 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Viajes Transparentes - Perfiles</title>
-        <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
-        <!-- Bootstrap Core CSS -->
-        <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
-        <!-- Custom CSS -->
-        <link href="{{ URL::asset('css/estilos.css') }}" rel="stylesheet">
-    </head>
-    <body id="page-top" class="index">
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <nav class="navbar navbar-default navbar-fixed-top">
-                <div class="container">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header page-scroll">
-                        <button data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" class="navbar-toggle" type="button">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a href="/" class="navbar-brand" id="travelogo">Travel logo</a>
-                    </div>
+@extends('template')
 
-                    <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="page-scroll">
-                                <a href="{{ URL::to('/') }}#quees">¿Qué es?</a>
-                            </li>
-                            <li class="page-scroll">
-                                <a href="{{ URL::to('/') }}#registroaccesar">Accesar</a>
-                            </li>                            
-                            <li class="page-scroll">
-                                <a href="{{ URL::to('/') }}#comofunciona">¿Cómo funciona?</a>
-                            </li>
-                            <li class="page-scroll">
-                                <a href="{{ URL::to('/') }}#contactanos">Contáctanos</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
+@section('content')
         <section>
             <div class="container">
                 <div class="loading"></div>
@@ -122,6 +78,8 @@
                     <div class="col-lg-9">
                         <h3>Mapa de lugares</h3>
                         <div id="regions_div"></div>
+                        <h3>Comentarios</h3>
+                        <div id="comments_div"><div class="fb-comments" data-href="{{Request::url()}}" data-numposts="5" data-colorscheme="light"></div></div>
                     </div>
                 </div>
             </div>
@@ -159,7 +117,7 @@
         </script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript">
-        /*  google.load("visualization", "1", {packages:["geomap"]});
+          google.load("visualization", "1", {packages:["geomap"]});
           google.setOnLoadCallback(drawMap);
 
           function drawMap() {
@@ -180,7 +138,7 @@
             var geomap = new google.visualization.GeoMap(container);
 
             geomap.draw(data, options);
-          };*/
+          };
         </script>
-    </body>
-</html>
+        
+@stop

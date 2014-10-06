@@ -64,6 +64,7 @@
                                 </select>
                             </div>-->
                             {{ Form::submit('Realizar búsqueda', array('class' => 'button expand round btn btn-default', 'id' => 'buscar_viajes_button')) }}
+                            {{ Form::submit('Descargar CSV', array('class' => 'button expand round btn btn-default', 'id' => 'buscar_viajes_button')) }}
                         {{ Form::close() }}
                     </div>
 @stop

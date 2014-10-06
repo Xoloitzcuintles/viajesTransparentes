@@ -33,10 +33,10 @@ class UserController extends BaseController {
         $register = Input::get('registerButton');
 
         if($register != false){
-            $password = Input::get('password');
+            $passwordOg = Input::get('password');
             $username = Input::get('username');
             $role = 3;//Input::get('role');
-            $password = Hash::make($password);
+            $password = Hash::make($passwordOg);
             $user = new User;
 
             $user->email = $username;
@@ -49,7 +49,7 @@ class UserController extends BaseController {
             $params = array('email'=>$username,'password'=>$password);
 
 //            return Redirect::to('users/welcome', $params)->with('message', 'Login Failed');
-            return Redirect::action('UserController@login', array('password'=>$password,'username'=>$username));
+            return Redirect::action('UserController@login', array('password'=>$passwordOg,'username'=>$username));
             
         }
 
@@ -79,7 +79,7 @@ class UserController extends BaseController {
                     break;
                 //ciudadano
                 case 3:
-                    return Redirect::to('ciudadano');
+                    return Redirect::to('/');
                     break;
                 default:
                     return View::make('users/welcome', array('title'=>$title));

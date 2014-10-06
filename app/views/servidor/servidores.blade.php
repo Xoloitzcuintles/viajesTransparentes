@@ -1,6 +1,6 @@
-@extends('servidor/layout')
+@extends('template')
 
-@section('data')
+@section('content')
 <!-- Header Section -->
     <script src="{{ URL::asset('js/lib/servidor/servidores.js') }}"></script>
 

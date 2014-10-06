@@ -1,6 +1,6 @@
-@extends('servidor/layout')
+@extends('template')
 
-@section('data')
+@section('content')
         <input type="hidden" id="viaje_id" name="viaje_id" value="{{Input::get('viaje')}}"/>
         <section>
             <div class="container">
@@ -489,6 +489,8 @@
                                         />
                                     </div>
                                     
+                                    <h3>Comentarios</h3>
+                                    <div id="comments_div"><div class="fb-comments" data-href="http://gasolinazos.com" data-numposts="5" data-colorscheme="light"></div></div>
 
                                     <!--<input type="submit" class="btn btn-default" data-loading-text="Registrando Viaje..." id="finishregister" value="Registrar Viaje" />!-->
                                 </div>     
@@ -499,9 +501,6 @@
             </div>
         </section>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="{{ URL::asset('js/lib/viajes/viajes.js') }}"></script>
         <script src="URL::to('/')/js/bootstrap-datepicker.js"></script>
         <script type="text/javascript">
@@ -532,7 +531,7 @@
                     },
                     success: function(data) {
                         viaje = data[0];
-                        $.each( $("input"), function( key, value ) {
+                        $.each( $("input, textarea, select"), function( key, value ) {
                           if($(this).attr("js-path") != undefined){
                             var js_path = $(this).attr("js-path");
                             if(js_path.charAt(0) != "$"){

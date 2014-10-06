@@ -58,6 +58,7 @@
         </div>
     </section>
     <!-- Login Section -->
+<?php if(!Auth::check()){ ?>
     <section id="registroaccesar">
         <div class="container">
             <div class="row">
@@ -66,27 +67,27 @@
                     <hr>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-6 text-center">
-                    <?php if(!Auth::check()){ ?>
-                    <h3>Accesar</h3>
-                    <button type="button" class="btn btn-default btn-lg" id="js-accesar">
-                        <span class="glyphicon glyphicon-lock"></span> Accesar a la Plataforma
-                    </button>
-                    <?php } else { ?>
-                    <h3>Ir a Perfil</h3>
-                    <button type="button" class="btn btn-default btn-lg" id="js-perfil">
-                        <span class="glyphicon glyphicon-lock"></span> Ir a Mi Perfil
-                    </button>
-                    <?php } ?>
+                <div class="row">
+                        <div class="col-sm-6 text-center">
+                            <?php if(!Auth::check()){ ?>
+                            <h3>Accesar</h3>
+                            <button type="button" class="btn btn-default btn-lg" id="js-accesar">
+                                <span class="glyphicon glyphicon-lock"></span> Accesar a la Plataforma
+                            </button>
+                            <?php } else { ?>
+                            <h3>Ir a Perfil</h3>
+                            <button type="button" class="btn btn-default btn-lg" id="js-perfil">
+                                <span class="glyphicon glyphicon-lock"></span> Ir a Mi Perfil
+                            </button>
+                            <?php } ?>
+                        </div>
+                    <div class="col-sm-6 text-center">
+                        <h3>Registrarse</h3>
+                        <button type="button" class="btn btn-default btn-lg" id="js-registrarse">
+                            <span class="glyphicon glyphicon-user"></span> Registrarse en la Plataforma
+                        </button>
+                    </div>
                 </div>
-                <div class="col-sm-6 text-center">
-                    <h3>Registrarse</h3>
-                    <button type="button" class="btn btn-default btn-lg" id="js-registrarse">
-                        <span class="glyphicon glyphicon-user"></span> Registrarse en la Plataforma
-                    </button>
-                </div>
-            </div>
             <div class="row">
                 <?php if( !Auth::check() ){ ?>
                 <div class="col-sm-4 col-md-offset-1 hidesection" id="loginuser">
@@ -164,6 +165,7 @@
             </div>
         </div>
     </section>    
+<?php } ?>
     <!-- About Section -->
     <section id="comofunciona">
         <div class="container">

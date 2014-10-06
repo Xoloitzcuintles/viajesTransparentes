@@ -27,31 +27,55 @@
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header page-scroll">
+                        <a href="{{URL::to('/')}}" class="navbar-brand" id="travelogo">Travel logo</a>
                         <button data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" class="navbar-toggle" type="button">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="{{URL::to('/')}}" class="navbar-brand" id="travelogo">Travel logo</a>
-
                     </div>
+                    <div id="fb-root"></div>
+                    <script>(function(d, s, id) {
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return;
+                      js = d.createElement(s); js.id = id;
+                      js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=465561006870893&version=v2.0";
+                      fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+                        <div style="padding-left:300px;" class="fb-like" data-href="{{URL::to('/')}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>    </body>
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="page-scroll">
-                                <a href="#quees">¿Qué es?</a>
-                            </li>
-                            <li class="page-scroll">
-                                <a href="#registroaccesar">Accesar</a>
-                            </li>                            
-                            <li class="page-scroll">
-                                <a href="#comofunciona">¿Cómo funciona?</a>
-                            </li>
-                            <li class="page-scroll">
-                                <a href="#contactanos">Contáctanos</a>
-                            </li>
+                            @if(Request::url() === URL::to('/'))
+                                <li class="page-scroll">
+                                    <a href="#quees">¿Qué es?</a>
+                                </li>
+                                @if(!Auth::check())
+                                    <li class="page-scroll">
+                                        <a href="#registroaccesar">Accesar</a>
+                                    </li>
+                                @endif                            
+                                <li class="page-scroll">
+                                    <a href="#comofunciona">¿Cómo funciona?</a>
+                                </li>
+                                <li class="page-scroll">
+                                    <a href="#contactanos">Contáctanos</a>
+                                </li>
+                            @else
+                                <li class="page-scroll">
+                                    <a href="{{URL::to('/')}}">Inicio</a>
+                                </li>
+                            @endif
+                            
+                            <?php if (!Auth::check() || Auth::user()->role_id == 3 ) { ?>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{URL::to('/')}}/viajesApi/consulta"><span class="glyphicon glyphicon-plane"></span>Viajes</a></li>
+                            <?php } ?>
+                            <?php if (!Auth::check() || Auth::user()->role_id == 3 ) { ?>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{URL::to('/')}}/servidores"><span class="glyphicon glyphicon-user"></span>Servidores</a></li>
+                            <?php } ?>
+
                             <?php if (Auth::check()) { ?>
                                 <?php if (Auth::user()->role_id < 2) { ?>
                                     <li class="dropdown">
@@ -63,11 +87,16 @@
                                             <li role="presentation"><a role="menuitem" tabindex="-1" href="{{URL::to('/')}}/viajesApi/consulta">Consultar Viajes</a></li>
                                         </ul>
                                     </li>
-                                <?php } ?>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{URL::to('/')}}/servidores"><span class="glyphicon glyphicon-user"></span>Servidores</a></li>
+                                <?php }  ?>
+                                <?php if (Auth::user()->role_id == 1) { ?>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{URL::to('/administrator')}}"><span class="glyphicon glyphicon-cog"></span>Administrador</a></li>
+                                <?php }  ?>
                                 <li class="page-scroll">
                                     <a href="{{URL::to('/users/logout')}}">Cerrar Sesión</a>
                                 </li>
                             <?php } ?>
+
                         </ul>
                     </div>
                 </div>
@@ -112,6 +141,6 @@
 
         </script>
         <input type="hidden" id="base_url" value="{{URL::to('/')}}"/>
-    </body>
+
 
 </html>
