@@ -31,8 +31,8 @@
                                 </select>
                             </div>
                             <div class="input-group">
-                                <select class="form-control" id="tema">
-                                    <option selected="selected">Tema</option>
+                                <select class="form-control" id="tema_id">
+                                    <option selected="selected" value="">Tema</option>
                                 <?php foreach($temas as $tema){ ?>
                                         <option value="{{$tema['id']}}">{{$tema['name']}}</option>
                                 <?php } ?>

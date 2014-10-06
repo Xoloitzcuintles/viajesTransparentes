@@ -16,7 +16,8 @@ getViajes = function () {
         dataType: 'json',
         async: false,
         data: {
-            servidor_id : $("#servidor_id").val()
+            servidores : $("#servidor").val(),
+            tema_id : $("#tema_id").val()
         },
         success: function(data) {
             viajes = data;

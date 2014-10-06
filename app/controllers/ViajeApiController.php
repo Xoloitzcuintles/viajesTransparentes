@@ -19,19 +19,27 @@ class ViajeApiController extends BaseController
     public function postJson($json = true,$viaje_id = null)
     {
         $viaje_id = ($viaje_id == null && null != Request::get('viaje_id')) ? Request::get('viaje_id'):$viaje_id;
-        if (Request::isMethod('post') && null !== Request::get('servidor_id') && Request::get('servidor_id') > 0)
+        if (Request::isMethod('post'))
         {
-            $viajeModel = Viaje::whereHas('servidor', function($q)
-                                            {
-                                                $q->where('id', '=', Request::get('servidor_id'));
+            if(null !== Request::get('servidor_id') && Request::get('servidor_id') > 0){
+                $viajeModel = Viaje::whereHas('servidor', function($q)
+                                                {
+                                                    $q->where('id', '=', Request::get('servidor_id'));
 
-                                            })->get();
+                                                })->get();
+            } else if(Request::get('servidores') != null && sizeof(Request::get('servidores'))>0){
+                $viajeModel = Viaje::whereIn('servidor_id', Request::get('servidores'))->get();
+            } else if(Request::get('tema_id') != null && Request::get('tema_id')>0){
+                $viajeModel = Viaje::where('tema_id', '=', Request::get('tema_id'))->get();
+            } else {
+                $viajeModel = Viaje::all();
+            }
         } else if(null !== $viaje_id || null != Request::get('viaje_id')) {
             $viajeModel = Viaje::where('id', '=', $viaje_id)->get();
         }else {
             $viajeModel = Viaje::all();
         }
-
+$viajeArray = array();
 //            var_dump($viajeModel);die();
         foreach($viajeModel as $viaje){//
             $viajeFinal = $viaje;
