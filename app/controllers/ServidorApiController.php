@@ -23,7 +23,7 @@ class ServidorApiController extends Controller
             $puesto->remuneracion = Remuneracion::where('id','=',$puesto->remuneracion_id)->get()->first();
 
             $cargo = Servidor::find($servidorId)->cargo;
-            $unidadAdministrativa = User::find($userId)->servidor->unidadAdministrativa;
+            $unidadAdministrativa = $contact->unidadAdministrativa;
             $numberOfViajes = Viaje::where('servidor_id', '=', $servidorId)->get()->count();
 
             if($viajes == true){
