@@ -20,6 +20,10 @@ Si no se usa vagrant necesitaremos:
 Para instalar el sistema, si se desea hacer con vagrant, solo es necesario localizarse en la carpeta raiz del proyecto y ejecutar el comando
 `vagrant up`
 
+Una vez que termine de levantar el ambiente en vagrant, podremos ingresar a la siguiente dirección para ver nuestro sistema funcionando
+`http://localhost:4567/`
+
+
 Aúnque, también se puede instalar de forma nativa, para eso, hay que seguir las instrucciones en el archivo `bootstrap.sh`
 
 ## Screenshots

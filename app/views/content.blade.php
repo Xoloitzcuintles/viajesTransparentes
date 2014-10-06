@@ -97,9 +97,9 @@
                                 <span>
                                     Usuarios de prueba:<br>
                                     <ul>
-                                        <li>us: admin@ifai.gob.mx pw:</li>
-                                        <li>us: servidor@ifai.gob.mx pw:</li>
-                                        <li>us: ciudadano@ifai.gob.mx pw:</li>
+                                        <li>us: admin@ifai.gob.mx pw:admin</li>
+                                        <li>us: servidor@ifai.gob.mx pw:servidor</li>
+                                        <li>us: ciudadano@ifai.gob.mx pw:ciudadano</li>
                                 </span>
                             </div>
                             <div class="input-group">
