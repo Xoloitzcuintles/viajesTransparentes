@@ -15,7 +15,7 @@ class CreateCargoTable extends Migration {
 		Schema::create('cargos', function($table)
 	    {
 	        $table->increments('id');
-	        $table->string('nombre',90);
+	        $table->string('nombre',255);
 	        $table->string('clave',45)->nullable();
 			$table->integer('cargo_id')->default(null)->nullable();
 	    });
