@@ -15,7 +15,7 @@ class CreateInstGeneraTable extends Migration {
 		Schema::create('inst_genera', function($table)
 		{
 			$table->increments('id');
-	        $table->string('name',90);
+	        $table->string('name',255);
 			$table->timestamps();
 		});
 	}
