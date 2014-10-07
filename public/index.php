@@ -1,5 +1,4 @@
 <?php
-var_dump(DATABASE_URL);
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
