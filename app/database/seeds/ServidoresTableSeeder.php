@@ -7,9 +7,9 @@ class ServidoresTableSeeder extends Seeder {
         DB::table('servidores')->delete();
 
         Servidor::create(array('nombre'=>'Liliana','apellidoPaterno'=>'Herrera','apellidoMaterno'=>'Martínez','correoElectronico'=>'liliana.herrera@ifai.org.mx',
-        //    'puesto_id'=>Puesto::where('nombre', '=', 'SECRETARIO PARTICULAR DE PONENCIA')->first()->id,
+            'puesto_id'=>Puesto::where('nombre', '=', 'SECRETARIO PARTICULAR DE PONENCIA')->first()->id,
             'picture_url'=>'/images/servidores/liliana.jpg',
-            'unidad_administrativa_id'=>UnidadAdministrativa::where('nombre','=', 'COMISIONADO')->first()->id,
+            'unidad_administrativa_id'=>UnidadAdministrativa::where('nombre','=', 'Comisionado')->first()->id,
             'cargo_id'=>Cargo::where('nombre', '=', 'SECRETARIA PARTICULAR')->first()->id));
         // Servidor::create(array('nombre'=>'Adrián Israel','apellidoPaterno'=>'Manilla','apellidoMaterno'=>'Aguirre','correoElectronico'=>'adrian.manilla@ifai.org.mx',
         //     'puesto_id'=>Puesto::where('nombre', '=', 'JEFE DE DEPARTAMENTO')->first()->id,
