@@ -7,7 +7,7 @@ class Pasaje extends Eloquent {
 
 	public function eventos()
     {
-        return $this->belongsToMany('Evento');
+        return $this->belongsToMany('Evento')->withTimestamps();
     }
 
 	public function compania()

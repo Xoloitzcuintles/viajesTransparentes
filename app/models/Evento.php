@@ -14,11 +14,11 @@ class Evento extends Eloquent {
                                 );
     
     public function viajes(){
-        return $this->belongsToMany('Viaje');
+        return $this->belongsToMany('Viaje')->withTimestamps();
     }
 
     public function pasajes(){
-        return $this->belongsToMany('Pasaje');
+        return $this->belongsToMany('Pasaje')->withTimestamps();
     }
 
     public function ciudad(){

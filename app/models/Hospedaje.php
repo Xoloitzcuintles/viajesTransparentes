@@ -13,7 +13,7 @@ class Hospedaje extends Eloquent {
 
 
     public function viaticos(){
-        return $this->belongsToMany('Viatico')->withTimestamps();;
+        return $this->belongsToMany('Viatico')->withTimestamps();
     }
 
 }
