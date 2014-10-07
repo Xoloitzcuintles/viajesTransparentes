@@ -14,7 +14,7 @@ class HospedajeTableSeeder extends Seeder {
 											));
         $viaticos = Viatico::where('id','=','1')->get();
         foreach($viaticos as $viatico){
-        	$viatico->hospedajes()->attach($hospedaje->id)->withTimestamps();
+        	$viatico->hospedajes()->attach($hospedaje->id);
         }
         $hospedaje = Hospedaje::create(array('fecha_inicio'=>'2014-09-15',
 											'fecha_fin'=>'2014-09-17',
@@ -24,7 +24,7 @@ class HospedajeTableSeeder extends Seeder {
 											));
         $viatico = Viatico::where('id','=','2')->get();
         foreach($viaticos as $viatico){
-        	$viatico->hospedajes()->attach($hospedaje->id)->withTimestamps();
+        	$viatico->hospedajes()->attach($hospedaje->id);
         }
         $hospedaje = Hospedaje::create(array('fecha_inicio'=>'2013-01-01',
 											'fecha_fin'=>'2013-01-07',
@@ -34,7 +34,7 @@ class HospedajeTableSeeder extends Seeder {
 											));
         $viatico = Viatico::where('id','=','3')->get();
         foreach($viaticos as $viatico){
-        	$viatico->hospedajes()->attach($hospedaje->id)->withTimestamps();
+        	$viatico->hospedajes()->attach($hospedaje->id);
         }
         $hospedaje = Hospedaje::create(array('fecha_inicio'=>'2014-08-01',
 											'fecha_fin'=>'2014-08-05',
@@ -44,7 +44,7 @@ class HospedajeTableSeeder extends Seeder {
 											));
         $viatico = Viatico::where('id','=','4')->get();
         foreach($viaticos as $viatico){
-        	$viatico->hospedajes()->attach($hospedaje->id)->withTimestamps();
+        	$viatico->hospedajes()->attach($hospedaje->id);
         }
         $hospedaje = Hospedaje::create(array('fecha_inicio'=>'2014-10-01',
 											'fecha_fin'=>'2014-10-05',
@@ -54,7 +54,7 @@ class HospedajeTableSeeder extends Seeder {
 											));
         $viatico = Viatico::where('id','=','5')->get();
         foreach($viaticos as $viatico){
-        	$viatico->hospedajes()->attach($hospedaje->id)->withTimestamps();
+        	$viatico->hospedajes()->attach($hospedaje->id);
         }
     }
 
