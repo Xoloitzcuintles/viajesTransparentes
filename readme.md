@@ -31,7 +31,8 @@ Aúnque, también se puede instalar de forma nativa, para eso, hay que seguir la
 
 ## Demo
 
-http://youtu.be/a_YQwKVLjYc
+Demo: http://blooming-escarpment-4474.herokuapp.com/public/
+Video: http://youtu.be/a_YQwKVLjYc
 
 ## Preguntas o problemas
 
