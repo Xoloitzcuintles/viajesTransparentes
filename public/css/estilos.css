@@ -6,6 +6,7 @@ header{
 	color: #FFF;
 	padding: 80px 0 20px 0;
 	position: relative;
+	background-size:cover;
 }
 header:before{
 	content: "";
