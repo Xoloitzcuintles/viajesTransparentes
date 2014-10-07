@@ -101,7 +101,7 @@ return array(
      * @type array
      */
     'sort' => array(
-        'field' => 'UR',
+        'field' => 'ur',
         'direction' => 'asc',
     ),
 );
