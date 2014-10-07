@@ -16,7 +16,7 @@ class CreateCargoTable extends Migration {
 	    {
 	        $table->increments('id');
 	        $table->string('nombre',90);
-	        $table->string('clave',45);
+	        $table->string('clave',45)->nullable();
 			$table->integer('cargo_id')->default(null)->nullable();
 	    });
 	}
