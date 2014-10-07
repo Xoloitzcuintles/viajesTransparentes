@@ -18,8 +18,8 @@ class CreateRemuneracionTable extends Migration {
 			$table->string('grupo_jerarquico',10);
 			$table->string('tipo_viaje',15);
 			$table->string('zona_destino',1);
-			$table->float('tarifa_diaria_mxn');
-			$table->float('tarifa_diaria_usd');
+			$table->float('tarifa_diaria_mxn')->nullable();
+			$table->float('tarifa_diaria_usd')->nullable();
 			$table->timestamps();
 		});
 	}
