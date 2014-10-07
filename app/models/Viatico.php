@@ -15,7 +15,7 @@ class Viatico extends Eloquent {
 
 	
     public function hospedajes(){
-        return $this->belongsToMany('Hospedaje');
+        return $this->belongsToMany('Hospedaje')->withTimestamps();;
     }
 
 }
