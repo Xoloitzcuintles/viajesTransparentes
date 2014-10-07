@@ -27,7 +27,7 @@ class ViajeTableSeeder extends Seeder {
 							'contribucion_ifai'=>'Como contribuye al IFAI este viaje',
 							'observaciones'=>'Las observaciones del viaje',
 							'url_comunicado'=>'http://www.ejemplo.com',));
-        $viaje->eventos()->attach('1')->withTimestamps();
+        $viaje->eventos()->attach('1');
 
         $viaje = Viaje::create(array('ur'=>'Dirección General de Tecnologías de la Información',
 							'tipo_rep'=>'Técnico',
@@ -50,7 +50,7 @@ class ViajeTableSeeder extends Seeder {
 							'contribucion_ifai'=>'Como contribuye al IFAI este viaje',
 							'observaciones'=>'Las observaciones del viaje',
 							'url_comunicado'=>'http://www.ejemplo.com',));
-        $viaje->eventos()->attach('2')->withTimestamps();
+        $viaje->eventos()->attach('2');
 
         $viaje = Viaje::create(array('ur'=>'COMAIP',
 							'tipo_rep'=>'Alto nivel',
@@ -73,7 +73,7 @@ class ViajeTableSeeder extends Seeder {
 							'contribucion_ifai'=>'Como contribuye al IFAI este viaje',
 							'observaciones'=>'Las observaciones del viaje',
 							'url_comunicado'=>'http://www.ejemplo.com',));
-        $viaje->eventos()->attach('3')->withTimestamps();
+        $viaje->eventos()->attach('3');
 
         $viaje = Viaje::create(array('ur'=>'Área General de Asuntos Jurídicos',
 							'tipo_rep'=>'Alto nivel',
@@ -96,7 +96,7 @@ class ViajeTableSeeder extends Seeder {
 							'contribucion_ifai'=>'Como contribuye al IFAI este viaje',
 							'observaciones'=>'Las observaciones del viaje',
 							'url_comunicado'=>'http://www.ejemplo.com',));
-        $viaje->eventos()->attach('4')->withTimestamps();
+        $viaje->eventos()->attach('4');
 
         $viaje = Viaje::create(array('ur'=>'Área General de Asuntos Jurídicos',
 							'tipo_rep'=>'Alto nivel',
@@ -119,7 +119,7 @@ class ViajeTableSeeder extends Seeder {
 							'contribucion_ifai'=>'Como contribuye al IFAI este viaje',
 							'observaciones'=>'Las observaciones del viaje',
 							'url_comunicado'=>'http://www.ejemplo.com',));
-        $viaje->eventos()->attach('5')->withTimestamps();
+        $viaje->eventos()->attach('5');
     }
 
 }
