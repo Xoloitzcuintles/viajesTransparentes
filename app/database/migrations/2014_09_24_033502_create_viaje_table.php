@@ -22,14 +22,14 @@ class CreateViajeTable extends Migration {
 			$table->text('tipo_viaje',45);
 			$table->text('acuerdo',90);
 			$table->text('oficio',45);
-	        $table->float('tarifa_diaria');
-	        $table->text('moneda',15);
+	        $table->float('tarifa_diaria')->nullable();
+	        $table->text('moneda',15)->nullable();
 	        $table->integer('tema_id');
 	        $table->integer('tipo_comision_id');
 	        $table->integer('mecanismo_origen_id');
 	        $table->integer('inst_genera_id');
-	        $table->date('fecha_inicio_part');
-	        $table->date('fecha_fin_part');
+	        $table->date('fecha_inicio_part')->nullable();
+	        $table->date('fecha_fin_part')->nullable();
 	        $table->longText('motivo');
 	        $table->longText('antecedente');
 	        $table->longText('actividad');
