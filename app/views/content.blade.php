@@ -70,10 +70,25 @@
                 <div class="row">
                         <div class="col-sm-6 text-center">
                             <?php if(!Auth::check()){ ?>
-                            <h3>Accesar</h3>
+                            <!--<h3>Accesar</h3>
                             <button type="button" class="btn btn-default btn-lg" id="js-accesar">
                                 <span class="glyphicon glyphicon-lock"></span> Accesar a la Plataforma
-                            </button>
+                            </button>!-->
+                            {{ Form::open(array('url' => 'users/login', 'id'=>'loginFormAdmin')) }}
+                                <input type="hidden" id="username" name="username" value="admin@ifai.gob.mx"/>
+                                <input type="hidden" id="password" name="password" value="admin"/>
+                                <input type="submit" class="btn btn-default" id="loginButtonAdmin" value="Ingresar como Administrador" />
+                            {{ Form::close() }}
+                            {{ Form::open(array('url' => 'users/login', 'id'=>'loginFormServidor')) }}
+                                <input type="hidden" id="username" name="username" value="servidor@ifai.gob.mx"/>
+                                <input type="hidden" id="password" name="password" value="servidor"/>
+                                <input type="submit" class="btn btn-default" id="loginButtonServidor" value="Ingresar como Servidor Público" />
+                            {{ Form::close() }}
+                            {{ Form::open(array('url' => 'users/login', 'id'=>'loginFormCiudadano')) }}
+                                <input type="hidden" id="username" name="username" value="ciudadano@ifai.gob.mx"/>
+                                <input type="hidden" id="password" name="password" value="ciudadano"/>
+                                <input type="submit" class="btn btn-default" id="loginButtonCiudadano" value="Ingresar como Ciudadano" />
+                            {{ Form::close() }}
                             <?php } else { ?>
                             <h3>Ir a Perfil</h3>
                             <button type="button" class="btn btn-default btn-lg" id="js-perfil">
@@ -92,7 +107,7 @@
                 <?php if( !Auth::check() ){ ?>
                 <div class="col-sm-4 col-md-offset-1 hidesection" id="loginuser">
                     <p>
-                        {{ Form::open(array('url' => 'users/login', 'id'=>'loginForm')) }}
+<!--                        {{ Form::open(array('url' => 'users/login', 'id'=>'loginForm')) }}
                             <div class="input-group">
                                 <span>
                                     Usuarios de prueba:<br>
@@ -115,7 +130,9 @@
                                 <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" />
                             </div>
                             <input type="submit" class="btn btn-default" id="loginButton" value="Accesar" />
-                        {{ Form::close() }}
+                        {{ Form::close() }} !-->
+                        
+
                     </p>
                 </div>
                 <?php } else { ?>

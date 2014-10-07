@@ -75,7 +75,7 @@ class UserController extends BaseController {
                     break;
                 //Servidor
                 case 2:
-                    return Redirect::to('servidor');
+                    return Redirect::to('/');
                     break;
                 //ciudadano
                 case 3:
