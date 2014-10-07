@@ -14,7 +14,7 @@ class AddServidorIdToUsers extends Migration {
 	{
 		Schema::table('users', function(Blueprint $table)
 		{
-			$table->integer('servidor_id');
+			$table->integer('servidor_id')->nullable();
 		});
 	}
 
