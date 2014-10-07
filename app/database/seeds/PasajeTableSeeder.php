@@ -17,7 +17,7 @@ class PasajeTableSeeder extends Seeder {
 							'ciudad_destino_id'=>'2'));
 		$eventos = Evento::where('id','=','1')->get();
         foreach($eventos as $evento){
-        	$evento->pasajes()->attach($pasaje->id);
+        	$evento->pasajes()->attach($pasaje->id)->withTimestamps();
         }
         $pasaje = Pasaje::create(array('cubre_pasaje'=>'IFAI',
 							'tipo_pasaje'=>'Aéreo',
@@ -30,7 +30,7 @@ class PasajeTableSeeder extends Seeder {
 							'ciudad_destino_id'=>'1'));
 		$eventos = Evento::where('id','=','1')->get();
         foreach($eventos as $evento){
-        	$evento->pasajes()->attach($pasaje->id);
+        	$evento->pasajes()->attach($pasaje->id)->withTimestamps();
         }
 
         /* Evento 2 */
@@ -45,7 +45,7 @@ class PasajeTableSeeder extends Seeder {
 							'ciudad_destino_id'=>'3'));
 		$eventos = Evento::where('id','=','2')->get();
         foreach($eventos as $evento){
-        	$evento->pasajes()->attach($pasaje->id);
+        	$evento->pasajes()->attach($pasaje->id)->withTimestamps();
         }
         $pasaje = Pasaje::create(array('cubre_pasaje'=>'IFAI',
 							'tipo_pasaje'=>'Aéreo',
@@ -58,7 +58,7 @@ class PasajeTableSeeder extends Seeder {
 							'ciudad_destino_id'=>'1'));
 		$eventos = Evento::where('id','=','2')->get();
         foreach($eventos as $evento){
-        	$evento->pasajes()->attach($pasaje->id);
+        	$evento->pasajes()->attach($pasaje->id)->withTimestamps();
         }
 
         /* Evento 3 */
@@ -73,7 +73,7 @@ class PasajeTableSeeder extends Seeder {
 							'ciudad_destino_id'=>'4'));
 		$eventos = Evento::where('id','=','3')->get();
         foreach($eventos as $evento){
-        	$evento->pasajes()->attach($pasaje->id);
+        	$evento->pasajes()->attach($pasaje->id)->withTimestamps();
         }
         $pasaje = Pasaje::create(array('cubre_pasaje'=>'IFAI',
 							'tipo_pasaje'=>'Aéreo',
@@ -86,7 +86,7 @@ class PasajeTableSeeder extends Seeder {
 							'ciudad_destino_id'=>'2'));
 		$eventos = Evento::where('id','=','3')->get();
         foreach($eventos as $evento){
-        	$evento->pasajes()->attach($pasaje->id);
+        	$evento->pasajes()->attach($pasaje->id)->withTimestamps();
         }
         
         /* Evento 4 */
@@ -101,7 +101,7 @@ class PasajeTableSeeder extends Seeder {
 							'ciudad_destino_id'=>'5'));
 		$eventos = Evento::where('id','=','4')->get();
         foreach($eventos as $evento){
-        	$evento->pasajes()->attach($pasaje->id);
+        	$evento->pasajes()->attach($pasaje->id)->withTimestamps();
         }
         $pasaje = Pasaje::create(array('cubre_pasaje'=>'IFAI',
 							'tipo_pasaje'=>'Aéreo',
@@ -114,7 +114,7 @@ class PasajeTableSeeder extends Seeder {
 							'ciudad_destino_id'=>'1'));
 		$eventos = Evento::where('id','=','4')->get();
         foreach($eventos as $evento){
-        	$evento->pasajes()->attach($pasaje->id);
+        	$evento->pasajes()->attach($pasaje->id)->withTimestamps();
         }
         
         /* Evento 5 */
@@ -129,7 +129,7 @@ class PasajeTableSeeder extends Seeder {
 							'ciudad_destino_id'=>'7'));
 		$eventos = Evento::where('id','=','5')->get();
         foreach($eventos as $evento){
-        	$evento->pasajes()->attach($pasaje->id);
+        	$evento->pasajes()->attach($pasaje->id)->withTimestamps();
         }
         $pasaje = Pasaje::create(array('cubre_pasaje'=>'IFAI',
 							'tipo_pasaje'=>'Aéreo',
@@ -142,7 +142,7 @@ class PasajeTableSeeder extends Seeder {
 							'ciudad_destino_id'=>'1'));
 		$eventos = Evento::where('id','=','5')->get();
         foreach($eventos as $evento){
-        	$evento->pasajes()->attach($pasaje->id);
+        	$evento->pasajes()->attach($pasaje->id)->withTimestamps();
         }
     }
 
