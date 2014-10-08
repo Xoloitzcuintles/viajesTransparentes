@@ -225,6 +225,10 @@ footer .footer-col:nth-child(3){
 	vertical-align: middle;
 }
 
+#loginFormAdmin input, #loginFormServidor input,#loginFormCiudadano input{
+	width: 50%;
+	margin: 15px 0;
+}
 
 #travelogo{
 	background: url("../images/viajes_logo.png") 0 2px no-repeat;
