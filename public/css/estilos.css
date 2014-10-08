@@ -127,6 +127,11 @@ footer .footer-col:nth-child(3){
 	background: #F29407;
 	border-radius: 50%;
 	padding: 5px;
+	color:#fff;
+}
+
+.functions button{
+	color:#666;
 }
 
 .icon-logo{
