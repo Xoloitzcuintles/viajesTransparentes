@@ -183,6 +183,33 @@
         </div>
     </section>    
 <?php } ?>
+    <!-- VT Section -->
+    <section id="mediosvt">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>En Medios</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <!-- 16:9 aspect ratio -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/0lqWkIdayIA?rel=0&vq=hd1080"></iframe>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <p>En este video podrás encontrar una breve explicación sobre el desarrollo de nuestro sistema, así como las funcionalidades principales y características más importantes.</p>
+                    <div class="btn-group btn-group-justified social">
+                        <a class="btn btn-default fb" role="button">Facebook</a>
+                        <a class="btn btn-default tw" role="button">Twitter</a>
+                        <a class="btn btn-default yt" role="button">You Tube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- About Section -->
     <section id="comofunciona">
         <div class="container">
