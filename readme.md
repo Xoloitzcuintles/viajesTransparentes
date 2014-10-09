@@ -16,6 +16,10 @@ Si no se usa vagrant necesitaremos:
 - Composer
 - CURL
 
+## Otras fuentes del software libre utilizado
+- Frozen Node Administrator https://github.com/FrozenNode/Laravel-Administrator
+- Laravel 4 https://github.com/laravel/laravel
+
 ## Instalación
 Para instalar el sistema, si se desea hacer con vagrant, solo es necesario localizarse en la carpeta raiz del proyecto y ejecutar el comando
 `vagrant up`
