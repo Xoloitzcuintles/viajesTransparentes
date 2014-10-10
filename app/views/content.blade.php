@@ -184,6 +184,14 @@
     </section>    
 <?php } ?>
     <!-- VT Section -->
+                        <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                          var js, fjs = d.getElementsByTagName(s)[0];
+                          if (d.getElementById(id)) return;
+                          js = d.createElement(s); js.id = id;
+                          js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=465561006870893&version=v2.0";
+                          fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
     <section id="mediosvt">
         <div class="container">
             <div class="row">
@@ -205,6 +213,10 @@
                         <a class="btn btn-default fb" role="button">Facebook</a>
                         <a class="btn btn-default tw" role="button">Twitter</a>
                         <a class="btn btn-default yt" role="button">You Tube</a>
+                        
+                    </div>
+                    <div style="padding-top:50px">
+                        <div style="padding-left:10px;" class="fb-like" data-href="{{URL::to('/')}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>    </body>
                     </div>
                 </div>
             </div>
